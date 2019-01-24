@@ -21,6 +21,21 @@
  }
  .login-form-box{ 
   border: 3px solid #f1f1f1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  text-align: center;
+ }
+
+ .signup-form-box{ 
+  border: 3px solid #f1f1f1;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -34,3 +49,55 @@
   display: flex
  }
 
+ .signup-input{
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 17px;
+  position: relative;
+  border: 1px solid #DCDEDD;
+ }
+
+ .login-text{
+
+  width: 100%;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: center;
+  writing-mode: horizontal-tb;
+ }
+
+ .signup-form-box, .loginform-box {
+  width: 400px;
+  height: 520px;
+  position: relative;
+  left: 50%;
+  top: 300px;
+  margin-bottom: 350px;
+  transform: perspective(1px) translate(-50%, -50%);
+  border: 0.5px solid #ccc;
+  background-color: white;
+
+}
+
+.login-form-box {
+  height: 385px;
+  top: 248px;
+}
+
+.signup-input, .login-input  {
+  margin: 12px 17px;
+  border: 1px solid #ccc;
+  width: 90%;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-weight: 300;
+}

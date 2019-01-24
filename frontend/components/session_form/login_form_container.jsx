@@ -6,8 +6,9 @@ import SessionForm from './session_form';
 
 const msp = (state) => {
   return {
-    formType: 'login',
-    navLink: <Link to="/signup">New to kickstarter? Sign up</Link>,
+    formType: 'Log in',
+    buttonName: 'Log me in!',
+    navLink: <Link to="/signup">New to JumpStartMe? Sign up</Link>,
   };
 };
 

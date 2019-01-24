@@ -1,11 +1,12 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,17 +26,21 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <>
+      <div className="signup-header" >
+        Have an account? <a className="signup-switch-login" href="/#/login">Log in</a>
+      </div>
+      <div className="signup-form-container">
+        <form onSubmit={this.handleSubmit} className="signup-form-box">
+       <div> {this.props.formType} </div>
           <br />
-          <div className="login-form">
-           <p className="login-text"> {this.props.formType}</p>
+          <div className="signup-form">
             <br />
             <label>Email:
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
-                className="login-input"
+                className="signup-input"
               />
             </label>
             <br />
@@ -43,17 +48,17 @@ class SessionForm extends React.Component {
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="signup-input"
               />
             </label>
             <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="signup-submit" type="submit" value="Create Account" />
           </div>
-          <div>{this.props.navLink}</div>
         </form>
       </div>
+      </>
     );
   }
 }
 
-export default SessionForm;
+export default SignUpForm;
