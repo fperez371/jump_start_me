@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
           <div className="login-form">
-           <p className="login-text"> {this.props.formType}</p>
+            <p className="login-text"> {this.props.formType}</p>
             <br />
             <label>Email:
               <input type="text"

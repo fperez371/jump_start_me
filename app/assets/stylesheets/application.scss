@@ -129,7 +129,7 @@
   padding: auto;
 }
 
-.site-nav-middle {
+.site-nav-middle  {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -138,8 +138,25 @@
   transform: perspective(1px) translate(-50%, -50%);
 }
 
-.site-nav-right li {
+.site-nav-middle > a {
+  color: green;
+}
+
+
+.site-nav-right li > a {
   display: block;
   float: right;
+  margin-left: 20px;
   padding-right: 30px;
+  width: auto;
+  padding: auto;
+}
+
+.site-nav-right li > button {
+  display: block;
+  float: right;
+  margin-left: 20px;
+  padding-right: 30px;
+  width: auto;
+  padding: auto;
 }

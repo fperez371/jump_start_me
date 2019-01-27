@@ -5,6 +5,7 @@ import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const msp = (state) => {
+  debugger
   return {
     formType: 'Log in',
     buttonName: 'Log me in!',
