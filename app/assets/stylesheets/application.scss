@@ -71,33 +71,22 @@
   writing-mode: horizontal-tb;
  } */
 
- .signup-form-box, .login-form-box {
+ .signup-form-box, .loginform-box {
   width: 400px;
   height: 520px;
   position: relative;
   left: 50%;
   top: 300px;
   margin-bottom: 350px;
-  transform: translate(-50%, -50%);
+  transform: perspective(1px) translate(-50%, -50%);
   border: 0.5px solid #ccc;
-
+  background-color: white;
 
 }
 
 .login-form-box {
   height: 385px;
   top: 248px;
-
-}
-
-.login-text{
-  font-size: 2.8rem;
-  line-height: 3.6rem;
-}
-
-.signup-text {
-  font-size: 2.8rem;
-  line-height: 3.6rem;
 }
 
 .signup-input, .login-input  {
@@ -107,12 +96,8 @@
   height: 40px;
   font-size: 14px;
   border-radius: 5px;
-  // padding-left: 10px;
+  padding-left: 10px;
   font-weight: 300;
-
-  box-sizing: border-box;
-  padding: 12px;
-  line-height: 17px;
 }
 
 /* Nav */
@@ -185,7 +170,7 @@
 //   list-style: none;
 // }
 
-.site-nav-right li {
+.site-nav-right li > hgroup {
   display: block;
   float: right;
   margin-left: 20px;
@@ -200,6 +185,6 @@
 }
 
 .login{
-  margin-left: 45px;
+  margin-right: 45px;
 }
 
