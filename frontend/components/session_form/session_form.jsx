@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
             <br />
             <button className="session-submit" type="submit" value="submit">Log me in!</button>
           </div>
-          <div>{this.props.navLink}</div>
+          <div>New to JumpStartMe? {this.props.navLink}</div>
         </form>
       </div>
     );

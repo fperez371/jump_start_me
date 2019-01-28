@@ -8,7 +8,7 @@ const msp = (state) => {
   return {
     formType: 'Log in',
     buttonName: 'Log me in!',
-    navLink: <Link to="/signup">New to JumpStartMe? Sign up</Link>,
+    navLink: <Link to="/signup">Sign up!</Link>,
   };
 };
 

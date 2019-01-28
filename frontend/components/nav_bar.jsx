@@ -13,7 +13,7 @@ class NavBar extends React.Component {
 
 
     return (
-      <div className="nav-bar group">
+      <div className="nav-bar">
         <div className="site-nav-left" >
           <ul className="nav-bar-items">
             <li><Link className="nav-link" to='/projects'>Explore</Link></li>

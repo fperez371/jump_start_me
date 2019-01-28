@@ -31,7 +31,8 @@ a {
  background:transparent;
  list-style: none;
  text-decoration: none;
- color: black;
+ color: #0000EE;
+ cursor: pointer;
 }
 
 ins {

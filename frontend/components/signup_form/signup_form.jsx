@@ -30,11 +30,11 @@ class SignUpForm extends React.Component {
       <>
         <div>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-            <div className='signup-text'> {this.props.formType} </div>
             <div className="signup-form">
-            <div className="signup-header" >
-              Have an account? <a className="signup-switch-login" href="/#/login"> Log in</a>
-            </div>
+              <div className="signup-header" >
+                Have an account?<a className="signup-switch-login" href="/#/login"> Log in</a>
+              </div>
+              <div className='signup-text'> {this.props.formType} </div>
               <label>Name:
               <input type="text"
                   value={this.state.name}
@@ -59,7 +59,7 @@ class SignUpForm extends React.Component {
                   placeholder="password"
                 />
               </label>
-              <input className="signup-submit" type="submit" value="Create Account" />
+              <button className="signup-submit" type="submit" value="Create Account">Create Account</button>
             </div>
           </form>
         </div>
