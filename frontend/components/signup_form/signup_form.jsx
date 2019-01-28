@@ -31,9 +31,9 @@ class SignUpForm extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
             <div className="signup-header" >
-              Have an account? <a className="signup-switch-login" href="/#/login">Log in</a>
+              Have an account? <a className="signup-switch-login" href="/#/login"> Log in</a>
             </div>
-            <div> {this.props.formType} </div>
+            <div className='signup-text'> {this.props.formType} </div>
             <div className="signup-form">
               <label>Name:
               <input type="text"
