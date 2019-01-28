@@ -100,6 +100,16 @@
   line-height: 3.6rem;
 }
 
+.session-submit{
+  background-color: #009E74;
+  color: #FFFFFF !important;
+  height: 4.2rem;
+  line-height: 4.2rem;
+  padding: 0 1.8rem;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
 .signup-input, .login-input  {
   margin: 12px 17px;
   border: 1px solid #ccc;
@@ -118,13 +128,12 @@
 /* Nav */
 
 
-
 .nav-bar {
   z-index: 1;
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px transparent grey;
+  border-bottom: 0.1rem solid #DCDEDD;
   font-family: helvetica;
   font-size: 14px;
   font-weight: bold;
@@ -155,15 +164,14 @@
   left: 50%;
   top: 50%;
   font-family: $primary;
-  font-size: 40px;
+  font-size: 28px;
   transform: perspective(1px) translate(-50%, -50%);
 }
 
 .site-nav-middle > a {
-  color: green;
+  color: #034752;
   list-style: none;
 }
-
 
 .site-nav-right li > a {
   display: block;
