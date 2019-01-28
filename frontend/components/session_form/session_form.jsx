@@ -25,10 +25,10 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="login-form">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
-          <div className="login-form">
+          <div>
             <p className="login-text"> {this.props.formType}</p>
             <br />
             <label>Email:

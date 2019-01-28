@@ -9,6 +9,7 @@ class SignUpForm extends React.Component {
       name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   update(field) {
@@ -27,7 +28,7 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <>
-        <div className="signup-form-container">
+        <div>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
             <div className="signup-header" >
               Have an account? <a className="signup-switch-login" href="/#/login">Log in</a>

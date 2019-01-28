@@ -109,16 +109,20 @@
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px transparent grey;
   font-family: helvetica;
   font-size: 14px;
   font-weight: bold;
   background-color: white;
   box-shadow: 0px 3px; 
+  list-style: none;
+  text-decoration: none;
 }
 
-.nav-bar a {
+ a {
   padding-bottom: 22px;
+  list-style: none;
+  text-decoration: none;
 }
 
 .site-nav-left li {
@@ -127,9 +131,11 @@
   padding-right: 30px;
   width: auto;
   padding: auto;
+  list-style: none;
 }
 
 .site-nav-middle  {
+  list-style: none;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -140,6 +146,7 @@
 
 .site-nav-middle > a {
   color: green;
+  list-style: none;
 }
 
 
@@ -150,13 +157,34 @@
   padding-right: 30px;
   width: auto;
   padding: auto;
+  list-style: none
 }
 
-.site-nav-right li > button {
+// .site-nav-right li > button {
+//   display: block;
+//   float: right;
+//   margin-left: 20px;
+//   padding-right: 30px;
+//   width: auto;
+//   padding: auto;
+//   list-style: none;
+// }
+
+.site-nav-right li {
   display: block;
   float: right;
   margin-left: 20px;
   padding-right: 30px;
   width: auto;
   padding: auto;
+  list-style: none;
 }
+
+.search-nav{
+  margin-right: 25px;
+}
+
+.login{
+  margin-left: 45px;
+}
+

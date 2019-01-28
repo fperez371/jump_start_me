@@ -1,23 +1,15 @@
 import React from 'react';
 
-import {Link} from 'react-router-dom';
-import Greeting from './greeting/greeting';
+import { Link } from 'react-router-dom';
+import GreetingContainer from './greeting/greeting_container';
+
 class NavBar extends React.Component {
 
 
 
 
+  render() {
 
-
-
-  render () {
-
-    // debugger
-    // if (this.props.loggedIn) {
-    //   let navLogin = <li><button onCLick={() => this.props.logout}>Log Out</button></li>
-    // } else {
-    //   let navLogin = <li><Link to="login"></Link></li>
-    // }
 
 
     return (
@@ -32,7 +24,10 @@ class NavBar extends React.Component {
           <Link to="/">JumpStartMe</Link>
         </div>
         <div className="site-nav-right">
-          {this.props.loggedIn ? <li><button onCLick={() => this.props.logout}>Log Out</button></li> : <li><Link to="/login">Log in</Link></li>}
+          <ul className="nav-bar-items">
+            <GreetingContainer />
+            <li><Link className="search-nav" to='/search'>Search</Link></li>
+          </ul>
         </div>
       </div>
     );

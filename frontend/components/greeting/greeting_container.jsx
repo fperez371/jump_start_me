@@ -11,7 +11,7 @@ const msp = ({ session, entities: {users} }) => {
 
 const mdp = dispatch => {
   return {
-    logout: () => dispatch(logout)
+    logout: () => dispatch(logout())
   };
 };
 

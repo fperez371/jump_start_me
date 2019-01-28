@@ -29,6 +29,9 @@ a {
  font-size:100%;
  vertical-align:baseline;
  background:transparent;
+ list-style: none;
+ text-decoration: none;
+ color: black;
 }
 
 ins {
