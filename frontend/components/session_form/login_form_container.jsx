@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const msp = (state) => {
+const msp = ({ errors }) => {
   return {
     formType: 'Log in',
-    buttonName: 'Log me in!',
+    errors: errors.session,
     navLink: <Link to="/signup">Sign up!</Link>,
   };
 };
@@ -15,6 +15,7 @@ const msp = (state) => {
 const mdp = dispatch => {
   return {
     processForm: (user) => dispatch(login(user)),
+    demoLogin: () => dispatch(login({email: "demo@demoemail.net", password: "starwars123"}))
   };
 };
 

@@ -27,6 +27,7 @@ class NavBar extends React.Component {
           <ul className="nav-bar-items">
             <GreetingContainer />
             <li><Link className="search-nav" to='/search'>Search</Link></li>
+            <i className="fas fa-search"></i>
           </ul>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -23,6 +24,21 @@ class SessionForm extends React.Component {
   }
 
 
+  renderErrors() {
+    return (
+      <fieldset >
+        <ul className="fieldset-errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      </fieldset>
+    );
+  }
+
+
   render() {
     return (
       <div className="login-form">
@@ -31,27 +47,25 @@ class SessionForm extends React.Component {
           <div>
             <p className="login-text"> {this.props.formType}</p>
             <br />
-            <label>Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-                placeholder="Email"
-              />
-            </label>
+            {this.renderErrors()}
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+              placeholder="Email"
+            />
             <br />
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="password"
-              />
-            </label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+              placeholder="password"
+            />
             <br />
             <button className="session-submit" type="submit" value="submit">Log me in!</button>
           </div>
           <div>New to JumpStartMe? {this.props.navLink}</div>
+          <Link to="/" className="demo-login" onClick={() => this.props.demoLogin()}>Or log in as a guest</Link>
         </form>
       </div>
     );

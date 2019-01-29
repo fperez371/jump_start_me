@@ -119,6 +119,10 @@
   width: 100%;
 }
 
+.demo-login{
+
+}
+
 .signup-submit{
   background-color: #009E74;
   color: #FFFFFF !important;
@@ -154,15 +158,35 @@
   text-align: center;
 }
 
+.fieldset {
+  margin-bottom: 20px;
+}
+
+.fieldset-errors {
+  list-style-type: disc;
+  list-style-position: outside;
+  background: #fd003b;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  line-height: 24px;
+}
+
 /* Nav */
 
 
 .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
   z-index: 1;
-  position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 0.1rem solid #DCDEDD;
+  // position: relative;
+  padding-top: 2px;
+  // padding-bottom: 20px;
+  border-bottom: 0.05rem solid #DCDEDD;
   font-family: helvetica;
   font-size: 14px;
   background-color: white;
@@ -170,10 +194,13 @@
   text-decoration: none;
   padding-right: 3rem !important;
   padding-left: 3rem !important;
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+  
 }
 
  a {
-  padding-bottom: 22px;
+  // padding-bottom: 22px;
   list-style: none;
   text-decoration: none;
 }
@@ -181,26 +208,29 @@
 
 .site-nav-left li {
   float: left;
-  margin-left: 20px;
+  // margin-left: 20px;
   padding-right: 30px;
   width: auto;
   padding: auto;
   list-style: none;
-  
+  color: #282828;
 }
 
 .site-nav-left li > a {
-  color: black;
+  color: #282828;
+}
+.site-nav-left li > a:hover {
+  color: #009E74;
 }
 
 .site-nav-middle  {
   list-style: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
   font-family: $primary;
-  font-size: 28px;
-  transform: translate(-50%, -50%);
+  font-size: 25px;
+  // transform: translate(-50%, -50%);
 }
 
 .site-nav-middle > a {
@@ -216,7 +246,7 @@
   width: auto;
   padding: auto;
   list-style: none;
-  color: black;
+  color: #282828;
 }
 
 // .site-nav-right li > button {
@@ -232,22 +262,37 @@
 .site-nav-right li {
   display: block;
   float: right;
-  margin-left: 20px;
-  padding-right: 30px;
+  // margin-left: 20px;
+  // padding-right: 30px;
   width: auto;
   padding: auto;
   list-style: none;
-  color: black;
+  color: #282828;
 }
 
-.search-nav{
-  margin-right: 25px;
+.fas.fa-search{
+  width: 5px;
+  height: 5px;
 }
 
-.login{
-  margin-left: 45px;
+.site-nav-right li > a:hover {
+  color: #009E74;
 }
+
+// .search-nav{
+//   margin-right: 25px;
+// }
+
+// .login{
+//   margin-left: 45px;
+// }
+
+
 
 .login > a {
   color: black;
+}
+
+.login > a:hover {
+  color: #009E74;
 }

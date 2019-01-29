@@ -35,30 +35,24 @@ class SignUpForm extends React.Component {
                 Have an account?<a className="signup-switch-login" href="/#/login"> Log in</a>
               </div>
               <div className='signup-text'> {this.props.formType} </div>
-              <label>Name:
               <input type="text"
-                  value={this.state.name}
-                  onChange={this.update('name')}
-                  className="signup-input"
-                  placeholder="Name"
-                />
-              </label>
-              <label>Email:
+                value={this.state.name}
+                onChange={this.update('name')}
+                className="signup-input"
+                placeholder="Name"
+              />
               <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="signup-input"
-                  placeholder="email"
-                />
-              </label>
-              <label>Password:
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="signup-input"
+                placeholder="email"
+              />
               <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="signup-input"
-                  placeholder="password"
-                />
-              </label>
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="signup-input"
+                placeholder="password"
+              />
               <button className="signup-submit" type="submit" value="Create Account">Create Account</button>
             </div>
           </form>
