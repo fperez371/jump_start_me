@@ -24,17 +24,42 @@ class SignUpForm extends React.Component {
     this.props.processForm(user);
   }
 
+  renderErrors() {
+    if (this.props.errors.length === 0) {
+      return null;
+    }
+
+    return (
+      <ul className="fieldset-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+
+    );
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors()
+  }
+
 
   render() {
     return (
       <>
-        <div>
+        <div className="signup-form">
+          <div className="signup-header" >
+            Have an account?<a className="signup-switch-login" href="/#/login"> Log in</a>
+          </div>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-            <div className="signup-form">
-              <div className="signup-header" >
-                Have an account?<a className="signup-switch-login" href="/#/login"> Log in</a>
-              </div>
+            <div>
               <div className='signup-text'> {this.props.formType} </div>
+              <br />
+              <fieldset>
+                {this.renderErrors()}
+              </fieldset>
               <input type="text"
                 value={this.state.name}
                 onChange={this.update('name')}

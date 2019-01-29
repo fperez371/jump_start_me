@@ -25,6 +25,10 @@ class SessionForm extends React.Component {
 
 
   renderErrors() {
+    if (this.props.errors.length === 0) {
+      return null;
+    }
+
     return (
       <fieldset >
         <ul className="fieldset-errors">
@@ -38,10 +42,14 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors()
+  }
+
 
   render() {
     return (
-      <div className="login-form">
+      <div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
           <div>
@@ -64,8 +72,8 @@ class SessionForm extends React.Component {
             <br />
             <button className="session-submit" type="submit" value="submit">Log me in!</button>
           </div>
-          <div>New to JumpStartMe? {this.props.navLink}</div>
           <Link to="/" className="demo-login" onClick={() => this.props.demoLogin()}>Or log in as a guest</Link>
+          <div className="login-footer">New to JumpStartMe? {this.props.navLink}</div>
         </form>
       </div>
     );
