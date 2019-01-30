@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :projects
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)
