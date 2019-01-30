@@ -129,6 +129,12 @@
   margin-bottom: 15px;
 }
 
+.header-button{
+  box-sizing: border-box;
+  background-color: #009E74;
+  color: #FFFFFF !important;
+}
+
 .login-footer{
   background-color: rgba(241,238,234,0.2);
   border-top: 1px solid #F1EEEA;
@@ -242,7 +248,7 @@
   border-radius: 3px;
   font-weight: bold;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 10px 20px;
   line-height: 24px;
 }
