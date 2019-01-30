@@ -19,43 +19,6 @@
 
 /* Signup/Login */
 
- /* .login-form-box{ 
-  border: 3px solid #f1f1f1;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  text-align: center;
- }
-
- .signup-form-box{ 
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex
- } */
-
-//  .signup-input{
-//   box-sizing: border-box;
-//   padding: 12px;
-//   font-size: 14px;
-//   line-height: 17px;
-//   position: relative;
-//   border: 1px solid #DCDEDD;
-//  }
-
  .signup-header{
   background-color: rgba(241,238,234,0.2);
   border-bottom: 1px solid #F1EEEA;
@@ -64,21 +27,6 @@
   text-align: center;
   color: #3D3D66;
  }
-
- /* .login-text{
-
-  width: 100%;
-  font-size: 2.8rem;
-  line-height: 3.6rem;
-  margin-bottom: 20px;
-  display: inline-block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  text-align: center;
-  writing-mode: horizontal-tb;
- } */
 
  .signup-form, .login-form-box {
   width: 338px;
@@ -93,12 +41,6 @@
   padding: 20px 30px 20px 30px;
 
 }
-
-// .login-form-box {
-//   height: 385px;
-//   top: 248px;
-
-// }
 
 .login-text{
   font-size: 30px;
@@ -115,11 +57,7 @@
 .session-submit{
   background-color: #009E74;
   color: #FFFFFF !important;
-  // height: 4.2rem;
   width: 100%;
-  // height: 4.2rem;
-  // padding: 0 1.8rem;
-  // font-size: 1.4rem;
   display: inline-block;
   box-sizing: border-box;
 
@@ -150,74 +88,32 @@
 .demo-login{
   background-color: #009E74;
   color: #FFFFFF !important;
-  // height: 4.2rem;
   width: 100%;
-  // height: 4.2rem;
-  // padding: 0 1.8rem;
-  // font-size: 1.4rem;
   display: inline-block;
   box-sizing: border-box;
-
   padding: 12px;
   font-size: 14px;
   line-height: 17px;
-
   text-align: center;
-
 }
 
 .signup-submit{
   background-color: #009E74;
   color: #FFFFFF !important;
-  // height: 4.2rem;
   width: 100%;
-  // height: 4.2rem;
-  // padding: 0 1.8rem;
-  // font-size: 1.4rem;
   display: inline-block;
   box-sizing: border-box;
-
   padding: 12px;
   font-size: 14px;
   line-height: 17px;
 }
 
 .signup-input, .login-input  {
-  // margin: 12px;
-  // border: 1px solid #ccc;
-  // width: 90%;
-  // height: 40px;
-  // font-size: 14px;
-  // border-radius: 5px;
-  // padding-left: 10px;
-  // font-weight: 300;
-
   box-sizing: border-box;
-  // padding: 12px;
-  // line-height: 17px;
-
-  // height: 4.2rem;
-  // width: 100%;
-  // padding: 12px;
-  // font-size: 14px;
-  // line-height: 17px;
-  
-  // display: inline-block;
-  // height: 4.2rem;
-  // width: 100%;
-  // height: 4.2rem;
-  // padding: 0 1.8rem;
-  // font-size: 1.4rem;
-
   padding: 12px;
   font-size: 14px;
   line-height: 17px;
-
-  // height: 4.2rem;
   width: 100%;
-  // height: 4.2rem;
-  // padding: 0 1.8rem;
-  // font-size: 1.4rem;
   display: inline-block;
   box-sizing: border-box;
   text-align: start;
@@ -261,9 +157,7 @@
   justify-content: space-between;
   align-content: center;
   z-index: 1;
-  // position: relative;
   padding-top: 2px;
-  // padding-bottom: 20px;
   border-bottom: 0.05rem solid #DCDEDD;
   font-family: helvetica;
   font-size: 14px;
@@ -274,11 +168,9 @@
   padding-left: 3rem !important;
   padding-top: 1.2rem !important;
   padding-bottom: 1.2rem !important;
-  
 }
 
  a {
-  // padding-bottom: 22px;
   list-style: none;
   text-decoration: none;
 }
@@ -286,7 +178,6 @@
 
 .site-nav-left li {
   float: left;
-  // margin-left: 20px;
   padding-right: 30px;
   width: auto;
   padding: auto;
@@ -303,17 +194,14 @@
 
 .site-nav-middle  {
   list-style: none;
-  // position: absolute;
-  // left: 50%;
-  // top: 50%;
   font-family: "RNS  BARUTA BLACK";
   font-size: 25px;
-  // transform: translate(-50%, -50%);
 }
 
 .site-nav-middle > a {
   color: #034752;
   list-style: none;
+  font-family: "RNS  BARUTA BLACK";
 }
 
 .site-nav-right li > a {
@@ -326,16 +214,6 @@
   list-style: none;
   color: #282828;
 }
-
-// .site-nav-right li > button {
-//   display: block;
-//   float: right;
-//   margin-left: 20px;
-//   padding-right: 30px;
-//   width: auto;
-//   padding: auto;
-//   list-style: none;
-// }
 
 .site-nav-right li {
   display: block;
@@ -350,13 +228,8 @@
 
 .fas.fa-search{
   margin-left: 0.6rem;
-  // width: 1.5rem;
-  // height: 1.5rem;
   display: inline-block;
   vertical-align: middle;
-  // overflow: hidden;
-  // border-radius: 4px;
-  // border: 0px;
   background-color: transparent;
 }
 
@@ -376,12 +249,6 @@
   padding:0!important;
   font: inherit;
 }
-
-// .login{
-//   margin-left: 45px;
-// }
-
-
 
 .login > a {
   color: black;
