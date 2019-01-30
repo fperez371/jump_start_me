@@ -1,17 +1,41 @@
-class ProjectsController < ApplicationController
+class Api::ProjectsController < ApplicationController
+
+  def index 
+    @projects = Project.all 
+    render :index
+  end
+
+  def show
+    @project = Project.find(params[:id])
+    render :show
+  end
+
+
   def create
-    @project = current_user.projects.new(project_params)
+    @project = Project.new(project_params)
     @project.creator_id = current_user.id
 
     if @project.save
-      render json: @project
+      render :show
     else
       render json: @project, status: unprocessable_entity
     end
   end
 
-  def destroy 
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      render :show
+    else
+      render json: @project.errors.full_messages, status: 422
+    end
 
+  end
+
+  def destroy 
+    @project = Project.find(params[:id])
+    @project.destroy
+    render :show
   end
 
 
