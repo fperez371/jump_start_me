@@ -8,7 +8,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import NavBarContainer from './nav_bar_container';
-import Categories from './categories';
+import Categories from './homepage/categories';
 import SignUpFormContainer from './signup_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';

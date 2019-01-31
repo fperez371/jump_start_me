@@ -6,7 +6,6 @@ export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS";
 
 export const receiveProject = project => {
-  debugger
   return {
     type: RECEIVE_PROJECT,
     project
@@ -42,9 +41,10 @@ export const fetchProjects = () => dispatch => {
 };
 
 export const fetchProject = (id) => dispatch => {
-  return APIUtil.fetchProject(id).then( project => dispatch(receiveProject(project)), err => (
-    dispatch(receiveProjectErrors(err.responseJSON))
-  ));
+  return APIUtil.fetchProject(id).then( project => dispatch(receiveProject(project)), err => {
+      return dispatch(receiveProjectErrors(err.statusText));
+    }
+  );
 };
 
 export const deleteProject = (id) => dispatch => {
