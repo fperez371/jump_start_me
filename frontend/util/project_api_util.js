@@ -8,9 +8,10 @@ export const fetchProjects = projects => {
 };
 
 export const fetchProject = id => {
+  debugger
   return $.ajax({
     method: "GET",
-    url: `/api/projects/${id}`
+    url: `/api/projects/${id}`,
   });
 };
 
