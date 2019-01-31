@@ -1,0 +1,1 @@
+json.extract! project, :body, :name, :category, :proj_image_url, :goal_amt, :deadline, :created_at

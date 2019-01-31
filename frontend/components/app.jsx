@@ -8,8 +8,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import NavBarContainer from './nav_bar_container';
-import GreetingContainer from './greeting/greeting_container';
-
+import Categories from './categories';
 import SignUpFormContainer from './signup_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute } from '../util/route_util';
@@ -20,6 +19,9 @@ const App = () => (
   <div>
     <header>
       <NavBarContainer/>
+      <Switch>
+        <AuthRoute exact path="/" component={Categories} />
+      </Switch>
     </header>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
