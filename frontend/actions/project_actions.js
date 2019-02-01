@@ -38,7 +38,7 @@ export const receiveProjectErrors = errors => {
 
 export const createProject = (project) => dispatch => {
   return APIUtil.createProject(project).then( project => dispatch(receiveProject(project)), err => (
-    dispatch(receiveProjectErrors(err.responseJSON))
+    dispatch(receiveProjectErrors(err.statusText))
   ));
 };
 
