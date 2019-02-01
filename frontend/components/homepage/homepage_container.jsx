@@ -3,7 +3,6 @@ import {fetchProjects} from '../../actions/project_actions';
 import HomePage from './homepage';
 
 const msp = state => {
-  debugger
   return {
     projects: Object.values(state.entities.projects),
   };
