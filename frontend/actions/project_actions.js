@@ -4,6 +4,7 @@ export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS";
+export const CREATE_PROJECT = "CREATE_PROJECT";
 
 export const receiveProject = project => {
   return {
@@ -30,6 +31,13 @@ export const receiveProjectErrors = errors => {
   return{
     type: RECEIVE_PROJECT_ERRORS,
     errors
+  };
+};
+
+export const createProject = project => {
+  return {
+    type: CREATE_PROJECT,
+    project
   };
 };
 

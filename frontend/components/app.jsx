@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import NavBarContainer from './nav_bar_container';
 import Categories from './homepage/categories';
+import Footer from './homepage/footer';
 import SignUpFormContainer from './signup_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -22,6 +23,7 @@ const App = () => (
       <NavBarContainer/>
       <Route exact path="/" component={Categories} />
       <Route exact path="/" component={HomePageContainer} />
+      <Route exact path="/" component={Footer}/>
     </header>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
