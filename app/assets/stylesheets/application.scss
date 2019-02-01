@@ -307,3 +307,60 @@
   text-decoration: underline;
   color: #009E74;
 }
+
+/* HomePage */
+.grid-container{
+  padding-left: 60px;
+  padding-right: 60px;
+};
+
+.flex-nowrap{
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 6rem;
+}
+
+.left-featured{
+  display: block;
+  border-bottom-color: rgb(232, 232, 232);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-right: 6rem;
+  flex-basis: 55%;
+  border-color: #E8E8E8;
+  border-right: 0.1rem solid #DCDEDD;
+}
+
+.featured-project{
+  font-weight: 700;
+  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 1.8rem;
+  color: #656969;
+  display: block;
+}
+
+.hover-target{
+  display: block;
+};
+
+.proj-link:hover{
+  color: #037362;
+  fill: #037362;
+  text-decoration: underline;
+  position: relative;
+}
+
+.proj-body{
+  font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
+  padding-bottom: 2.4rem;
+  color: #282828;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.proj-name{
+  color: #656969;
+  border-color: #DCDEDD;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}

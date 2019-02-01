@@ -12,6 +12,7 @@ import Categories from './homepage/categories';
 import SignUpFormContainer from './signup_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import HomePageContainer from './homepage/homepage_container';
 
 
 
@@ -19,9 +20,8 @@ const App = () => (
   <div>
     <header>
       <NavBarContainer/>
-      <Switch>
-        <Route exact path="/" component={Categories} />
-      </Switch>
+      <Route exact path="/" component={Categories} />
+      <Route exact path="/" component={HomePageContainer} />
     </header>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
