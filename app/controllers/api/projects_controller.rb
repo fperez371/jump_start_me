@@ -15,11 +15,9 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.creator_id = current_user.id
     @project.deadline = DateTime.now
-    debugger
     if @project.save
       render :show
     else
-      debugger
       render json: @project.errors.full_messages, status: 422
     end
   end
