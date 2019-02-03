@@ -35,12 +35,16 @@ class CreateProjectForm extends React.Component {
 
   update(field) {
 
-    return e => this.setState({ [field]: e.currentTarget.value });
+    return e => {
+      this.setState({ [field]: e.currentTarget.value });
+    };
   }
 
   showDrop() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
+
+
 
 
 

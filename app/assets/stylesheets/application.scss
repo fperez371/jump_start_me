@@ -146,7 +146,7 @@
   font-size: 16px;
   margin-bottom: 5px;
   padding: 10px 20px;
-  line-height: 24px;
+  line-height: 18px;
   text-decoration: none;
 }
 
@@ -605,6 +605,10 @@ html, body, #root, #root > div {
 }
 
 .create-proj-name:hover{
+  border:1px solid green;
+}
+
+.create-proj-name:focus{
   border:1px solid green;
 }
 
