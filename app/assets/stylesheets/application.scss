@@ -586,6 +586,10 @@ html, body, #root, #root > div {
   border:1px solid green;
 }
 
+.create-proj-body:focus{
+  border:1px solid green;
+}
+
 .create-proj-name{
   font-size: 14px;
   font-weight: 400;
@@ -609,7 +613,7 @@ html, body, #root, #root > div {
 }
 
 .create-proj-name:focus{
-  border:1px solid green;
+  border:1px solid green; 
 }
 
 .create-proj-form{
