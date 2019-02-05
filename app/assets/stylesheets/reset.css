@@ -71,3 +71,14 @@ hr {
 input, select {
  vertical-align:middle;
 }
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: textfield; 
+  margin: 0; 
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}

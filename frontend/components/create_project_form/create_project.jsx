@@ -36,7 +36,6 @@ class CreateProjectForm extends React.Component {
 
   update(field) {
     return e => {
-      debugger
       this.setState({ [field]: e.currentTarget.value });
     };
   }
@@ -55,7 +54,7 @@ class CreateProjectForm extends React.Component {
           <textarea className="create-proj-body" type="text" onChange={this.update('body')} value={this.state.body} placeholder="Describe your project"></textarea>
           <textarea className="create-proj-name" type="text" onChange={this.update("name")} value={this.state.name} placeholder="Give your Project a title"></textarea>
           <h3>Set an amount for your funding goal:</h3>
-          <input className="create-goal-amt" type="number" onChange={this.update('goal_amt')} value={this.state.goal_amt} />
+          <input className="create-goal-amt" type="number" min="1" max="100000000" placeholder="500" step="1" onChange={this.update('goal_amt')} value={this.state.goal_amt} />
           <div className="dropdown">
             <select className="dropdown-list" value={this.value} onChange={this.update("category")} >
               <option selected disabled hidden>Choose a category</option>
