@@ -12,7 +12,6 @@ class Dropdown extends React.Component {
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   }
   showDropdownMenu(e) {
-    e.preventDefault();
     this.setState({ displayMenu: true }, () => {
       document.addEventListener('click', this.hideDropdownMenu);
     });
@@ -23,6 +22,12 @@ class Dropdown extends React.Component {
       document.removeEventListener('click', this.hideDropdownMenu);
     });
 
+  }
+
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.currentTarget.value });
+    };
   }
 
   render() {

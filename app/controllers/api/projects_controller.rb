@@ -13,6 +13,7 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    debugger
     @project.creator_id = current_user.id
     @project.deadline = DateTime.now
     if @project.save
