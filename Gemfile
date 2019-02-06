@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem "aws-sdk-s3"
 gem "better_errors"
 gem "binding_of_caller"
 gem "pry-rails"
