@@ -19,12 +19,15 @@ class CreateProjectForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    let currentDate = new Date();
+    let defDeadline = new Date(currentDate.setDate(currentDate.getDate() + 1));
     this.state = {
       body: "",
       name: "",
       category: "",
       proj_image_url: "default",
       goal_amt: 0,
+      deadline: defDeadline,
     };
   }
 
@@ -47,6 +50,8 @@ class CreateProjectForm extends React.Component {
 
   render() {
 
+
+
     return (
       <div className="create-project-page">
         <h2 className="create-project-greeting">First, let's get you set up</h2>
@@ -55,6 +60,9 @@ class CreateProjectForm extends React.Component {
           <textarea className="create-proj-name" type="text" onChange={this.update("name")} value={this.state.name} placeholder="Give your Project a title"></textarea>
           <h3>Set an amount for your funding goal:</h3>
           <input className="create-goal-amt" type="number" min="1" max="100000000" placeholder="500" step="1" onChange={this.update('goal_amt')} value={this.state.goal_amt} />
+          <h3>Set a deadline to achieve funding goal</h3>
+          <input type="date" className="create-proj-date" onChange={this.update('deadline')} value={this.state.deadline} min={this.state.deadline} required />
+          <input type="file" className="create-proj-image" onChange={this.update('proj_image_url')}/>
           <div className="dropdown">
             <select className="dropdown-list" value={this.value} onChange={this.update("category")} >
               <option selected disabled hidden>Choose a category</option>

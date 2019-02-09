@@ -1,0 +1,46 @@
+.Categories-header{
+  display: block;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  box-sizing: border-box;
+  border-bottom: 0.05rem solid #DCDEDD;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.flex-nav{
+  font-family: helvetica;
+}
+
+.cat-list-items{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: inherit;
+}
+
+.cat-list-item{
+  display: inline-block;
+  position: relative;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: #656969;
+}
+
+.cat-list-item > a{
+  text-decoration: none;
+  color: #656969;
+}
+
+.cat-list-item > a:visited{
+  text-decoration: none;
+  color: #656969;
+}
+
+.cat-list-item > a:hover{
+  text-decoration: underline;
+  color: #009E74;
+}

@@ -1,0 +1,219 @@
+html, body, #root, #root > div {
+  height: 100%
+}
+
+.create-project-page{
+  display: block;
+  background-size: cover;
+  padding-left: 60px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  line-height:21px;
+  height: 100%;
+  width: 100%;
+}
+.create-proj-body{
+  border: 1px solid #E8E8E8;
+  -webkit-appearance: none;
+  -moz-appearance:none;
+  outline:0px none transparent;
+  resize: none;
+  width: 428px;
+  height: 80px;
+  padding: 12px 12px 12px 12px;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 30px;
+}
+
+.create-proj-body:hover{
+  border:1px solid green;
+}
+
+.create-proj-body:focus{
+  border:1px solid green;
+}
+
+.create-proj-name{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 30px;
+  border-style:solid;
+  border-width: 1px;
+  -webkit-appearance: none;
+  -moz-appearance:none;
+  outline:0px none transparent;
+  resize: none;
+  width: 428px;
+  height: 80px;
+  padding: 12px 12px 12px 12px;
+  display: block;
+  border: 1px solid #E8E8E8;
+}
+
+.create-proj-name:hover{
+  border:1px solid green;
+}
+
+.create-proj-name:focus{
+  border:1px solid green; 
+}
+
+.create-proj-form{
+  display: flex;
+  padding-top: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-project-greeting{
+  line-height: 36px;
+  font-size: 28px;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.create-goal-amt{
+  line-height: 18px;
+  margin-top: 20px;
+  width: 428px;
+  height: 20px;
+  padding: 12px 12px 12px 12px;
+  display: block;
+  border: 1px solid #E8E8E8;
+
+}
+
+.create-goal-amt:hover{
+  border:1px solid green;
+}
+
+.create-goal-amt:focus{
+  border:1px solid green; 
+}
+
+.dropdown {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(0, 0, 0, 0);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-sizing: border-box;
+  color: rgb(40, 40, 40);
+  display: flex;
+  justify-content: flex-start;
+  font-family:"Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:14px;
+  font-stretch: 100%;
+  font-weight:400;
+  height: 54px;
+  padding-bottom:12px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 12px;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  outline: none;
+  color: #009E74;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-list{
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  margin: 20px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 60px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-ul{
+  overflow-x: hidden;
+  overflow-y: scroll;
+   /* display: block; */
+  background-color: #fff; 
+  background: rgba(255,255,255,0); 
+  list-style: none;
+}
+
+.dropdown-content > li {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  background-color: #fff; 
+  display: block;
+  text-align: left;
+  list-style: none;
+}
+
+.dropdown-button{
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.show {
+  display: list-item;
+  list-style-position: outside;
+  list-style-type:none;
+
+  position: absolute;
+  top: 54px;
+}
+
+.create-proj-submit{
+  cursor: pointer;
+  font-size: 16px;  
+  outline: none;
+  color: #009E74;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  margin-top: 20px;
+}
