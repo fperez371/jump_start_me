@@ -4,8 +4,10 @@
   padding-left: 60px;
   padding-right: 60px;
   box-sizing: border-box;
-  display: block;
+  display: grid;
   line-height:21px;
+  grid-template-columns: 55% 45%;
+  /* grid-template-rows: 1fr 1fr; */
 };
 
 .flex-nowrap{
@@ -14,12 +16,11 @@
   padding-bottom: 60px;
   font-weight: 400;
   vertical-align: auto;
-
+  flex-direction: column;
 }
 
 .left-featured{
   display: block;
-  flex-basis: 55%;
   border-bottom-color: rgb(232, 232, 232);
   border-bottom-style: none;
   border-bottom-width: 0px;
@@ -34,8 +35,11 @@
 }
 
 .featured-img{
+  width: auto !important;
   max-width: 100%;
-  max-height: 100%;
+  position: relative;
+  display: block;
+  margin: 0;
 }
 
 .featured-project{
@@ -53,6 +57,8 @@
 .hover-target{
   display: block;
 };
+
+
 
 .proj-link > a:hover{
   color: #037362;
@@ -108,6 +114,7 @@
   padding-top: 30px;
   margin-top: 24px;
   flex-basis: 45%;
+  float: right;
   /* box-sizing: inherit; */
 }
 

@@ -25,7 +25,6 @@ class HomePage extends React.Component {
     
     return (
       <div className="grid-container">
-        <div className="flex-nowrap">
           <div className="left-featured">
             <section>
               <h3 className="featured-project">Featured Project</h3>
@@ -80,7 +79,6 @@ class HomePage extends React.Component {
               </li>
             </ul>
           </div>
-        </div>
       </div>
     )
   }
