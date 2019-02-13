@@ -20,14 +20,13 @@ class CreateProjectForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     let currentDate = new Date();
-    let defDeadline = new Date(currentDate.setDate(currentDate.getDate() + 1));
     this.state = {
       body: "",
       name: "",
       category: "",
       proj_image_url: "default",
       goal_amt: 0,
-      deadline: defDeadline,
+      deadline: currentDate,
     };
   }
 
@@ -62,7 +61,10 @@ class CreateProjectForm extends React.Component {
           <input className="create-goal-amt" type="number" min="1" max="100000000" placeholder="500" step="1" onChange={this.update('goal_amt')} value={this.state.goal_amt} />
           <h3>Set a deadline to achieve funding goal</h3>
           <input type="date" className="create-proj-date" onChange={this.update('deadline')} value={this.state.deadline} min={this.state.deadline} required />
-          <input type="file" className="create-proj-image" onChange={this.update('proj_image_url')}/>
+          <label htmlFor="create-proj-image">
+            Please upload a Photo for your project. Try to choose one that will look good at different sizes.
+          </label>
+          <input type="file" id="create-proj-image" onChange={this.update('proj_image_url')}/>
           <div className="dropdown">
             <select className="dropdown-list" value={this.value} onChange={this.update("category")} >
               <option selected disabled hidden>Choose a category</option>

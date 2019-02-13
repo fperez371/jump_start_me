@@ -26,6 +26,7 @@ html, body, #root, #root > div {
   font-weight: 400;
   line-height: 18px;
   margin-bottom: 30px;
+  justify-content: flex-start;
 }
 
 .create-proj-body:hover{
@@ -62,15 +63,22 @@ html, body, #root, #root > div {
   border:1px solid green; 
 }
 
+#create-proj-date{
+  margin-top: 20px;
+  width: 428px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
 .create-proj-form{
   display: flex;
   padding-top: 40px;
   margin-left: 60px;
   margin-right: 60px;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
+  /* align-items: stretch; */
 }
 
 .create-project-greeting{
