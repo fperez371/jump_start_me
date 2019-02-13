@@ -27,6 +27,7 @@ class CreateProjectForm extends React.Component {
       proj_image_url: "default",
       goal_amt: 0,
       deadline: currentDate,
+      photo: null,
     };
   }
 
@@ -42,6 +43,9 @@ class CreateProjectForm extends React.Component {
     };
   }
 
+  handleFile(e){
+    this.setState({photo: e.currentTarget.files[0]});
+  }
 
 
 
@@ -64,7 +68,7 @@ class CreateProjectForm extends React.Component {
           <label htmlFor="create-proj-image">
             Please upload a Photo for your project. Try to choose one that will look good at different sizes.
           </label>
-          <input type="file" id="create-proj-image" onChange={this.update('proj_image_url')}/>
+          <input type="file" id="create-proj-image" onChange={this.handleFile.bind(this)}/>
           <div className="dropdown">
             <select className="dropdown-list" value={this.value} onChange={this.update("category")} >
               <option selected disabled hidden>Choose a category</option>
