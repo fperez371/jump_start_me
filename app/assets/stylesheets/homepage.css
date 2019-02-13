@@ -7,6 +7,7 @@
   display: grid;
   line-height:21px;
   grid-template-columns: 55% 45%;
+  padding-bottom: 20px;
   /* grid-template-rows: 1fr 1fr; */
 };
 
