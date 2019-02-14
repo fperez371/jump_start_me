@@ -24,7 +24,7 @@ class CreateProjectForm extends React.Component {
       body: "",
       name: "",
       category: "",
-      proj_image_url: "default",
+      proj_image_url: null,
       goal_amt: 0,
       deadline: currentDate,
       photo: null,
@@ -33,8 +33,17 @@ class CreateProjectForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const project = Object.assign({}, this.state);
-    this.props.createProject(project).then(() => this.props.history.push("/"));
+    // const project = Object.assign({}, this.state);
+    // this.props.createProject(project).then(() => this.props.history.push("/"));
+    const formData = new FormData();
+    formData.append('project[body]', this.state.body);
+    formData.append('project[name]', this.state.name);
+    formData.append('project[category]', this.state.category);
+    formData.append('project[proj_image_url]', this.state.proj_image_url);
+    formData.append('project[goal_amt]', this.state.goal_amt);
+    formData.append('project[deadline]', this.state.deadline);
+    formData.append('project[photo]', this.state.photo);
+    this.props.createProject(formData).then(() => this.props.history.push('/'));
   }
 
   update(field) {
@@ -43,8 +52,15 @@ class CreateProjectForm extends React.Component {
     };
   }
 
-  handleFile(e){
-    this.setState({photo: e.currentTarget.files[0]});
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photo: file, proj_image_url: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
 
@@ -53,7 +69,7 @@ class CreateProjectForm extends React.Component {
 
   render() {
 
-
+    const preview = this.state.proj_image_url ? <img src={this.state.proj_image_url} /> : null;
 
     return (
       <div className="create-project-page">
@@ -68,7 +84,11 @@ class CreateProjectForm extends React.Component {
           <label htmlFor="create-proj-image">
             Please upload a Photo for your project. Try to choose one that will look good at different sizes.
           </label>
-          <input type="file" id="create-proj-image" onChange={this.handleFile.bind(this)}/>
+          <input type="file" id="create-proj-image" onChange={this.handleFile.bind(this)} />
+          <div className="create-image-preview">
+            <h3>Image preview</h3>
+            {preview}
+          </div>
           <div className="dropdown">
             <select className="dropdown-list" value={this.value} onChange={this.update("category")} >
               <option selected disabled hidden>Choose a category</option>
@@ -92,4 +112,4 @@ class CreateProjectForm extends React.Component {
 }
 
 
-export default withRouter(connect(msp, mdp)(CreateProjectForm));
+export default withRouter(connect(msp, mdp)(CreateProjectForm))

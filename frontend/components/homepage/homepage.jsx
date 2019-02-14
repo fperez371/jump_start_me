@@ -15,6 +15,7 @@ class HomePage extends React.Component {
 
   render() {
     const projName = this.props.projects[0] ? this.props.projects[0].name : null;
+    const projLink = this.props.projects[0] ? `/api/projects/${this.props.projects[0].id}` : '/';
     const projBody = this.props.projects[0] ? this.props.projects[0].body : null;
     const projName2 = this.props.projects[1] ? this.props.projects[1].name : null;
     const projBody2 = this.props.projects[1] ? this.props.projects[1].body : null;
@@ -34,7 +35,7 @@ class HomePage extends React.Component {
               <img className="featured-img" src="https://ksr-ugc.imgix.net/assets/023/806/011/62a55f5e7af4e233a37d51ab2ea07a35_original.jpg?ixlib=rb-1.1.0&w=680&fit=max&v=1547668226&auto=format&gif-q=50&q=92&s=51a19982c44f5ab73fe4d6d259a2e36f" alt=""/>
               <p className="proj-body">{projBody}</p>
               <h3 className="proj-name">{projName}</h3>
-              <Link className="creator-name" to="/">By demo-guy</Link>
+              <Link className="creator-name" to={projLink}>By demo-guy</Link>
             </section>
           </div>
           <div className="right-recommended">

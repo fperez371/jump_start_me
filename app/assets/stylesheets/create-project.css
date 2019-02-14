@@ -59,6 +59,7 @@ html, body, #root, #root > div {
   border:1px solid green;
 }
 
+
 .create-proj-name:focus{
   border:1px solid green; 
 }
@@ -79,6 +80,21 @@ html, body, #root, #root > div {
   flex-wrap: wrap;
   flex-direction: column;
   /* align-items: stretch; */
+}
+
+.create-image-preview{
+  max-width: 400px;
+  max-height: 300px;
+}
+
+.create-image-preview > img{
+  width: auto !important;
+  max-width: 100%;
+  max-height: 300px;
+  position: relative;
+  display: block;
+  margin: 0;
+  object-fit: contain;
 }
 
 .create-project-greeting{
