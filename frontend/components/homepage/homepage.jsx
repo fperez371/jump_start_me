@@ -4,25 +4,41 @@ import { Link } from 'react-router-dom';
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {isLoading: true};
   }
 
 
   componentDidMount() {
-    this.props.fetchProjects();
+    this.props.fetchProjects().then(() => this.setState({isLoading: false}));
   }
+
+  // componentDidUpdate(prevProps){
+  //   if (prevProps.projects !== props.projects){
+  //     render();
+  //   }
+  // }
 
 
   render() {
-    const projName = this.props.projects[0] ? this.props.projects[0].name : null;
-    const projLink = this.props.projects[0] ? `/api/projects/${this.props.projects[0].id}` : '/';
-    const projBody = this.props.projects[0] ? this.props.projects[0].body : null;
-    const projName2 = this.props.projects[1] ? this.props.projects[1].name : null;
-    const projBody2 = this.props.projects[1] ? this.props.projects[1].body : null;
-    const projName3 = this.props.projects[2] ? this.props.projects[2].name : null;
-    const projBody3 = this.props.projects[2] ? this.props.projects[2].body : null;
-    const projName4 = this.props.projects[3] ? this.props.projects[3].name : null;
-    const projBody4 = this.props.projects[3] ? this.props.projects[3].body : null;
+    // if (!this.props.projects.length) {
+    //   return <div>Loading</div>
+    // }
+
+    if (this.state.isLoading) {
+      return <div>Loading</div>
+    }
+
+
+
+    const projName = this.props.projects[0].name;
+    const projLink = `/api/projects/${this.props.projects[0].id}`;
+    const projBody = this.props.projects[0].body;
+    const projName2 = this.props.projects[1].name 
+    const projBody2 = this.props.projects[1].body 
+    const projName3 = this.props.projects[2].name 
+    const projBody3 = this.props.projects[2].body 
+    const projName4 = this.props.projects[3].name 
+    const projBody4 = this.props.projects[3].body 
     
     return (
       <div className="grid-container">
