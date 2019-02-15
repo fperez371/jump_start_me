@@ -25,6 +25,7 @@ class ProjectShowComponent extends React.Component {
   constructor(props){
     super(props);
   }
+  
   componentDidMount(){
     this.props.fetchProject(this.props.project.id);
   }

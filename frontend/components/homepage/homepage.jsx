@@ -48,7 +48,7 @@ class HomePage extends React.Component {
               <div className="hover-target">
                 <Link className="proj-link" to="/"></Link>
               </div>
-              <img className="featured-img" src="https://ksr-ugc.imgix.net/assets/023/806/011/62a55f5e7af4e233a37d51ab2ea07a35_original.jpg?ixlib=rb-1.1.0&w=680&fit=max&v=1547668226&auto=format&gif-q=50&q=92&s=51a19982c44f5ab73fe4d6d259a2e36f" alt=""/>
+              <img className="featured-img" src={projects[0].photo} alt=""/>
               <p className="proj-body">{projects[0].body}</p>
               <h3 className="proj-name">{projects[0].name}</h3>
               <Link className="creator-name" to={projLink}>By demo-guy</Link>
