@@ -43,13 +43,13 @@ export const createProject = (project) => dispatch => {
 };
 
 export const fetchProjects = () => dispatch => {
-  return APIUtil.fetchProjects().then( projects => dispatch(receiveAllProjects(projects)), err => (
+  return APIUtil.fetchProjects().then( projects => { dispatch(receiveAllProjects(projects)) 
+  return projects ;}, err => (
     dispatch(receiveProjectErrors(err.responseJSON))
   ));
 };
 
 export const fetchProject = (id) => dispatch => {
-  debugger
   return APIUtil.fetchProject(id).then( project => dispatch(receiveProject(project)), err => {
       return dispatch(receiveProjectErrors(err.statusText));
     }

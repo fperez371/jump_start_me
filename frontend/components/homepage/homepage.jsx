@@ -29,7 +29,7 @@ class HomePage extends React.Component {
     }
 
     let projects = this.props.projects
-    const projLink = `/api/projects/${this.props.projects[0].id}`;
+    const projLink = `/projects/${this.props.projects[0].id}`;
 
     // const projName = this.props.projects[0].name;
     // const projBody = this.props.projects[0].body;

@@ -1,5 +1,36 @@
 .proj-show-grid{
   display: grid;
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 20%, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr; 
+}
+
+.top-row-description{
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.flex-nowrap{
+  flex-flow: nowrap;
+}
+
+.project-name-show{
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.project-creator-show{
+  flex-direction: column;
+  margin: 5px;
+}
+
+.proj-show-left-picture > img{
+  max-width: 75%;
+  position: relative;
+  display: block;
+  margin: 0;
 }
