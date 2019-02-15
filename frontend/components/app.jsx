@@ -15,7 +15,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomePageContainer from './homepage/homepage_container';
 import CreateProject from './create_project_form/create_project';
-import ProjectComponent from './project_show/project_component';
+import ProjectShowComponent from './project_show/project_show_component';
 
 
 
@@ -31,7 +31,7 @@ const App = () => (
       <ProtectedRoute exact path="/startProject" component={CreateProject}/>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <Route path='/api/projects/:projectId' component={ProjectComponent} />
+      <Route path='/api/projects/:projectId' component={ProjectShowComponent} />
     </Switch>
   </div>
 );

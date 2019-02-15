@@ -6,7 +6,6 @@ import { fetchProject } from '../../util/project_api_util';
 
 
 const msp = (state, ownProps) => {
-  debugger
   const project = state.entities.projects[ownProps.match.params.projectId];
   const creator = state.entities.users[project.creator_id];
   return {
@@ -22,12 +21,11 @@ const mdp = (dispatch) => {
   };
 };
 
-class ProjectComponent extends React.Component {
+class ProjectShowComponent extends React.Component {
   constructor(props){
     super(props);
   }
   componentDidMount(){
-    debugger
     this.props.fetchProject(this.props.project.id);
   }
   /*  outer is grid container for page. next is large header with project title aka top row description
@@ -54,7 +52,7 @@ class ProjectComponent extends React.Component {
 
 
 
-export default withRouter(connect(msp, mdp)(ProjectComponent));
+export default withRouter(connect(msp, mdp)(ProjectShowComponent));
 
 
 
