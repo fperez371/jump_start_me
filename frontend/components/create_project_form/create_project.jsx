@@ -43,7 +43,7 @@ class CreateProjectForm extends React.Component {
     formData.append('project[goal_amt]', this.state.goal_amt);
     formData.append('project[deadline]', this.state.deadline);
     formData.append('project[photo]', this.state.photo);
-    this.props.createProject(formData).then(() => this.props.history.push('/'));
+    this.props.createProject(formData).then((project) => this.props.history.push(`/projects/${project.id}`));
   }
 
   update(field) {
