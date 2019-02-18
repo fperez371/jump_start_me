@@ -28,6 +28,7 @@ class CreateProjectForm extends React.Component {
       goal_amt: 0,
       deadline: currentDate,
       photo: null,
+      location: "",
     };
   }
 
@@ -36,13 +37,15 @@ class CreateProjectForm extends React.Component {
     // const project = Object.assign({}, this.state);
     // this.props.createProject(project).then(() => this.props.history.push("/"));
     const formData = new FormData();
+    debugger
     formData.append('project[body]', this.state.body);
     formData.append('project[name]', this.state.name);
     formData.append('project[category]', this.state.category);
-    formData.append('project[proj_image_url]', this.state.proj_image_url);
     formData.append('project[goal_amt]', this.state.goal_amt);
     formData.append('project[deadline]', this.state.deadline);
     formData.append('project[photo]', this.state.photo);
+    formData.append('project[location]', this.state.location);
+    debugger
     this.props.createProject(formData).then((project) => this.props.history.push(`/projects/${project.id}`));
   }
 
@@ -81,14 +84,6 @@ class CreateProjectForm extends React.Component {
           <input className="create-goal-amt" type="number" min="1" max="100000000" placeholder="500" step="1" onChange={this.update('goal_amt')} value={this.state.goal_amt} />
           <h3>Set a deadline to achieve funding goal</h3>
           <input type="date" className="create-proj-date" onChange={this.update('deadline')} value={this.state.deadline} min={this.state.deadline} required />
-          <label htmlFor="create-proj-image">
-            Please upload a Photo for your project. Try to choose one that will look good at different sizes.
-          </label>
-          <input type="file" id="create-proj-image" onChange={this.handleFile.bind(this)} />
-          <div className="create-image-preview">
-            <h3>Image preview</h3>
-            {preview}
-          </div>
           <div className="dropdown">
             <select className="dropdown-list" value={this.value} onChange={this.update("category")} >
               <option selected disabled hidden>Choose a category</option>
@@ -101,6 +96,17 @@ class CreateProjectForm extends React.Component {
               <option className="dropdown-option" onChange={this.update("category")} value="Music">Music</option>
               <option className="dropdown-option" onChange={this.update("category")} value="Publishing">Publishing</option>
             </select>
+          </div>
+          <div className="create-proj-location">
+            <input type="textarea" value={this.state.location} placeholder="Enter a location for your project" onChange={this.update("location")} />
+          </div>
+          <label htmlFor="create-proj-image">
+            Please upload a Photo for your project. Try to choose one that will look good at different sizes.
+          </label>
+          <input type="file" id="create-proj-image" onChange={this.handleFile.bind(this)} />
+          <div className="create-image-preview">
+            <h3>Image preview</h3>
+            {preview}
           </div>
           <input className="create-proj-submit" type="submit" value="Get Jumpstarted!" />
         </form>
