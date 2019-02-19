@@ -3,10 +3,10 @@ html, body, #root, #root > div {
 }
 
 .create-project-page{
-  display: block;
+  display: grid;
   background-size: cover;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
   box-sizing: border-box;
   line-height:21px;
   height: 100%;
@@ -18,7 +18,7 @@ html, body, #root, #root > div {
   -moz-appearance:none;
   outline:0px none transparent;
   resize: none;
-  width: 428px;
+  width: 100%;
   height: 80px;
   padding: 12px 12px 12px 12px;
   display: block;
@@ -37,22 +37,70 @@ html, body, #root, #root > div {
   border:1px solid green;
 }
 
+.proj-name-row{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.proj-name-instruction{
+  float: left;
+  color: #656969;
+  font-size: 14px;
+  vertical-align: top;
+  position: relative;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 300px;
+  flex-basis: 60%
+}
+
 .create-proj-name{
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   margin-bottom: 30px;
   border-style:solid;
-  border-width: 1px;
+  border-width: 0.1rem;
   -webkit-appearance: none;
   -moz-appearance:none;
   outline:0px none transparent;
   resize: none;
-  width: 428px;
   height: 80px;
   padding: 12px 12px 12px 12px;
   display: block;
+  width: 100%;
   border: 1px solid #E8E8E8;
+}
+
+.proj-body-instruction{
+  float: left;
+  color: #656969;
+  font-size: 14px;
+  vertical-align: top;
+  position: relative;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 300px;
+  flex-basis: 60%;
+}
+
+.proj-body-row{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .create-proj-name:hover{
@@ -80,6 +128,48 @@ html, body, #root, #root > div {
   flex-wrap: wrap;
   flex-direction: column;
   /* align-items: stretch; */
+}
+
+.create-proj-image-row{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.create-proj-funding-row{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.funding-goal-text{
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #282828;
+  font-weight: 500;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+.proj-body-row{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .create-image-preview{
@@ -123,6 +213,63 @@ html, body, #root, #root > div {
   border:1px solid green; 
 }
 
+.categories-row{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.create-location-input{
+  font-size: 14px;
+  height: 42px;
+  line-height: 18px;
+  display: block;
+  box-sizing: border-box;
+  width: 100%
+}
+
+.create-location-input:hover{
+  border:1px solid green;
+}
+
+
+.create-location-input:focus{
+  border:1px solid green; 
+}
+
+.create-proj-location{
+  display: flex;
+  border-top-color :rgb(220, 222, 221);
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.description-row{
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-categories-instruction{
+  float: left;
+  color: #656969;
+  font-size: 14px;
+  vertical-align: top;
+  position: relative;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 300px;
+  flex-basis: 60%;
+}
+
 .dropdown {
   align-items: center;
   background-color: rgb(255, 255, 255);
@@ -139,19 +286,18 @@ html, body, #root, #root > div {
   box-sizing: border-box;
   color: rgb(40, 40, 40);
   display: flex;
-  justify-content: flex-start;
   font-family:"Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:14px;
   font-stretch: 100%;
   font-weight:400;
-  height: 54px;
+  /* height: 54px; */
   padding-bottom:12px;
   padding-left: 18px;
   padding-right: 18px;
   padding-top: 12px;
-  position: relative;
+  /* position: relative; */
   margin-top: 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
 .dropdown .dropbtn {
