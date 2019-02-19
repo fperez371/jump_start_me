@@ -80,8 +80,8 @@ class HomePage extends React.Component {
               </div>
               <div className="rec-li-div-description">
                 <Link className="description-link" to={projLink3}>
-                  <h2 className="rec-title">{projects[2].body}</h2>
-                  {projects[2].name.slice(0, 100)}...</Link>
+                  <h2 className="rec-title">{projects[2].name}</h2>
+                  {projects[2].body.slice(0, 100)}...</Link>
               </div>
             </li>
             <li className="rec-li">

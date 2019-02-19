@@ -68,7 +68,7 @@ class ProjectShowComponent extends React.Component {
         </div>
         <div className="proj-show-left-picture">
           <img src={this.props.project.photo} alt="" />
-          <span>{null}</span>
+          <span>{this.props.project.deadline.slice(0,10) '12AM EST'}</span>
           <h4>Days to go</h4>
         </div>
         <div className="proj-show-right-deadline">
