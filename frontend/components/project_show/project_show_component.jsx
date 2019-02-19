@@ -18,7 +18,6 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = (dispatch) => {
-  debugger
   return ({
     fetchProject: (id) => dispatch(fetchProject(id)),
     // fetchProject2: (id) => dispatch(fetchProject(id))
@@ -32,7 +31,6 @@ class ProjectShowComponent extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchProject(this.props.project.id).then(() => this.setState({ isLoading: false }));
     // if (!this.props.project){
     //   this.props.fetchProject2(this.props.project.id);
@@ -53,7 +51,6 @@ class ProjectShowComponent extends React.Component {
     // const currentMs = this.props.project ? this.props.project.deadline - new Date() : null;
     // const diff = ((this.props.project.deadline - new Date())/86400000)
     // const diff = new Date(new Date().setDate(this.props.project.deadline.getDate() - new Date()))
-    debugger
     // const deadline = this.props.project ? ((this.props.project.deadline.getTime() - currentMs)/ 86400000) : null;
 
     return (
@@ -66,18 +63,25 @@ class ProjectShowComponent extends React.Component {
             </div>
           </div>
         </div>
-        <div className="proj-show-left-picture">
-          <img src={this.props.project.photo} alt="" />
-          <div className="show-cat-location">
-            <div><i className="far fa-compass"></i>
-              <span>{this.props.project.category}</span></div>
-            <br />
-            <div><i className="fas fa-map-marker-alt"></i>
-              <span>{this.props.project.location}</span></div>
+        <div className="proj-show-picture-deadline">
+          <div className="proj-show-left-picture">
+            <img src={this.props.project.photo} alt="" />
+            <div className="show-cat-location">
+              <div><i className="far fa-compass"></i>
+                <span>{this.props.project.category}</span></div>
+              <br />
+              <div><i className="fas fa-map-marker-alt"></i>
+                <span>{this.props.project.location}</span></div>
+            </div>
           </div>
-          <div className="proj-show-right-deadline">
-            <span>This project will only be funded if it reaches its goal by {this.props.project.deadline.slice(0, 10)} 12AM EST</span>
-          </div>
+            <div className="proj-show-right-deadline">
+              <div className="funding-border"></div>
+              <div>
+                <span className="funded-amt-text">$15000</span>
+              </div>
+              <span className="goal-amt-text">pledged of ${this.props.project.goal_amt}</span>
+              <span>This project will only be funded if it reaches its goal by {this.props.project.deadline.slice(0, 10)} 12AM EST</span>
+            </div>
         </div>
         <div className="proj-show-about-left">
           <div className="proj-show-body">{this.props.project.body}</div>

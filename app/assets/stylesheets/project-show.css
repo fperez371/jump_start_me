@@ -30,8 +30,14 @@
   margin: 5px;
 }
 
+.proj-show-picture-deadline{
+  display: flex;
+  flex-direction: row;
+
+}
+
 .proj-show-left-picture > img{
-  max-width: 60%;
+  max-width: 70%;
   position: relative;
   display: block;
   margin: 0;
@@ -39,13 +45,20 @@
 
 .proj-show-left-picture{
   display: block; 
+  flex-basis: 60%;
 }
 
-/* .show-cat-location{
+.show-cat-location{
+  margin-bottom: 10px;
   display: flex;
-  justify-content: space-between
-} */
-
+  flex-direction: row;
+}
+.fa-compass{
+  padding: 10px;
+}
+.fa-map-marker-alt{
+  padding: 10px;
+}
 .proj-show-title{
   font-size: 38px;
   margin-block-end: 18px;
@@ -59,10 +72,21 @@
   padding-right: 18px;
   padding-left: 18px;
   float: right;
+  flex-basis: 40%;
   width: 40%;
+  height: 100%;
 }
 
 .proj-show-body{
   width: 50%;
   float: left;
+}
+
+.funding-border{
+  width: 100%;
+  background-color: #037362;
+  height: 3px;
+}
+.funded-amt-text{
+  color: #037362;
 }
