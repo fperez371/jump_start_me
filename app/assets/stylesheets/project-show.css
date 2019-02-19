@@ -31,7 +31,7 @@
 }
 
 .proj-show-left-picture > img{
-  max-width: 50%;
+  max-width: 60%;
   position: relative;
   display: block;
   margin: 0;
@@ -41,6 +41,11 @@
   display: block; 
 }
 
+/* .show-cat-location{
+  display: flex;
+  justify-content: space-between
+} */
+
 .proj-show-title{
   font-size: 38px;
   margin-block-end: 18px;
@@ -48,4 +53,16 @@
   font-weight: 500;
   color: #282828;
   /* font-family: inherit; */
+}
+
+.proj-show-right-deadline{
+  padding-right: 18px;
+  padding-left: 18px;
+  float: right;
+  width: 40%;
+}
+
+.proj-show-body{
+  width: 50%;
+  float: left;
 }

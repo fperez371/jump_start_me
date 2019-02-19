@@ -68,11 +68,20 @@ class ProjectShowComponent extends React.Component {
         </div>
         <div className="proj-show-left-picture">
           <img src={this.props.project.photo} alt="" />
+          <div className="show-cat-location">
+            <div><i className="far fa-compass"></i>
+              <span>{this.props.project.category}</span></div>
+            <br />
+            <div><i className="fas fa-map-marker-alt"></i>
+              <span>{this.props.project.location}</span></div>
+          </div>
           <div className="proj-show-right-deadline">
-            <span>{this.props.project.deadline.slice(0, 10)} 12AM EST</span>
+            <span>This project will only be funded if it reaches its goal by {this.props.project.deadline.slice(0, 10)} 12AM EST</span>
           </div>
         </div>
-        <div className="proj-show-about-left"></div>
+        <div className="proj-show-about-left">
+          <div className="proj-show-body">{this.props.project.body}</div>
+        </div>
         <div className="proj-show-rewards-right"></div>
       </div>
     )
