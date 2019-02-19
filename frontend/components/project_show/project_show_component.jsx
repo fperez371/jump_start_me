@@ -28,23 +28,23 @@ const mdp = (dispatch) => {
 class ProjectShowComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isLoading: true};
+    this.state = { isLoading: true };
   }
 
   componentDidMount() {
     debugger
-    this.props.fetchProject(this.props.project.id).then( () => this.setState({isLoading: false}));
+    this.props.fetchProject(this.props.project.id).then(() => this.setState({ isLoading: false }));
     // if (!this.props.project){
     //   this.props.fetchProject2(this.props.project.id);
     // }
   }
 
- 
+
   /*  outer is grid container for page. next is large header with project title aka top row description
     next layer is proj main picture for like 70% give or take, with proj deadline next to it
   */
   render() {
-    if(this.state.isLoading){
+    if (this.state.isLoading) {
       return <div>Loading...</div>
     }
     // const projTitle = this.props.project ? this.props.project.name : null;
@@ -53,25 +53,24 @@ class ProjectShowComponent extends React.Component {
     // const currentMs = this.props.project ? this.props.project.deadline - new Date() : null;
     // const diff = ((this.props.project.deadline - new Date())/86400000)
     // const diff = new Date(new Date().setDate(this.props.project.deadline.getDate() - new Date()))
-   debugger
+    debugger
     // const deadline = this.props.project ? ((this.props.project.deadline.getTime() - currentMs)/ 86400000) : null;
 
     return (
       <div className="proj-show-grid">
         <div className="top-row-description flex-nowrap">
           <div className="proj-creator-show">
-            <span>By {this.props.project.creator.name}</span>
-          </div>
-          <div className="project-name-show">
-            <span>{this.props.project.name}</span>
+            <div className="project-name-show">
+              <p className="proj-show-title">{this.props.project.name}</p>
+              <p>By {this.props.project.creator.name}</p>
+            </div>
           </div>
         </div>
         <div className="proj-show-left-picture">
           <img src={this.props.project.photo} alt="" />
-          <span>{this.props.project.deadline.slice(0,10) '12AM EST'}</span>
-          <h4>Days to go</h4>
-        </div>
-        <div className="proj-show-right-deadline">
+          <div className="proj-show-right-deadline">
+            <span>{this.props.project.deadline.slice(0, 10)} 12AM EST</span>
+          </div>
         </div>
         <div className="proj-show-about-left"></div>
         <div className="proj-show-rewards-right"></div>
