@@ -6,23 +6,23 @@ import { fetchProject } from '../../actions/project_actions';
 
 
 const msp = (state, ownProps) => {
-  let projectId = ownProps.match.params.projectId;
-  let project = {};
-  let creator = project ? state.entities.users[project.creator_id] : {};
-  return {
+  // let projectId = ownProps.match.params.projectId;
+  let project = state.entities.projects[ownProps.match.params.projectId];
+  let creator = state.entities.users[project.creator_id];
+  return ({
     currentUserId: state.session.id,
     creator: creator,
     project: project,
-    projectId: projectId,
-  };
+    // projectId: projectId,
+  });
 };
 
 const mdp = (dispatch) => {
   debugger
-  return {
+  return ({
     fetchProject: (id) => dispatch(fetchProject(id)),
     // fetchProject2: (id) => dispatch(fetchProject(id))
-  };
+  });
 };
 
 class ProjectShowComponent extends React.Component {
@@ -33,11 +33,13 @@ class ProjectShowComponent extends React.Component {
 
   componentDidMount() {
     debugger
-    this.props.fetchProject(this.props.projectId).then( () => this.setState({isLoading: false}));
+    this.props.fetchProject(this.props.project.id).then( () => this.setState({isLoading: false}));
     // if (!this.props.project){
     //   this.props.fetchProject2(this.props.project.id);
     // }
   }
+
+ 
   /*  outer is grid container for page. next is large header with project title aka top row description
     next layer is proj main picture for like 70% give or take, with proj deadline next to it
   */
@@ -66,7 +68,7 @@ class ProjectShowComponent extends React.Component {
         </div>
         <div className="proj-show-left-picture">
           <img src={this.props.project.photo} alt="" />
-          <span>{}</span>
+          <span>{null}</span>
           <h4>Days to go</h4>
         </div>
         <div className="proj-show-right-deadline">
