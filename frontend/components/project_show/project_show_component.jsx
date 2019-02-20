@@ -28,6 +28,7 @@ class ProjectShowComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: true };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +38,9 @@ class ProjectShowComponent extends React.Component {
     // }
   }
 
+  handleClick() {
+    this.props.history.push('/');
+  }
 
   /*  outer is grid container for page. next is large header with project title aka top row description
     next layer is proj main picture for like 70% give or take, with proj deadline next to it
@@ -65,7 +69,7 @@ class ProjectShowComponent extends React.Component {
         </div>
         <div className="proj-show-picture-deadline">
           <div className="proj-show-left-picture">
-            <img src={this.props.project.photo} alt="" />
+            <img className="proj-show-img" src={this.props.project.photo} alt="" />
             <div className="show-cat-location">
               <div><i className="far fa-compass"></i>
                 <span>{this.props.project.category}</span></div>
@@ -74,14 +78,18 @@ class ProjectShowComponent extends React.Component {
                 <span>{this.props.project.location}</span></div>
             </div>
           </div>
-            <div className="proj-show-right-deadline">
-              <div className="funding-border"></div>
-              <div>
-                <span className="funded-amt-text">$15000</span>
-              </div>
-              <span className="goal-amt-text">pledged of ${this.props.project.goal_amt}</span>
-              <span>This project will only be funded if it reaches its goal by {this.props.project.deadline.slice(0, 10)} 12AM EST</span>
+          <div className="proj-show-right-deadline">
+            <div className="funding-border"></div>
+            <div >
+              <span className="funded-amt-text">$15000</span>
+              <div><span className="goal-amt-text">pledged of ${this.props.project.goal_amt} goal</span></div>
             </div>
+            <div className="backers-amt">
+              522 backers
+            </div>
+            <button className="back-project-button" onClick={this.handleClick}>Back this Project</button>
+            <span>This project will only be funded if it reaches its goal by {this.props.project.deadline.slice(0, 10)} 12AM EST</span>
+          </div>
         </div>
         <div className="proj-show-about-left">
           <div className="proj-show-body">{this.props.project.body}</div>

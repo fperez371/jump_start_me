@@ -37,10 +37,12 @@
 }
 
 .proj-show-left-picture > img{
-  max-width: 70%;
+  max-width: 100%;
+  height: auto;
   position: relative;
   display: block;
   margin: 0;
+  object-fit: contain;
 }
 
 .proj-show-left-picture{
@@ -71,10 +73,16 @@
 .proj-show-right-deadline{
   padding-right: 18px;
   padding-left: 18px;
-  float: right;
+  float: left;
+  position: relative;
   flex-basis: 40%;
-  width: 40%;
-  height: 100%;
+  width: 100%;
+  height: auto;
+  flex-direction: row;
+}
+
+.proj-show-right-deadline > * {
+  margin-bottom: 40px;
 }
 
 .proj-show-body{
@@ -89,4 +97,20 @@
 }
 .funded-amt-text{
   color: #037362;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 12px;
 }
+
+.back-project-button{
+  background-color: #037362;
+  color: #FFFFFF !important;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  height: 48px;
+  line-height: 48px;
+  cursor: pointer;
+}
+
