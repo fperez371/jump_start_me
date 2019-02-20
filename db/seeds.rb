@@ -8,9 +8,12 @@
 
 User.destroy_all
 u0 = User.create!(name:"demo-guy", email: "demo@demoemail.net", password: "starwars123")
+<<<<<<< HEAD
 u1 = User.create!(name:"demo-guy2", email: "demo@gmail.com", password: "starwars123")
 u2 = User.create!(name:"demo-guy3", email: "demo@hotmail.com", password: "starwars123")
 u3 = User.create!(name:"demo-guy4", email: "demo@aol.com", password: "starwars123")
+=======
+>>>>>>> project
 
 <<<<<<< HEAD
 Project.destroy_all
