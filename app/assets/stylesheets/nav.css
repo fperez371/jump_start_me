@@ -1,0 +1,106 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  z-index: 1;
+  padding-top: 2px;
+  border-bottom: 0.05rem solid #DCDEDD;
+  font-family: helvetica;
+  font-size: 14px;
+  background-color: white;
+  list-style: none;
+  text-decoration: none;
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+  width: 100%;
+}
+
+ a {
+  list-style: none;
+  text-decoration: none;
+}
+
+
+.site-nav-left li {
+  float: left;
+  padding-right: 30px;
+  width: auto;
+  padding: auto;
+  list-style: none;
+  color: #282828;
+}
+
+.site-nav-left li > a {
+  color: #282828;
+}
+.site-nav-left li > a:hover {
+  color: #009E74;
+}
+
+.site-nav-middle  {
+  list-style: none;
+  font-family: "RNS  BARUTA BLACK";
+  font-size: 25px;
+}
+
+.site-nav-middle > a {
+  color: #034752;
+  list-style: none;
+  font-family: "RNS  BARUTA BLACK";
+}
+
+.site-nav-right li > a {
+  display: block;
+  float: right;
+  margin-left: 20px;
+  padding-right: 30px;
+  width: auto;
+  padding: auto;
+  list-style: none;
+  color: #282828;
+}
+
+.site-nav-right li {
+  display: block;
+  float: right;
+  margin-left: 20px;
+  padding-right: 30px;
+  width: auto;
+  padding: auto;
+  list-style: none;
+  color: #282828;
+}
+
+.fas.fa-search{
+  margin-left: 0.6rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: transparent;
+}
+
+.site-nav-right li > a:hover {
+  color: #009E74;
+}
+
+.site-nav-right li > button:hover {
+  color: #009E74;
+  cursor: pointer
+}
+
+.search-nav{
+  background:none!important;
+  color:inherit;
+  border:none; 
+  padding:0!important;
+  font: inherit;
+}
+
+.login > a {
+  color: black;
+}
+
+.login > a:hover {
+  color: #009E74;
+}
