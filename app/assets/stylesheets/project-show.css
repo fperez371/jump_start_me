@@ -67,7 +67,6 @@
   margin-bottom: 18px;
   font-weight: 500;
   color: #282828;
-  /* font-family: inherit; */
 }
 
 .proj-show-right-deadline{
@@ -82,12 +81,13 @@
 }
 
 .proj-show-right-deadline > * {
-  margin-bottom: 40px;
+  margin-bottom: 3.2rem;
 }
 
 .proj-show-body{
   width: 50%;
   float: left;
+  margin: 10px;
 }
 
 .funding-border{

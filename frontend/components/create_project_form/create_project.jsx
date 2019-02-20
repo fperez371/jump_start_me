@@ -18,7 +18,6 @@ const mdp = dispatch => {
 class CreateProjectForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     let currentDate = new Date();
     this.state = {
@@ -39,7 +38,6 @@ class CreateProjectForm extends React.Component {
     // const project = Object.assign({}, this.state);
     // this.props.createProject(project).then(() => this.props.history.push("/"));
     const formData = new FormData();
-    debugger
     let day = 60 * 60 * 24 * 1000;
     this.state.deadline = new Date(this.state.deadline.getTime() + (this.state.due * day));
     formData.append('project[body]', this.state.body);
@@ -49,8 +47,7 @@ class CreateProjectForm extends React.Component {
     formData.append('project[deadline]', this.state.deadline);
     formData.append('project[photo]', this.state.photo);
     formData.append('project[location]', this.state.location);
-    debugger
-    this.props.createProject(formData).then((project) => this.props.history.push(`/projects/${project.id}`));
+    this.props.createProject(formData).then((project) =>  this.props.history.push(`/projects/${project.id}`));
   }
 
   update(field) {
