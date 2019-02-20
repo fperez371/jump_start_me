@@ -6,8 +6,8 @@ import { fetchProject } from '../../actions/project_actions';
 
 
 const msp = (state, ownProps) => {
-  let project = state.entities.projects[ownProps.match.params.projectId];
-  let creator = state.entities.users[project.creator_id];
+  let project = state.entities.projects[ownProps.match.params.projectId] || null;
+  let creator = project ? state.entities.users[project.creator_id] : null;
   return ({
     currentUserId: state.session.id,
     creator: creator,
@@ -29,7 +29,7 @@ class ProjectShowComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProject(this.props.project.id).then(() => this.setState({ isLoading: false }));
+    this.props.fetchProject(this.props.match.params.projectId).then(() => this.setState({ isLoading: false }));
   }
 
   handleClick() {
