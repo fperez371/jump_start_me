@@ -29,7 +29,6 @@ class ProjectShowComponent extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchProject(this.props.match.params.projectId).then(() => this.setState({ isLoading: false }));
   }
 
