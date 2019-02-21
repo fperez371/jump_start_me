@@ -43,7 +43,6 @@ class HomePage extends React.Component {
     // const projBody3 = this.props.projects[2].body 
     // const projName4 = this.props.projects[3].name 
     // const projBody4 = this.props.projects[3].body 
-
     return (
       <div className="grid-container">
         <div className="left-featured">
