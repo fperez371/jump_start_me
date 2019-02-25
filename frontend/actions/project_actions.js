@@ -49,6 +49,7 @@ export const fetchProjects = () => dispatch => {
   ));
 };
 
+
 export const fetchProject = (id) => dispatch => {
   return APIUtil.fetchProject(id).then( project => dispatch(receiveProject(project)), err => {
       return dispatch(receiveProjectErrors(err.statusText));
