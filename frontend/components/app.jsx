@@ -16,6 +16,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomePageContainer from './homepage/homepage_container';
 import CreateProject from './create_project_form/create_project';
 import ProjectShowComponent from './project_show/project_show_component';
+import CatIndex from './project_index_by_category/category_index';
 
 
 
@@ -25,6 +26,14 @@ const App = () => (
       <NavBarContainer/>
       <Route exact path="/" component={Categories} />
       <Route exact path="/" component={HomePageContainer} />
+      <Route path='/Arts' component={CatIndex} />
+      <Route path='/Comics&Illustration' component={CatIndex} />
+      <Route path='/Design&Tech' component={CatIndex} />
+      <Route path='/Film' component={CatIndex} />
+      <Route path='/Food&Craft' component={CatIndex} />
+      <Route path='/Games' component={CatIndex} />
+      <Route path='/Music' component={CatIndex} />
+      <Route path='/Publishing' component={CatIndex} />
       <Route exact path="/" component={Footer}/>
     </header>
     <Switch>
