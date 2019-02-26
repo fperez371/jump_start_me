@@ -30,10 +30,10 @@ class HomePage extends React.Component {
     }
 
     let projects = this.props.projects
-    const projLink = `/projects/${this.props.projects[0].id}`;
-    const projLink2 = `/projects/${this.props.projects[1].id}`;
-    const projLink3 = `/projects/${this.props.projects[2].id}`;
-    const projLink4 = `/projects/${this.props.projects[3].id}`;
+    const projLink = `/projects/${projects[0].id}`;
+    const projLink2 = `/projects/${projects[1].id}`;
+    const projLink3 = `/projects/${projects[2].id}`;
+    const projLink4 = `/projects/${projects[3].id}`;
 
     // const projName = this.props.projects[0].name;
     // const projBody = this.props.projects[0].body;
