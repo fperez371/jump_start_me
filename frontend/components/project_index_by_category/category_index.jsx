@@ -40,6 +40,28 @@ class CatIndex extends React.Component {
       return (project.category === this.props.location.pathname.slice(1));
     })
     let formName = this.props.location.pathname.slice(1)
+    let formDesc
+    switch (formName) {
+      case 'Arts':
+         formDesc = "Discover the artists and organizations using JumpStartMe to realize ambitious projects in visual art and performance."
+      case 'Comics&Illustration':
+         formDesc = "Explore fantastical worlds and original characters from JumpStartMe’s community of comics creators and illustrators."
+      case 'Design&Tech':
+         formDesc = "From fine design to innovative tech, discover projects from creators working to build a more beautiful future."
+      case 'Film':
+         formDesc = "Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen."
+      case 'Food&Craft':
+         formDesc = "See how artisans and entrepreneurs are using JumpStartMe to break new ground in food, fashion, and crafts."
+      case 'Games':
+         formDesc = "From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay."
+      case 'Music':
+         formDesc = "Discover new albums, performances, and independent venues from creators using JumpStartMe to shape the future of sound."
+      case 'Publishing':
+         formDesc = "Explore how writers and publishers are using JumpStartMe to bring new literature, periodicals, podcasts, and more to life."
+    
+      default:
+        break;
+    }
     const projLink = `/projects/${projects[0].id}`;
     const projLink2 = `/projects/${projects[1].id}`;
     const projLink3 = `/projects/${projects[2].id}`;
@@ -48,7 +70,8 @@ class CatIndex extends React.Component {
     return (
       <>
       <div className="cat-header">
-        <h2>{formName}</h2>
+        <h3>{formName}</h3>
+        <p>{formDesc}</p>
       </div>
       <div className="grid-container">
         <div className="left-featured">
