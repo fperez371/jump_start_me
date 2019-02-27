@@ -12,6 +12,7 @@ class Categories extends React.Component {
       <div className="Categories-header">
         <nav className="flex-nav">
           <ul className="cat-list-items">
+            <div className="pad"></div>
             <li className="cat-list-item"><Link to="/Arts">Arts</Link></li>
             <li className="cat-list-item"><Link to="/Comics&Illustration">Comics & Illustration</Link></li>
             <li className="cat-list-item"><Link to="/Design&Tech">Design & Tech</Link></li>
@@ -20,6 +21,7 @@ class Categories extends React.Component {
             <li className="cat-list-item"><Link to="/Games">Games</Link></li>
             <li className="cat-list-item"><Link to="/Music">Music</Link></li>
             <li className="cat-list-item"><Link to="/Publishing">Publishing</Link></li>
+            <div className="pad"></div>
           </ul>
         </nav>
       </div>

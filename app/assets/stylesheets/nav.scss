@@ -1,6 +1,5 @@
 $duration: .2s;
 $distance: 8px;
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 .nav-bar {
   display: flex;
@@ -9,8 +8,10 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   z-index: 1;
   padding-top: 2px;
   border-bottom: 0.05rem solid #DCDEDD;
-  font-family: helvetica;
-  font-size: 14px;
+  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 14px;
+  font-size: 1.0rem;
+  font-weight: 350;
   background-color: white;
   list-style: none;
   text-decoration: none;
@@ -33,7 +34,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 .site-nav-left li {
   float: left;
-  padding-right: 30px;
+  padding-right: 25px;
   width: auto;
   padding: auto;
   list-style: none;
@@ -42,39 +43,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 .site-nav-left li > a {
   color: #282828;
-  &:before,
-  &:after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: 0; right: 0;
-      height: 2px;
-      background-color: #009E74;
-  }
-  &:before {
-      opacity: 0;
-      transform: translateY(- $distance);
-      transition: transform 0s $easeOutBack, opacity 0s;
-  }
-  &:after {
-      opacity: 0;
-      transform: translateY($distance/2);
-      transition: transform $duration $easeOutBack, opacity $duration;
-  }
-  &:hover,
-  &:focus {
-      &:before,
-      &:after {
-          opacity: 1;
-          transform: translateY(0);
-      }
-      &:before {
-          transition: transform $duration $easeOutBack, opacity $duration;
-      }
-      &:after {
-          transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
-      }
-  }
 }
 .site-nav-left li > a:hover {
   color: #009E74;
@@ -83,7 +51,8 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 .site-nav-middle  {
   list-style: none;
   font-family: "RNS  BARUTA BLACK";
-  font-size: 2.1rem;
+  font-size: 1.8rem;
+  padding-top: 10px;
 }
 
 .site-nav-middle > a {
@@ -100,7 +69,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   display: block;
   float: right;
   margin-left: 20px;
-  padding-right: 30px;
+  padding-right: 25px;
   width: auto;
   padding: auto;
   list-style: none;
