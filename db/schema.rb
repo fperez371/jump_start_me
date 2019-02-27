@@ -50,9 +50,13 @@ ActiveRecord::Schema.define(version: 2019_02_27_220608) do
   end
 
   create_table "rewards", force: :cascade do |t|
-  end
-
-  create_table "rewards_tables", force: :cascade do |t|
+    t.integer "proj_id", null: false
+    t.integer "amount", null: false
+    t.text "description", null: false
+    t.string "name", null: false
+    t.date "est_delivery", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
