@@ -69,9 +69,8 @@ $distance: 8px;
   display: block;
   float: right;
   margin-left: 20px;
-  padding-right: 25px;
   width: auto;
-  padding: auto;
+  padding-right: 0px !important;
   list-style: none;
   color: #282828;
 }
@@ -111,10 +110,22 @@ $distance: 8px;
   font: inherit;
 }
 
+
 .login > a {
   color: black;
 }
 
 .login > a:hover {
   color: #009E74;
+}
+
+.user-avatar{
+  margin-top: -18px;
+  border-radius: 100%;
+}
+
+.user-dropdown{
+  border: none;
+  // padding:0!important;
+  padding-right: 1.5rem;
 }

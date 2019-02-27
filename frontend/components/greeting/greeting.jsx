@@ -10,9 +10,9 @@ const Greeting = ({ currentUser, logout }) => {
   )
 
   const personalGreeting = () => (
-    <li><hgroup className = "login">
-      <button className="header-button" onClick={() => logout()}> <img className="user-avatar" src='../../../app/assets/images/missing_user_avatar.png' alt=""/></button>
-    </hgroup></li>
+    <li>
+      <button className="user-dropdown" onClick={() => logout()}> <img className="user-avatar" src='https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-1.1.0&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=c8baefb239621e7b5b26957577e078db' alt=""/></button>
+    </li>
   );
 
   return currentUser ? personalGreeting() : sessionLink()
