@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const msp = state => {
-  debugger
+  // debugger
   return {
     projects: Object.values(state.entities.projects),
   };
@@ -71,7 +71,7 @@ class CatIndex extends React.Component {
       <>
       <div className="cat-header">
         <h3>{formName}</h3>
-        <p>{formDesc}</p>
+        <p className="desc-text">{formDesc}</p>
       </div>
       <div className="grid-container">
         <div className="left-featured">

@@ -1,3 +1,7 @@
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -23,6 +27,9 @@
   text-decoration: none;
 }
 
+.site-nav-left{
+  padding-top: 10px;
+}
 
 .site-nav-left li {
   float: left;
@@ -35,6 +42,39 @@
 
 .site-nav-left li > a {
   color: #282828;
+  &:before,
+  &:after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0; right: 0;
+      height: 2px;
+      background-color: #009E74;
+  }
+  &:before {
+      opacity: 0;
+      transform: translateY(- $distance);
+      transition: transform 0s $easeOutBack, opacity 0s;
+  }
+  &:after {
+      opacity: 0;
+      transform: translateY($distance/2);
+      transition: transform $duration $easeOutBack, opacity $duration;
+  }
+  &:hover,
+  &:focus {
+      &:before,
+      &:after {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      &:before {
+          transition: transform $duration $easeOutBack, opacity $duration;
+      }
+      &:after {
+          transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+      }
+  }
 }
 .site-nav-left li > a:hover {
   color: #009E74;
@@ -43,13 +83,17 @@
 .site-nav-middle  {
   list-style: none;
   font-family: "RNS  BARUTA BLACK";
-  font-size: 25px;
+  font-size: 2.1rem;
 }
 
 .site-nav-middle > a {
   color: #034752;
   list-style: none;
   font-family: "RNS  BARUTA BLACK";
+}
+
+.site-nav-right{
+  padding-top: 10px;
 }
 
 .site-nav-right li > a {

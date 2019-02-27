@@ -13,17 +13,9 @@ class HomePage extends React.Component {
     this.props.fetchProjects().then(() => this.setState({ isLoading: false }));
   }
 
-  // componentDidUpdate(prevProps){
-  //   if (prevProps.projects !== props.projects){
-  //     render();
-  //   }
-  // }
 
 
   render() {
-    // if (!this.props.projects.length) {
-    //   return <div>Loading</div>
-    // }
 
     if (this.state.isLoading) {
       return <div>Loading</div>
@@ -35,14 +27,6 @@ class HomePage extends React.Component {
     const projLink3 = `/projects/${projects[2].id}`;
     const projLink4 = `/projects/${projects[3].id}`;
 
-    // const projName = this.props.projects[0].name;
-    // const projBody = this.props.projects[0].body;
-    // const projName2 = this.props.projects[1].name 
-    // const projBody2 = this.props.projects[1].body 
-    // const projName3 = this.props.projects[2].name 
-    // const projBody3 = this.props.projects[2].body 
-    // const projName4 = this.props.projects[3].name 
-    // const projBody4 = this.props.projects[3].body 
     return (
       <div className="grid-container">
         <div className="left-featured">

@@ -6,6 +6,7 @@ export const fetchProjects = () => {
   });
 };
 
+
 export const fetchProject = id => {
   return $.ajax({
     method: "GET",
