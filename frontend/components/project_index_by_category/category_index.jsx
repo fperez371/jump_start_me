@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import {fetchProjects} from '../../actions/project_actions';
+import { fetchProjects } from '../../actions/project_actions';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const msp = state => {
+  debugger
   return {
     projects: Object.values(state.entities.projects),
   };
@@ -35,16 +36,20 @@ class CatIndex extends React.Component {
     if (this.state.isLoading) {
       return <div>Loading</div>
     }
-    debugger
-    let projects = this.props.projects.filter( (project) => {
+    let projects = this.props.projects.filter((project) => {
       return (project.category === this.props.location.pathname.slice(1));
     })
+    let formName = this.props.location.pathname.slice(1)
     const projLink = `/projects/${projects[0].id}`;
     const projLink2 = `/projects/${projects[1].id}`;
     const projLink3 = `/projects/${projects[2].id}`;
     const projLink4 = `/projects/${projects[3].id}`;
 
     return (
+      <>
+      <div className="cat-header">
+        <h2>{formName}</h2>
+      </div>
       <div className="grid-container">
         <div className="left-featured">
           <section>
@@ -101,7 +106,8 @@ class CatIndex extends React.Component {
           </ul>
         </div>
       </div>
+      </>
     )
   }
 }
-export default connect(msp,mdp)(CatIndex);
+export default connect(msp, mdp)(CatIndex);
