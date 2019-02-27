@@ -219,3 +219,8 @@
 .desc-text{
   color: #656969;
 }
+
+.user-avatar{
+  width: 36px;
+  height: 36px;
+}

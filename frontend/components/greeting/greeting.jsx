@@ -11,8 +11,7 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = () => (
     <li><hgroup className = "login">
-      <h2 className="header-name">Hi, {currentUser.name}!</h2>
-      <button className="header-button" onClick={() => logout()}>Log out</button>
+      <button className="header-button" onClick={() => logout()}> <img className="user-avatar" src='../../../app/assets/images/missing_user_avatar.png' alt=""/></button>
     </hgroup></li>
   );
 
