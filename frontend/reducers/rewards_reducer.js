@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_REWARDS, RECEIVE_REWARD } from  '../actions/reward_actions';
 import  merge  from 'lodash/merge';
+
 const rewardReducer = ( state={}, action) => {
   Object.freeze(state);
   switch (action.type) {
