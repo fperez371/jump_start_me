@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const msp = state => {
   return {
-    errors: state.errors.session,
+    errors: state.errors.project,
   };
 };
 
