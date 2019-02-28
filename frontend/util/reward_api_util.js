@@ -4,3 +4,13 @@ export const fetchRewards = () => {
     url: 'api/rewards'
   });
 };
+
+export const createReward = reward => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/rewards",
+    data: reward,
+  });
+};
+
+
