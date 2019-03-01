@@ -1,12 +1,16 @@
 class Api::ProjectsController < ApplicationController
 
   def index 
-    @projects = Project.all 
+    if params[:creator_id]
+      @projects = Project.find_by(creator_id: params[:creator_id])
+    else 
+      @projects = Project.all 
+    end
     render :index
   end
 
   def show
-    @project =  Project.find(params[:id])
+    @project = Project.find(params[:id])
     render :show
   end
 
