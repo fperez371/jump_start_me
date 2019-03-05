@@ -44,20 +44,28 @@ class CatIndex extends React.Component {
     switch (formName) {
       case 'Arts':
          formDesc = "Discover the artists and organizations using JumpStartMe to realize ambitious projects in visual art and performance."
+         break;
       case 'Comics&Illustration':
          formDesc = "Explore fantastical worlds and original characters from JumpStartMe’s community of comics creators and illustrators."
+         break;
       case 'Design&Tech':
          formDesc = "From fine design to innovative tech, discover projects from creators working to build a more beautiful future."
+         break;
       case 'Film':
          formDesc = "Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen."
+         break;
       case 'Food&Craft':
          formDesc = "See how artisans and entrepreneurs are using JumpStartMe to break new ground in food, fashion, and crafts."
+         break;
       case 'Games':
          formDesc = "From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay."
+         break;
       case 'Music':
          formDesc = "Discover new albums, performances, and independent venues from creators using JumpStartMe to shape the future of sound."
+         break;
       case 'Publishing':
          formDesc = "Explore how writers and publishers are using JumpStartMe to bring new literature, periodicals, podcasts, and more to life."
+         break;
     
       default:
         break;

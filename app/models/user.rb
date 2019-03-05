@@ -19,7 +19,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :projects
+  has_many :projects,
+    class_name: :Project,
+    foreign_key: :creator_id,
+    primary_key: :id
 
   attr_reader :password
 
