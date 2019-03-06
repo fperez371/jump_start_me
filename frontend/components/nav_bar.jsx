@@ -16,6 +16,8 @@ class NavBar extends React.Component {
     )
   }
 
+
+
   personalGreeting(){
     return (
       <button onClick={ this.props.openModal }>
@@ -43,9 +45,9 @@ class NavBar extends React.Component {
           <ul className="nav-bar-items">
             <li><button className="search-nav">Search
             <i className="fas fa-search"></i>
-            { this.props.loggedIn ? this.personalGreeting() : this.sessionLink() }
             </button>
             </li>
+            { this.props.loggedIn ? this.personalGreeting() : this.sessionLink() }
           </ul>
         </div>
       </div>

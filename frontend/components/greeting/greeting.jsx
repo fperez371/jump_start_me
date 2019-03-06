@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { closeModal } from '../../actions/modal_actions';
-
-
 
 //  let userProjs = entities.projects.filter(project => project.creator_id === currentUser.id)
 class GreetingModal extends React.Component {
@@ -11,17 +8,31 @@ class GreetingModal extends React.Component {
 
   }
 
-
-
-
-  render(){
+  render() {
     const current = this.props.currentUser;
+    const { closeModal } = this.props;
     let projsDiv;
     if (current.projects) {
       if (current.projects.length > 3) {
-        projsDiv = current.projects.slice(0, 2).map((project, idx) => <Link onClick={ () => closeModal()} key={idx} to={`/projects/${project.id}`}>{project.name}</Link>)
+        projsDiv = current.projects.slice(0, 2).map((project, idx) => {
+          return (
+            <li onClick={() => closeModal()}>
+              <Link key={idx} to={`/projects/${project.id}`}>
+                {project.name}
+              </Link>
+            </li>
+          )
+          
+        })
+          
       } else {
-        projsDiv = current.projects.map((project, idx) => <Link onClick={ () => closeModal()} key={idx} to={`/projects/${project.id}`}>{project.name}</Link>)
+        projsDiv = current.projects.map((project, idx) => {
+          return (
+            <li onClick={() => closeModal()}>
+              <Link  key={idx} to={`/projects/${project.id}`}>{project.name}</Link>
+            </li>
+          )
+        })
       };
     } else {
       projsDiv = null
