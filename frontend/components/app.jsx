@@ -17,11 +17,12 @@ import HomePageContainer from './homepage/homepage_container';
 import CreateProject from './create_project_form/create_project';
 import ProjectShowComponent from './project_show/project_show_component';
 import CatIndex from './project_index_by_category/category_index';
-
+import Modal from './modal/modal';
 
 
 const App = () => (
   <div>
+    <Modal/>
     <header>
       <NavBarContainer/>
       <Route exact path="/" component={Categories} />

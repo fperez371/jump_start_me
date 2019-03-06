@@ -1,12 +1,28 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-import GreetingContainer from './greeting/greeting_container';
+
 
 class NavBar extends React.Component {
+  constructor(props){
+    super(props);
+    this.sessionLink = this.sessionLink.bind(this);
+    this.personalGreeting = this.personalGreeting.bind(this);
+  }
 
+  sessionLink(){
+    return ( <li><nav className="login">
+      <Link to='/login'>Log in</Link>
+    </nav></li>
+    )
+  }
 
-
+  personalGreeting(){
+    return (
+      <button onClick={ this.props.openModal }>
+        <img className="user-avatar" src='https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-1.1.0&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=c8baefb239621e7b5b26957577e078db' alt="" />
+      </button>
+    )
+  }
 
   render() {
 
@@ -25,9 +41,9 @@ class NavBar extends React.Component {
         </div>
         <div className="site-nav-right">
           <ul className="nav-bar-items">
-            <GreetingContainer />
             <li><button className="search-nav">Search
             <i className="fas fa-search"></i>
+            { this.props.loggedIn ? this.personalGreeting() : this.sessionLink() }
             </button>
             </li>
           </ul>

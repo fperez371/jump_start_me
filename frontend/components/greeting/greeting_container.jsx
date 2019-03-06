@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
-import Greeting from './greeting';
+import GreetingModal from './greeting';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = ({ session, entities: {users} }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
   };
 };
 
 const mdp = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
   };
 };
 
-export default connect(msp, mdp)(Greeting);
+export default connect(msp, mdp)(GreetingModal);
