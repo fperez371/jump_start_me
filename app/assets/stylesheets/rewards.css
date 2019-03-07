@@ -1,0 +1,51 @@
+.rewards-page-container{
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.flex-rewards{
+  display: flex;
+  flex-direction: column;
+  box-sizing: inherit; 
+}
+
+.reward-name{
+  padding-bottom: 2rem;
+  border-bottom: 0.05rem solid #DCDEDD;
+}
+
+.reward-amount{
+  padding-bottom: 2rem;
+  border-bottom: 0.05rem solid #DCDEDD;
+}
+
+.reward-name-input{
+  width: 100%;
+}
+
+.reward-name-input:hover{
+  border:1px solid green;
+}
+
+
+.reward-name-input:focus{
+  border:1px solid green; 
+}
+
+.reward-desc-text{
+  resize: none;
+}
+
+.reward-desc-text:hover{
+  border:1px solid green; 
+}
+
+.reward-desc-text:focus{
+  border:1px solid green; 
+}
+
+.add-reward-button{
+  box-sizing: border-box;
+  background-color: #009E74;
+  color: #FFFFFF !important;
+}

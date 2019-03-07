@@ -25,6 +25,11 @@ class Project < ApplicationRecord
     foreign_key: :creator_id,
     primary_key: :id
 
+  has_many :rewards,
+    class_name: :Reward,
+    foreign_key: :proj_id,
+    primary_key: :id
+
   has_one_attached :photo
 
 end 
