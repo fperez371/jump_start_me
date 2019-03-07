@@ -124,10 +124,16 @@ $distance: 8px;
   border-radius: 100%;
 }
 
+
 .user-dropdown{
   border: none;
   // padding:0!important;
   padding-right: 1.5rem;
+}
+
+.user-button{
+  border: none;
+  outline: none;
 }
 
 .modal-background {
@@ -142,7 +148,56 @@ $distance: 8px;
 
 .modal-child {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 60%;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+}
+
+.user-modal{
+  border: 0.1rem solid #DCDEDD;
+  background-color: #FFFFFF;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column; 
+}
+
+.user-modal > *{
+  margin: 1.0rem;
+}
+.username-header{
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+.user-modal-projects{
+  color: #282828;
+}
+
+.user-modal-projects:hover{
+  color: #009E74;
+  text-decoration: underline;
+}
+
+.no-dec-li{
+  list-style: none;
+  text-decoration: none;
+}
+
+.projects-div{
+  padding: auto;
+}
+
+.my-projects{
+  margin-bottom: 1rem;
+}
+
+.logout{
+  border: none;
+
+}
+
+.logout-button-div{
+  margin-top: auto;
 }

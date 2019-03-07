@@ -20,7 +20,7 @@ class NavBar extends React.Component {
 
   personalGreeting(){
     return (
-      <button onClick={ this.props.openModal }>
+      <button className="user-button" onClick={ this.props.openModal }>
         <img className="user-avatar" src='https://ksr-ugc.imgix.net/missing_user_avatar.png?ixlib=rb-1.1.0&w=40&h=40&fit=crop&v=&auto=format&frame=1&q=92&s=c8baefb239621e7b5b26957577e078db' alt="" />
       </button>
     )

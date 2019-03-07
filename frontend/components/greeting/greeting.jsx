@@ -16,20 +16,20 @@ class GreetingModal extends React.Component {
       if (current.projects.length > 3) {
         projsDiv = current.projects.slice(0, 2).map((project, idx) => {
           return (
-            <li onClick={() => closeModal()}>
-              <Link key={idx} to={`/projects/${project.id}`}>
+            <li className="no-dec-li" onClick={() => closeModal()}>
+              <Link className="user-modal-projects" key={idx} to={`/projects/${project.id}`}>
                 {project.name}
               </Link>
             </li>
           )
-          
+
         })
-          
+
       } else {
         projsDiv = current.projects.map((project, idx) => {
           return (
-            <li onClick={() => closeModal()}>
-              <Link  key={idx} to={`/projects/${project.id}`}>{project.name}</Link>
+            <li className="no-dec-li" onClick={() => closeModal()}>
+              <Link className="user-modal-projects" key={idx} to={`/projects/${project.id}`}>{project.name}</Link>
             </li>
           )
         })
@@ -39,9 +39,14 @@ class GreetingModal extends React.Component {
     }
     return (
       <div className="user-modal">
-        <h3>{this.props.currentUser.name}</h3>
-        {projsDiv}
-        <button onClick={this.props.logout}>Log Out!</button>
+        <header className="username-header">{this.props.currentUser.name}</header>
+        <div className="projects-div">
+          <h3 className="my-projects">My Projects</h3>
+          {projsDiv}
+        </div>
+        <div className="logout-button-div">
+          <button className="logout" onClick={this.props.logout}>Log Out!</button>
+        </div>
       </div>
     )
   }
