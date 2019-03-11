@@ -16,6 +16,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomePageContainer from './homepage/homepage_container';
 import CreateProject from './create_project_form/create_project';
 import ProjectShowComponent from './project_show/project_show_component';
+import CreateRewardComponent from './rewards/create_reward_component';
 import CatIndex from './project_index_by_category/category_index';
 import Modal from './modal/modal';
 
@@ -41,6 +42,7 @@ const App = () => (
       <ProtectedRoute exact path="/startProject" component={CreateProject}/>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <Route exact path='/createRewards' component={CreateRewardComponent} />
       <Route exact path='/projects/:projectId' component={ProjectShowComponent} />
     </Switch>
   </div>
