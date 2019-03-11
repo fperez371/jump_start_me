@@ -142,7 +142,7 @@ class CreateProjectForm extends React.Component {
               <input type="number" className="create-goal-amt" onChange={this.update('due')} value={this.state.due} min="1" placeholder="30" max="60" required />
             </div>
           </div>
-          <input className="create-proj-submit" type="submit" value="Move on to rewards" />
+          <input className="create-proj-submit" type="submit" value="Get Jumpstarted" />
         </form>
       </div>
     )
