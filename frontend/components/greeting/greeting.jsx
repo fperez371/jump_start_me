@@ -14,7 +14,7 @@ class GreetingModal extends React.Component {
     let projsDiv;
     if (current.projects) {
       if (current.projects.length > 3) {
-        projsDiv = current.projects.slice(0, 2).map((project, idx) => {
+        projsDiv = current.projects.slice(0, 3).map((project, idx) => {
           return (
             <li className="no-dec-li" onClick={() => closeModal()}>
               <Link className="user-modal-projects" key={idx} to={`/projects/${project.id}`}>
