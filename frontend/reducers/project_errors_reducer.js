@@ -1,9 +1,9 @@
 import {
   RECEIVE_PROJECT_ERRORS,
   RECEIVE_PROJECT,
-} from '../actions/project_actions';
+} from "../actions/project_actions";
 
-export default (state = [], action ) => {
+export default (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PROJECT_ERRORS:

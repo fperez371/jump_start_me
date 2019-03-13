@@ -1,19 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Root from './components/root';
-import configureStore from './store/store';
-import {fetchProjects, fetchProject, deleteProject} from './actions/project_actions';
+import Root from "./components/root";
+import configureStore from "./store/store";
+import {
+  fetchProjects,
+  fetchProject,
+  deleteProject,
+} from "./actions/project_actions";
 
-
-document.addEventListener("DOMContentLoaded" , () =>{
-  let store; 
-  if (window.currentUser){
+document.addEventListener("DOMContentLoaded", () => {
+  let store;
+  if (window.currentUser) {
     const preloadedState = {
       session: { id: window.currentUser.id },
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
-      }
+        users: { [window.currentUser.id]: window.currentUser },
+      },
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
@@ -25,6 +28,6 @@ document.addEventListener("DOMContentLoaded" , () =>{
   window.deleteProject = deleteProject;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store}/>, root);
+  const root = document.getElementById("root");
+  ReactDOM.render(<Root store={store} />, root);
 });
