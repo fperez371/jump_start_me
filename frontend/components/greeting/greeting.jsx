@@ -39,7 +39,7 @@ class GreetingModal extends React.Component {
     }
     return (
       <div className="user-modal">
-        <header className="username-header">{this.props.currentUser.name}</header>
+        <header className="username-header"> Welcome {this.props.currentUser.name}!</header>
         <div className="projects-div">
           <h3 className="my-projects">My Projects</h3>
           {projsDiv}
