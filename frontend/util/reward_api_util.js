@@ -6,9 +6,10 @@ export const fetchRewards = () => {
 };
 
 export const createReward = reward => {
+  debugger;
   return $.ajax({
     method: "POST",
-    url: "/api/rewards",
-    data: reward,
+    url: `/api/projects/${reward.project_id}/rewards`,
+    data: { reward },
   });
 };

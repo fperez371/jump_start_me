@@ -6,6 +6,7 @@ class Api::RewardsController < ApplicationController
   end
 
   def create
+    debugger
     @reward = Reward.new(reward_params)
 
     if @reward.save 

@@ -35,7 +35,11 @@ const App = () => (
       <ProtectedRoute exact path="/startProject" component={CreateProject} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <Route exact path="/createRewards" component={CreateRewardComponent} />
+      <Route
+        exact
+        path="/projects/:projectId/rewards"
+        component={CreateRewardComponent}
+      />
       <Route
         exact
         path="/projects/:projectId"

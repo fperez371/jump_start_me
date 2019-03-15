@@ -1,10 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { createReward } from "../../actions/reward_actions";
 
 const msp = (state, ownProps) => {
+  debugger;
   return {
     errors: state.errors.reward,
-    proj_id: ownProps.match.params.id,
+    proj_id: ownProps.match.params.projectId,
   };
 };
 
@@ -35,7 +37,8 @@ class CreateRewardComponent extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const reward = Object.assign({}, this.state);
+    let reward = Object.assign({}, this.state);
+    reward.proj_id = this.props.proj_id;
     this.props.createReward(reward).then(() => {
       this.props.history.push(`/`);
     });
