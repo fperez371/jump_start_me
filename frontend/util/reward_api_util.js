@@ -1,17 +1,15 @@
-
 export const fetchRewards = () => {
   return $.ajax({
     method: "GET",
-    url: '/api/rewards'
+    url: "/api/rewards",
   });
 };
 
 export const createReward = reward => {
+  debugger;
   return $.ajax({
     method: "POST",
-    url: "/api/rewards",
-    data: reward,
+    url: `/api/projects/${reward.project_id}/rewards`,
+    data: { reward },
   });
 };
-
-

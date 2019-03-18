@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { logout } from '../../actions/session_actions';
-import GreetingModal from './greeting';
-import { closeModal } from '../../actions/modal_actions';
+import { logout } from "../../actions/session_actions";
+import GreetingModal from "./greeting";
+import { closeModal } from "../../actions/modal_actions";
 
-const msp = ({ session, entities: {users} }) => {
+const msp = ({ session, entities: { users } }) => {
   return {
     currentUser: users[session.id],
   };
@@ -13,8 +13,11 @@ const msp = ({ session, entities: {users} }) => {
 const mdp = dispatch => {
   return {
     logout: () => dispatch(logout()),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
-export default connect(msp, mdp)(GreetingModal);
+export default connect(
+  msp,
+  mdp
+)(GreetingModal);

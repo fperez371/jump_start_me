@@ -2,16 +2,16 @@
 #
 # Table name: projects
 #
-#  id             :bigint(8)        not null, primary key
-#  body           :text             not null
-#  name           :string           not null
-#  category       :string           not null
-#  proj_image_url :string           not null
-#  creator_id     :integer          not null
-#  goal_amt       :integer          not null
-#  deadline       :datetime         not null
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id         :bigint(8)        not null, primary key
+#  body       :text             not null
+#  name       :string           not null
+#  category   :string           not null
+#  creator_id :integer          not null
+#  goal_amt   :integer          not null
+#  deadline   :datetime         not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  location   :string           not null
 #
 
 class Project < ApplicationRecord

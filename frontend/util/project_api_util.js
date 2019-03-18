@@ -1,11 +1,9 @@
-
 export const fetchProjects = () => {
   return $.ajax({
     method: "GET",
     url: "/api/projects",
   });
 };
-
 
 export const fetchProject = id => {
   return $.ajax({
@@ -17,7 +15,7 @@ export const fetchProject = id => {
 export const deleteProject = id => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/projects/${id}`
+    url: `/api/projects/${id}`,
   });
 };
 
@@ -35,7 +33,6 @@ export const updateProject = project => {
   return $.ajax({
     method: "PATCH",
     url: `/api/projects/${project.id}`,
-    data: {project},
+    data: { project },
   });
 };
-
