@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { createReward } from "../../actions/reward_actions";
 
 const msp = (state, ownProps) => {
-  debugger;
   return {
     errors: state.errors.reward,
     proj_id: ownProps.match.params.projectId,
@@ -24,7 +23,7 @@ class CreateRewardComponent extends React.Component {
       amount: 0,
       description: "",
       name: "",
-      est_delivery: null,
+      est_delivery: new Date(),
     };
   }
 
