@@ -23,7 +23,7 @@ class CreateRewardComponent extends React.Component {
       amount: 0,
       description: "",
       name: "",
-      est_delivery: new Date(),
+      est_delivery: undefined,
     };
   }
 
