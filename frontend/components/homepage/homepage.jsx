@@ -34,7 +34,7 @@ class HomePage extends React.Component {
             <p className="proj-body">{projects[0].body}</p>
             <h3 className="proj-name">{projects[0].name}</h3>
             <Link className="creator-name" to={projLink}>
-              By demo-guy
+              By {projects[0].creator.name}
             </Link>
           </section>
         </div>

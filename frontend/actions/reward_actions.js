@@ -5,7 +5,6 @@ export const RECEIVE_REWARD = "RECEIVE_REWARD";
 export const RECEIVE_REWARD_ERRORS = "RECEIVE_REWARD_ERRORS";
 
 export const receiveReward = reward => {
-  debugger;
   return {
     type: RECEIVE_REWARD,
     reward,
@@ -27,7 +26,6 @@ export const receiveRewardErrors = errors => {
 };
 
 export const createReward = reward => dispatch => {
-  debugger;
   return APIUtil.createReward(reward).then(
     reward => dispatch(receiveReward(reward)),
     err => dispatch(receiveRewardErrors(err.statusText))
@@ -35,6 +33,7 @@ export const createReward = reward => dispatch => {
 };
 
 export const fetchRewards = () => dispatch => {
+  debugger;
   return APIUtil.fetchRewards().then(
     rewards => {
       dispatch(receiveAllRewards(rewards));

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :projects do
       resources :rewards, only: [:create, :update, :destroy] 
     end
+    resources :rewards, only: [:index, :show]
   end
 end

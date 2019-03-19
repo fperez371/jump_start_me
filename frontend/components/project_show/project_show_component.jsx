@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchProject } from "../../actions/project_actions";
+import { fetchRewards } from "../../actions/reward_actions";
 
 const msp = (state, ownProps) => {
   let project =
@@ -18,6 +19,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     fetchProject: id => dispatch(fetchProject(id)),
+    fetchRewards: () => dispatch(fetchRewards()),
   };
 };
 
@@ -32,6 +34,7 @@ class ProjectShowComponent extends React.Component {
     this.props
       .fetchProject(this.props.match.params.projectId)
       .then(() => this.setState({ isLoading: false }));
+    this.props.fetchRewards();
   }
 
   handleClick() {
@@ -39,8 +42,18 @@ class ProjectShowComponent extends React.Component {
   }
 
   render() {
+    debugger;
     if (this.state.isLoading) {
       return <div>Loading...</div>;
+    }
+    let rewardDivs;
+    let rewards = this.state.entities.rewards;
+    if (this.state.entities.rewards) {
+      rewardDivs = rewards.map(reward => (
+        <div className="rewardDiv">{reward.name}</div>
+      ));
+    } else {
+      rewardDivs = null;
     }
 
     return (
@@ -95,7 +108,7 @@ class ProjectShowComponent extends React.Component {
         <div className="proj-show-about-left">
           <div className="proj-show-body">{this.props.project.body}</div>
         </div>
-        <div className="proj-show-rewards-right" />
+        <div className="proj-show-rewards-right">{rewardDivs}</div>
       </div>
     );
   }

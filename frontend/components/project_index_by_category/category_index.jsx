@@ -4,7 +4,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const msp = state => {
-  // debugger
   return {
     projects: Object.values(state.entities.projects),
   };
