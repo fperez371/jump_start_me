@@ -1,8 +1,8 @@
-$duration: .2s;
+$duration: 0.2s;
 $distance: 8px;
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-.Categories-header{
+.Categories-header {
   display: block;
   padding-left: 8rem;
   padding-right: 8rem;
@@ -10,23 +10,23 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   font-weight: 400;
   line-height: 21px;
   box-sizing: border-box;
-  border-bottom: 0.05rem solid #DCDEDD;
+  border-bottom: 0.05rem solid #dcdedd;
   padding-bottom: 20px;
   padding-top: 20px;
 }
 
-.flex-nav{
+.flex-nav {
   font-family: helvetica;
 }
 
-.cat-list-items{
+.cat-list-items {
   display: flex;
   justify-content: space-between;
   width: 100%;
   box-sizing: inherit;
 }
 
-.cat-list-item{
+.cat-list-item {
   font-weight: 360;
   display: inline-block;
   position: relative;
@@ -35,54 +35,54 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   color: #656969;
   &:before,
   &:after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: 0; right: 0;
-      height: 2px;
-      background-color: #034752;
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #034752;
   }
   &:before {
-      opacity: 0;
-      transform: translateY(- $distance);
-      transition: transform 0s $easeOutBack, opacity 0s;
+    opacity: 0;
+    transform: translateY(-$distance);
+    transition: transform 0s $easeOutBack, opacity 0s;
   }
   &:after {
-      opacity: 0;
-      transform: translateY($distance/2);
-      transition: transform $duration $easeOutBack, opacity $duration;
+    opacity: 0;
+    transform: translateY($distance/2);
+    transition: transform $duration $easeOutBack, opacity $duration;
   }
   &:hover,
   &:focus {
-      &:before,
-      &:after {
-          opacity: 1;
-          transform: translateY(7px);
-      }
-      &:before {
-          transition: transform $duration $easeOutBack, opacity $duration;
-      }
-      &:after {
-          transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
-      }
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY(7px);
+    }
+    &:before {
+      transition: transform $duration $easeOutBack, opacity $duration;
+    }
+    &:after {
+      transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+    }
   }
 }
 
-.cat-list-item > a{
-  text-decoration: none;
-  color: #656969;
-  
-}
-
-.cat-list-item > a:visited{
+.cat-list-item > a {
   text-decoration: none;
   color: #656969;
 }
 
-.cat-list-item > a:hover{
+.cat-list-item > a:visited {
+  text-decoration: none;
+  color: #656969;
+}
+
+.cat-list-item > a:hover {
   color: #034752;
 }
 
-.pad{
+.pad {
   width: 10rem;
 }

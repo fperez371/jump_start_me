@@ -30,6 +30,11 @@ class Project < ApplicationRecord
     foreign_key: :proj_id,
     primary_key: :id
 
+  has_many :pledges,
+    class_name: :Pledge,
+    foreign_key: :proj_id,
+    primary_key: :id
+
   has_one_attached :photo
 
 end 

@@ -24,6 +24,11 @@ class User < ApplicationRecord
     foreign_key: :creator_id,
     primary_key: :id
 
+  has_many :pledges,
+    class_name: :Pledge,
+    foreign_key: :backer_id,
+    primary_key: :id
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)
