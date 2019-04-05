@@ -28,17 +28,37 @@ class ProjectShowComponent extends React.Component {
     super(props);
     this.state = { isLoading: true };
     this.handleClick = this.handleClick.bind(this);
+    this.calculateTimeLeft = this.calculateTimeLeft.bind(this);
   }
 
   componentDidMount() {
     this.props
       .fetchProject(this.props.match.params.projectId)
+      .then(() => this.props.fetchRewards())
       .then(() => this.setState({ isLoading: false }));
-    this.props.fetchRewards();
   }
 
   handleClick() {
     this.props.history.push("/");
+  }
+
+  calculateTimeLeft(endDate) {
+    const daysLeft = (Date.parse(endDate) - Date.now()) / 1000 / 60 / 60 / 24;
+
+    if (daysLeft > 1) {
+      return (
+        <>
+          <div>
+            <span id="pledges-total">{Math.round(daysLeft)}</span>
+          </div>
+          <span className="goal-amt-text">days to go</span>
+        </>
+      );
+    } else if (daysLeft > 0) {
+      return <h5>Ends Today!</h5>;
+    } else {
+      return <h5>Ended</h5>;
+    }
   }
 
   render() {
@@ -46,15 +66,19 @@ class ProjectShowComponent extends React.Component {
     if (this.state.isLoading) {
       return <div>Loading...</div>;
     }
-    let rewardDivs;
-    let rewards = this.state.entities.rewards;
-    if (this.state.entities.rewards) {
-      rewardDivs = rewards.map(reward => (
-        <div className="rewardDiv">{reward.name}</div>
-      ));
-    } else {
-      rewardDivs = null;
-    }
+    let rewardDivs = null;
+    // let rewards = this.state.entities.rewards;
+    // if (this.state.entities.rewards) {
+    //   rewardDivs = rewards.map(reward => (
+    //     <div className="rewardDiv">{reward.name}</div>
+    //   ));
+    // } else {
+    //   rewardDivs = null;
+    // }
+
+    const percentage = {
+      width: `${this.props.project.percentToGoal}%`,
+    };
 
     return (
       <div className="proj-show-grid">
@@ -86,16 +110,23 @@ class ProjectShowComponent extends React.Component {
             </div>
           </div>
           <div className="proj-show-right-deadline">
-            <div className="funding-border" />
+            <div className="funding-border" style={percentage} />
             <div>
-              <span className="funded-amt-text">$150,000</span>
+              <span className="funded-amt-text">
+                ${this.props.project.totalRaised}
+              </span>
               <div>
                 <span className="goal-amt-text">
                   pledged of ${this.props.project.goal_amt} goal
                 </span>
               </div>
             </div>
-            <div className="backers-amt">522 backers</div>
+            <div className="backers-amt">
+              <span id="pledges-total">{this.props.project.totalPledges}</span>
+              <br />
+              <span className="goal-amt-text">Backers</span>
+            </div>
+            <div>{this.calculateTimeLeft(this.props.project.deadline)}</div>
             <button className="back-project-button" onClick={this.handleClick}>
               Back this Project
             </button>

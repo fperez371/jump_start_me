@@ -1,7 +1,4 @@
 json.extract! project, :id, :body, :name, :category, :location, :goal_amt, :deadline, :created_at, :creator_id
-json.percentToGoal percent_to_goal(project)
-json.totalRaised total_raised(project)
-json.totalPledges total_pledges(project)
 
 
 if project.photo.attached?
@@ -23,6 +20,10 @@ def percent_to_goal(project)
     0
   end
 end
+
+json.percentToGoal percent_to_goal(project)
+json.totalRaised total_raised(project)
+json.totalPledges total_pledges(project)
 
 json.creator do
   json.id project.creator.id

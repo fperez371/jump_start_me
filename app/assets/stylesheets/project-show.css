@@ -1,42 +1,40 @@
-.proj-show-grid{
+.proj-show-grid {
   display: grid;
   width: 100%;
   height: 100%;
   grid-template-columns: 20%, 1fr, 1fr;
-  grid-template-rows: 1fr, 1fr, 1fr, 1fr; 
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr;
   padding-left: 60px;
   padding-right: 60px;
 }
 
-.top-row-description{
+.top-row-description {
   display: flex;
   margin-top: 50px;
   margin-bottom: 50px;
-
 }
 
-.flex-nowrap{
+.flex-nowrap {
   flex-flow: nowrap;
 }
 
-.project-name-show{
+.project-name-show {
   align-items: flex-start;
   flex-direction: column;
   margin: 5px;
 }
 
-.project-creator-show{
+.project-creator-show {
   flex-direction: column;
   margin: 5px;
 }
 
-.proj-show-picture-deadline{
+.proj-show-picture-deadline {
   display: flex;
   flex-direction: row;
-
 }
 
-.proj-show-left-picture > img{
+.proj-show-left-picture > img {
   max-width: 100%;
   height: auto;
   position: relative;
@@ -45,23 +43,23 @@
   object-fit: contain;
 }
 
-.proj-show-left-picture{
-  display: block; 
+.proj-show-left-picture {
+  display: block;
   flex-basis: 60%;
 }
 
-.show-cat-location{
+.show-cat-location {
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
 }
-.fa-compass{
+.fa-compass {
   padding: 10px;
 }
-.fa-map-marker-alt{
+.fa-map-marker-alt {
   padding: 10px;
 }
-.proj-show-title{
+.proj-show-title {
   font-size: 38px;
   margin-block-end: 18px;
   margin-bottom: 18px;
@@ -69,7 +67,7 @@
   color: #282828;
 }
 
-.proj-show-right-deadline{
+.proj-show-right-deadline {
   padding-right: 18px;
   padding-left: 18px;
   float: left;
@@ -84,27 +82,31 @@
   margin-bottom: 3.2rem;
 }
 
-.proj-show-body{
+.proj-show-body {
   width: 50%;
   float: left;
   margin: 10px;
 }
 
-.funding-border{
-  width: 100%;
+.funding-border {
   background-color: #037362;
   height: 3px;
 }
-.funded-amt-text{
+.funded-amt-text {
   color: #037362;
   font-size: 24px;
   line-height: 30px;
   margin-bottom: 12px;
 }
 
-.back-project-button{
+.goal-amt-text {
+  color: #656969;
+  font-weight: 400;
+}
+
+.back-project-button {
   background-color: #037362;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   width: 100%;
   font-size: 16px;
   text-align: center;
@@ -114,3 +116,8 @@
   cursor: pointer;
 }
 
+#pledges-total {
+  font-weight: 500;
+  line-height: 1.8rem;
+  font-size: 1.5rem;
+}
