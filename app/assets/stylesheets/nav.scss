@@ -147,17 +147,17 @@ a {
 .modal-child {
   position: absolute;
   top: 10%;
-  left: 60%;
+  left: 70%;
   // top: 50%;
   // left: 50%;
   // transform: translate(-50%, -50%);
 }
 
 .user-modal {
-  border: 0.1rem solid #dcdedd;
+  border: 0.15rem solid #dcdedd;
   background-color: #ffffff;
-  height: 20rem;
-  width: 20rem;
+  height: 25rem;
+  width: 25rem;
   display: flex;
   flex-direction: column;
 }
@@ -167,7 +167,7 @@ a {
 }
 .username-header {
   font-size: 1.4rem;
-  line-height: 2.4rem;
+  line-height: 2.6rem;
 }
 .user-modal-projects {
   color: #282828;
@@ -193,6 +193,11 @@ a {
 
 .logout {
   border: none;
+  font-size: 1rem;
+}
+
+.logout:hover {
+  cursor: pointer;
 }
 
 .logout-button-div {

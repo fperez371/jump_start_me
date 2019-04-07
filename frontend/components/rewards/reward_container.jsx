@@ -1,7 +1,7 @@
 import React from "react";
-import Reward from "./reward";
+import Pledge from "./pledge";
 
-class RewardContainer extends React.Component {
+class PledgeContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,10 +54,10 @@ class RewardContainer extends React.Component {
         {this.defaultSupportField()}
         {this.props.rewards.map((reward, idx) => {
           return (
-            <Reward
+            <Pledge
               key={idx}
               reward={reward}
-              creatorId={this.props.a}
+              creatorId={this.props.creator.id}
               userId={this.props.userId}
               projectId={this.props.projectId}
               createPledge={this.props.createPledge}
@@ -69,4 +69,4 @@ class RewardContainer extends React.Component {
   }
 }
 
-export default RewardContainer;
+export default PledgeContainer;

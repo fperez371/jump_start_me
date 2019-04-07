@@ -1,11 +1,12 @@
 .proj-show-grid {
   display: grid;
-  /* width: 100%;
-  height: 100%; */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1366px;
   grid-template-columns: 20%, 1fr, 1fr;
   grid-template-rows: 1fr, 1fr, 1fr, 1fr;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .top-row-description {
@@ -45,7 +46,8 @@
 
 .proj-show-left-picture {
   display: block;
-  flex-basis: 60%;
+  flex-basis: 72%;
+  padding-right: 18px;
 }
 
 .show-cat-location {
@@ -72,7 +74,7 @@
   padding-left: 18px;
   float: left;
   position: relative;
-  flex-basis: 40%;
+  flex-basis: 28%;
   width: 100%;
   height: auto;
   flex-direction: row;

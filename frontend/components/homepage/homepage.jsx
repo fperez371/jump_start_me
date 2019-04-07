@@ -50,7 +50,7 @@ class HomePage extends React.Component {
               <div className="rec-li-div-description">
                 <Link className="description-link" to={projLink2}>
                   <h2 className="rec-title">{projects[1].name}</h2>
-                  {projects[1].body.slice(0, 40)}
+                  {projects[1].body}
                 </Link>
               </div>
             </li>
@@ -63,7 +63,7 @@ class HomePage extends React.Component {
               <div className="rec-li-div-description">
                 <Link className="description-link" to={projLink3}>
                   <h2 className="rec-title">{projects[2].name}</h2>
-                  {projects[2].body.slice(0, 100)}...
+                  {projects[2].body}
                 </Link>
               </div>
             </li>

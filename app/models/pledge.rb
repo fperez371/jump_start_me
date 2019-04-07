@@ -8,10 +8,11 @@
 #  backer_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  reward_id  :integer
 #
 
 class Pledge < ApplicationRecord
-  validates :amount, :proj_id, :backer_id, presence: true
+  validates :amount, :proj_id, :backer_id, :reward_id, presence: true
 
   belongs_to :backer,
     class_name: :User,

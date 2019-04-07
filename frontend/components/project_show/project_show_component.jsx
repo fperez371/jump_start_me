@@ -4,16 +4,27 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchProject } from "../../actions/project_actions";
 import { fetchRewards } from "../../actions/reward_actions";
-import { RewardContainer } from "../rewards/reward_container";
+import PledgeContainer from "../rewards/reward_container";
 
 const msp = (state, ownProps) => {
   let project =
     state.entities.projects[ownProps.match.params.projectId] || null;
   let creator = project ? state.entities.users[project.creator_id] : null;
+  let rewards;
+
+  if (Object.keys(state.entities.rewards) > 0) {
+    rewards = Object.values(state.entities.rewards).filter(reward => {
+      return reward.project_id === parseInt(ownProps.match.params.project_id);
+    });
+  } else {
+    rewards = [];
+  }
+
   return {
     currentUserId: state.session.id,
     creator: creator,
     project: project,
+    rewards: rewards,
   };
 };
 
@@ -67,7 +78,6 @@ class ProjectShowComponent extends React.Component {
     if (this.state.isLoading) {
       return <div>Loading...</div>;
     }
-    let rewardDivs = null;
     // let rewards = this.state.entities.rewards;
     // if (this.state.entities.rewards) {
     //   rewardDivs = rewards.map(reward => (
@@ -141,7 +151,7 @@ class ProjectShowComponent extends React.Component {
           <h2 className="about-proj">About</h2>
           <div className="proj-show-body">{this.props.project.body}</div>
         </div>
-        <div className="proj-show-rewards-right">{rewardDivs}</div>
+        <div className="proj-show-rewards-right" />
       </div>
     );
   }
