@@ -10,7 +10,7 @@ def total_pledges(project)
 end
 
 def total_raised(project)
-  project.pledges.inject(0) {|total, pledge| total += pledge.value}
+  project.pledges.inject(0) {|total, pledge| total += pledge.amount}
 end
 
 def percent_to_goal(project)

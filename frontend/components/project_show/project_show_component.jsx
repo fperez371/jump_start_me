@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchProject } from "../../actions/project_actions";
 import { fetchRewards } from "../../actions/reward_actions";
+import { RewardContainer } from "../rewards/reward_container";
 
 const msp = (state, ownProps) => {
   let project =
@@ -137,6 +138,7 @@ class ProjectShowComponent extends React.Component {
           </div>
         </div>
         <div className="proj-show-about-left">
+          <h2 className="about-proj">About</h2>
           <div className="proj-show-body">{this.props.project.body}</div>
         </div>
         <div className="proj-show-rewards-right">{rewardDivs}</div>

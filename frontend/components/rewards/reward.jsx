@@ -13,9 +13,9 @@ class Reward extends React.Component {
     this.setState({ clicked: true });
   }
 
-  submitBacking() {
+  submitPledge() {
     this.props.createPledge({
-      user_id: this.props.userId,
+      user_id: this.props.backer_id,
       project_id: this.props.projectId,
       amount: this.state.amount,
       reward_id: this.props.reward.id,
@@ -51,7 +51,7 @@ class Reward extends React.Component {
                 ? "deactivated pale"
                 : ""
             }
-            onClick={this.submitBacking.bind(this)}
+            onClick={this.submitPledge.bind(this)}
           >
             Continue
           </button>
