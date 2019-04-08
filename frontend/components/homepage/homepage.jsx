@@ -16,7 +16,9 @@ class HomePage extends React.Component {
       return <div>Loading</div>;
     }
 
-    let projects = this.props.projects;
+    let projects = this.props.projects.sort(function() {
+      return 0.5 - Math.random();
+    });
     const projLink = `/projects/${projects[0].id}`;
     const projLink2 = `/projects/${projects[1].id}`;
     const projLink3 = `/projects/${projects[2].id}`;
@@ -31,7 +33,10 @@ class HomePage extends React.Component {
               <Link className="proj-link" to={projLink} />
             </div>
             <img className="featured-img" src={projects[0].photo} alt="" />
-            <p className="proj-body">{projects[0].body}</p>
+            <div
+              className="funding-border-hp"
+              style={{ width: `${projects[0].percentToGoal}` }}
+            />
             <h3 className="proj-name">{projects[0].name}</h3>
             <Link className="creator-name" to={projLink}>
               By {projects[0].creator.name}
@@ -46,12 +51,15 @@ class HomePage extends React.Component {
                 <Link className="rec-li-div-img" to={projLink2}>
                   <img src={projects[1].photo} alt="" />
                 </Link>
-              </div>
-              <div className="rec-li-div-description">
-                <Link className="description-link" to={projLink2}>
-                  <h2 className="rec-title">{projects[1].name}</h2>
-                  {projects[1].body}
-                </Link>
+                <div className="rec-li-div-description">
+                  <Link className="description-link" to={projLink2}>
+                    <h2 className="rec-title">{projects[1].name}</h2>
+                    <span className="percent-funded">
+                      {projects[1].percentToGoal}% funded
+                    </span>
+                    <p className="dark-grey">by {projects[1].creator.name}</p>
+                  </Link>
+                </div>
               </div>
             </li>
             <li className="rec-li">
@@ -59,12 +67,15 @@ class HomePage extends React.Component {
                 <Link className="rec-li-div-img" to={projLink3}>
                   <img src={projects[2].photo} alt="" />
                 </Link>
-              </div>
-              <div className="rec-li-div-description">
-                <Link className="description-link" to={projLink3}>
-                  <h2 className="rec-title">{projects[2].name}</h2>
-                  {projects[2].body}
-                </Link>
+                <div className="rec-li-div-description">
+                  <Link className="description-link" to={projLink3}>
+                    <h2 className="rec-title">{projects[2].name}</h2>
+                    <span className="percent-funded">
+                      {projects[2].percentToGoal}% funded
+                    </span>
+                    <p className="dark-grey">by {projects[2].creator.name}</p>
+                  </Link>
+                </div>
               </div>
             </li>
             <li className="rec-li">
@@ -72,13 +83,16 @@ class HomePage extends React.Component {
                 <Link className="rec-li-div-img" to={projLink4}>
                   <img src={projects[3].photo} alt="" />
                 </Link>
-              </div>
-              <div className="rec-li-div-description">
-                <div />
-                <Link className="description-link" to={projLink4}>
-                  <h2 className="rec-title">{projects[3].name}</h2>
-                  {projects[3].body}
-                </Link>
+                <div className="rec-li-div-description">
+                  <div />
+                  <Link className="description-link" to={projLink4}>
+                    <h2 className="rec-title">{projects[3].name}</h2>
+                    <span className="percent-funded">
+                      {projects[3].percentToGoal}% funded
+                    </span>
+                    <p className="dark-grey">by {projects[3].creator.name}</p>
+                  </Link>
+                </div>
               </div>
             </li>
           </ul>

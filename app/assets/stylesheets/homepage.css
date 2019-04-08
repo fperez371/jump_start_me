@@ -1,17 +1,20 @@
 /* HomePage and left side featured */
 
-.grid-container{
+.grid-container {
   padding-left: 60px;
   padding-right: 60px;
+  max-width: 1366px;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
   display: grid;
-  line-height:21px;
+  line-height: 21px;
   grid-template-columns: 55% 45%;
   padding-bottom: 20px;
   /* grid-template-rows: 1fr 1fr; */
-};
+}
 
-.flex-nowrap{
+.flex-nowrap {
   display: flex;
   flex-wrap: nowrap;
   padding-bottom: 60px;
@@ -20,7 +23,7 @@
   flex-direction: column;
 }
 
-.left-featured{
+.left-featured {
   display: block;
   border-bottom-color: rgb(232, 232, 232);
   border-bottom-style: none;
@@ -29,13 +32,13 @@
   padding-right: 60px;
   margin-top: 24px;
   line-height: 21px;
-  border-color: #E8E8E8;
+  border-color: #e8e8e8;
   border-right-style: solid;
   border-right-color: rgb(232, 232, 232);
   border-right-width: 1px;
 }
 
-.featured-img{
+.featured-img {
   width: auto !important;
   max-width: 100%;
   position: relative;
@@ -43,10 +46,11 @@
   margin: 0;
 }
 
-.featured-project{
+.featured-project {
   font-weight: 600;
   box-sizing: border-box;
-  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   margin-bottom: 18px;
   color: #656969;
   display: block;
@@ -55,20 +59,32 @@
   text-transform: uppercase;
 }
 
-.hover-target{
+.funding-border-hp {
+  background-color: #037362;
+  height: 1rem;
+}
+
+.hover-target {
   display: block;
-};
+}
 
-
-
-.proj-link > a:hover{
+.proj-link > a:hover {
   color: #037362;
   fill: #037362;
   text-decoration: underline;
   position: relative;
 }
 
-.proj-body{
+.percent-funded {
+  color: #037362;
+  padding-top: 0.6rem !important;
+}
+
+.dark-grey {
+  color: #656969;
+}
+
+.proj-body {
   display: block;
   box-sizing: border-box;
   font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
@@ -79,12 +95,11 @@
   line-height: 24px;
 }
 
-
-.proj-name{
+.proj-name {
   display: block;
   box-sizing: border-box;
   color: #656969;
-  border-color: #DCDEDD;
+  border-color: #dcdedd;
   font-size: 28px;
   line-height: 36px;
   font-weight: 400;
@@ -92,24 +107,22 @@
   padding-top: 18px;
 }
 
-.creator-name{
+.creator-name {
   color: #656969;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
 }
 
-.creator-name:hover{
+.creator-name:hover {
   color: #037362;
   fill: #037362;
   text-decoration: underline;
-  position: relative;
 }
-
 
 /* right side */
 
-.right-recommended{
+.right-recommended {
   padding-left: 3rem;
   padding-top: 30px;
   margin-top: 24px;
@@ -118,13 +131,14 @@
   /* box-sizing: inherit; */
 }
 
-.recommended{
+.recommended {
   margin-bottom: 1.8rem;
   font-weight: 700;
   color: #656969;
   font-size: 0.8rem;
   line-height: 0.8rem;
-  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -132,7 +146,7 @@
   margin-inline-end: 0px;
 }
 
-.rec-lis{
+.rec-lis {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -140,30 +154,30 @@
   margin-inline-end: 0px;
   padding-inline-start: 40px;
   margin-bottom: 1.8rem;
-  margin-top: 1.0rem;
+  margin-top: 1rem;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  height: 100%
+  height: 100%;
 }
 
-.rec-li{
+.rec-li {
   font-size: 14px;
-  border-color: #E8E8E8;
-  border-bottom: 0.1rem solid #DCDEDD;
+  border-color: #e8e8e8;
+  border-bottom: 0.1rem solid #dcdedd;
   list-style-type: none;
   padding-bottom: 12px;
   text-align: left;
 }
 
-.rec-li-div{
+.rec-li-div {
   -webkit-box-align: center;
   align-items: center;
   /* width: 100%; */
   display: flex;
 }
 
-.rec-li-div-img{
+.rec-li-div-img {
   flex-basis: 40%;
   padding-right: 24px;
   vertical-align: baseline;
@@ -171,12 +185,12 @@
   padding-top: 10px;
 }
 
-.rec-li-div-img > *{
+.rec-li-div-img > * {
   max-width: 100%;
   max-height: 100%;
 }
 
-.rec-li-div-description{
+.rec-li-div-description {
   -webkit-box-pack: justify;
   flex-basis: 60%;
   flex-direction: column;
@@ -184,14 +198,14 @@
   text-align: left;
 }
 
-.rec-title:hover{
+.rec-title:hover {
   color: #037362;
   fill: #037362;
   text-decoration: underline;
-  position: relative;
+  /* position: relative; */
 }
 
-.description-link{
+.description-link {
   color: #282828;
   fill: #282828;
   font-size: 14px;
@@ -200,22 +214,20 @@
   text-decoration: none;
 }
 
-
-.cat-header{
+.cat-header {
   margin: 30px 60px 0px 60px;
   font-weight: 400;
   margin-left: 60px;
   margin-right: 60px;
 }
 
-.cat-header > h3{
+.cat-header > h3 {
   font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
-  font-size: 2.0rem;
+  font-size: 2rem;
   line-height: 2.8rem;
   margin: 20px 0px 20px 0px;
 }
 
-.desc-text{
+.desc-text {
   color: #656969;
 }
-
