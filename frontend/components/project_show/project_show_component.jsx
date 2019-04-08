@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchProject } from "../../actions/project_actions";
 import { fetchRewards } from "../../actions/reward_actions";
-import PledgeContainer from "../rewards/reward_container";
+import { createPledge } from "../../actions/pledge_actions";
+import RewardContainer from "../rewards/reward_container";
 
 const msp = (state, ownProps) => {
   let project =
@@ -32,6 +33,7 @@ const mdp = dispatch => {
   return {
     fetchProject: id => dispatch(fetchProject(id)),
     fetchRewards: () => dispatch(fetchRewards()),
+    createPledge: pledge => dispatch(createPledge(pledge)),
   };
 };
 
@@ -147,11 +149,21 @@ class ProjectShowComponent extends React.Component {
             </span>
           </div>
         </div>
-        <div className="proj-show-about-left">
-          <h2 className="about-proj">About</h2>
-          <div className="proj-show-body">{this.props.project.body}</div>
+        <div className="proj-show-about-rewards">
+          <div className="about-proj-div">
+            <h2 className="about-proj">About </h2>
+            <div className="proj-show-body">{this.props.project.body}</div>
+          </div>
+          <div className="proj-show-rewards-right">
+            <RewardContainer
+              userId={this.props.currentUserId}
+              rewards={this.props.rewards}
+              createPledge={this.props.createPledge}
+              proj_id={this.props.project.id}
+              backer_id={this.props.project.creator.id}
+            />
+          </div>
         </div>
-        <div className="proj-show-rewards-right" />
       </div>
     );
   }

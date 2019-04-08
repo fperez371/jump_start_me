@@ -1,12 +1,12 @@
 import React from "react";
 import Pledge from "./pledge";
 
-class PledgeContainer extends React.Component {
+class RewardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       clicked: false,
-      value: "",
+      amount: "",
     };
   }
 
@@ -14,31 +14,42 @@ class PledgeContainer extends React.Component {
     this.setState({ clicked: true });
   }
 
+  submitPledge() {
+    this.props.createPledge({
+      backer_id: this.props.backer_id,
+      proj_id: this.props.proj_id,
+      amount: this.state.amount,
+    });
+    this.setState({ amount: "", clicked: false });
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+
   defaultSupportField() {
     return (
-      <div>
-        <div id="reward-pane">
+      <div id="reward-pane">
+        <div className="pledge-amount">
           <h1>Make a pledge without a reward</h1>
-          <input
-            type="number"
-            onFocus={this.handleClick.bind(this)}
-            value={this.state.value}
-            onChange={e => {
-              this.setState({ value: e.currentTarget.value });
-            }}
-          />
-          <div className={this.state.clicked ? "" : "hidden"}>
-            <button
-              className={
-                this.props.userId === this.props.adminId || !this.props.userId
-                  ? "deactivated pale"
-                  : ""
-              }
-              onClick={this.submitBacking.bind(this)}
-            >
-              Continue
-            </button>
-          </div>
+        </div>
+        <input
+          className="pledge-input"
+          type="number"
+          onFocus={this.handleClick.bind(this)}
+          value={this.state.amount}
+          onChange={e => {
+            this.setState({ amount: e.currentTarget.value });
+          }}
+        />
+        <div>
+          <button
+            className="pledge-button"
+            onClick={this.submitPledge.bind(this)}
+          >
+            Continue
+          </button>
         </div>
       </div>
     );
@@ -57,9 +68,8 @@ class PledgeContainer extends React.Component {
             <Pledge
               key={idx}
               reward={reward}
-              creatorId={this.props.creator.id}
-              userId={this.props.userId}
-              projectId={this.props.projectId}
+              backer_id={this.props.backer_id}
+              project_id={this.props.projectId}
               createPledge={this.props.createPledge}
             />
           );
@@ -69,4 +79,4 @@ class PledgeContainer extends React.Component {
   }
 }
 
-export default PledgeContainer;
+export default RewardContainer;

@@ -124,7 +124,55 @@
   font-size: 1.5rem;
 }
 
+.proj-show-about-rewards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
 .about-proj {
   font-size: 1.2rem;
   margin: 1rem;
+}
+
+#reward-pane {
+  padding: 1rem;
+  border: 1px solid #9b9e9e;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #656969;
+  display: block;
+  position: relative;
+}
+
+#reward-pane > * {
+  margin: 1rem;
+}
+
+.pledge-amount {
+  margin: 0 20px;
+  padding: 20px 0;
+  color: #282828;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+.pledge-input {
+  border-color: #dcdedd;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.pledge-button {
+  width: 100%;
+  background-color: #009e74;
+  color: #ffffff !important;
+  height: 2.2rem;
+  padding: 0 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out !important;
+  text-align: center;
 }

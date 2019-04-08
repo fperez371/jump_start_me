@@ -12,7 +12,7 @@
 #
 
 class Pledge < ApplicationRecord
-  validates :amount, :proj_id, :backer_id, :reward_id, presence: true
+  validates :amount, :proj_id, :backer_id, presence: true
 
   belongs_to :backer,
     class_name: :User,
