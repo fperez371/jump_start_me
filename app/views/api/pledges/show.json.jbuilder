@@ -1,1 +1,1 @@
-json.extract! pledge, :id, :amount, :proj_id, :backer_id, :reward_id
+json.extract! @pledge, :id, :amount, :proj_id, :backer_id, :reward_id

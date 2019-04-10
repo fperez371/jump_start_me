@@ -183,6 +183,37 @@ a {
   text-decoration: none;
 }
 
+.transparent-back {
+  background-color: transparent !important;
+}
+
+.ddm-project-list {
+  width: 340px;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.ddm-project-list li a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  float: none;
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+}
+
+.li-prj-img {
+  width: 50px;
+  height: 30px;
+  background: grey;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+}
 .projects-div {
   padding: auto;
 }

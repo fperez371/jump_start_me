@@ -9,11 +9,13 @@ class GreetingModal extends React.Component {
 
   render() {
     const current = this.props.currentUser;
-    const { closeModal } = this.props;
+    const { closeModal, projects } = this.props;
+    debugger;
     let projsDiv;
-    if (current.projects) {
-      if (current.projects.length > 3) {
-        projsDiv = current.projects.slice(0, 3).map((project, idx) => {
+    if (projects) {
+      if (projects.length > 3) {
+        projsDiv = projects.slice(0, 3).map((project, idx) => {
+          debugger;
           return (
             <li className="no-dec-li" onClick={() => closeModal()}>
               <Link
@@ -21,13 +23,17 @@ class GreetingModal extends React.Component {
                 key={idx}
                 to={`/projects/${project.id}`}
               >
+                <div className="li-prj-img">
+                  {" "}
+                  <img className="modal-img" src={project.photo} alt="" />{" "}
+                </div>
                 {project.name}
               </Link>
             </li>
           );
         });
       } else {
-        projsDiv = current.projects.map((project, idx) => {
+        projsDiv = projects.map((project, idx) => {
           return (
             <li className="no-dec-li" onClick={() => closeModal()}>
               <Link
@@ -46,13 +52,12 @@ class GreetingModal extends React.Component {
     }
     return (
       <div className="user-modal">
-        <header className="username-header">
-          {" "}
-          Welcome {this.props.currentUser.name}!
-        </header>
+        <header className="username-header"> Welcome {current.name}!</header>
         <div className="projects-div">
-          <h3 className="my-projects">My Projects</h3>
-          {projsDiv}
+          <ul className="ddm-project-list">
+            <h3 className="my-projects">My Projects</h3>
+            {projsDiv}
+          </ul>
         </div>
         <div className="logout-button-div">
           <button className="logout" onClick={this.props.logout}>

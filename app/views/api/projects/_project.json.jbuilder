@@ -1,4 +1,4 @@
-json.extract! project, :id, :body, :name, :category, :location, :goal_amt, :deadline, :created_at, :creator_id
+json.extract! project, :id, :body, :name, :category, :location, :goal_amt, :deadline, :created_at, :creator_id, :photo
 
 
 if project.photo.attached?

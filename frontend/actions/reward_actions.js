@@ -33,7 +33,6 @@ export const createReward = reward => dispatch => {
 };
 
 export const fetchRewards = () => dispatch => {
-  debugger;
   return APIUtil.fetchRewards().then(
     rewards => {
       dispatch(receiveAllRewards(rewards));

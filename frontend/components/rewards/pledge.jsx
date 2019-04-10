@@ -1,6 +1,6 @@
 import React from "react";
 
-class Reward extends React.Component {
+class Pledge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,8 +15,8 @@ class Reward extends React.Component {
 
   submitPledge() {
     this.props.createPledge({
-      user_id: this.props.backer_id,
-      project_id: this.props.projectId,
+      backer_id: this.props.backer_id,
+      proj_id: this.props.proj_id,
       amount: this.state.amount,
       reward_id: this.props.reward.id,
     });
@@ -35,29 +35,31 @@ class Reward extends React.Component {
         <h3>{this.props.reward.name}</h3>
         <h6>{this.props.reward.description}</h6>
         <h4>ESTIMATED DELIVERY</h4>
-        <h5>{this.props.reward.delivery_date}</h5>
+        <h5>{this.props.reward.est_delivery}</h5>
         <div className={this.state.clicked ? "" : "hidden"}>
           <h2>Pledge Amount</h2>
-          <input
-            type="number"
-            onChange={e => {
-              this.setState({ amount: e.currentTarget.value });
-            }}
-            min={this.props.reward.amount}
-          />
+          <div className="input-div">
+            <div className="currency-border">
+              <span className="dolla">$</span>
+            </div>
+            <input
+              className="pledge-input"
+              type="number"
+              onChange={e => {
+                this.setState({ amount: e.currentTarget.value });
+              }}
+              min={this.props.reward.amount}
+            />
+          </div>
           <button
-            className={
-              this.props.userId === this.props.creator_id || !this.props.userId
-                ? "deactivated pale"
-                : ""
-            }
+            className={!this.props.userId ? "pledge-button" : "deactivated"}
             onClick={this.submitPledge.bind(this)}
           >
             Continue
           </button>
         </div>
         <div
-          id="foregorund"
+          id="foreground"
           className={this.state.clicked ? "hidden" : ""}
           onClick={this.handleClick.bind(this)}
         >
@@ -68,4 +70,4 @@ class Reward extends React.Component {
   }
 }
 
-export default Reward;
+export default Pledge;

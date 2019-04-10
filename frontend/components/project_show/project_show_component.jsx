@@ -12,10 +12,9 @@ const msp = (state, ownProps) => {
     state.entities.projects[ownProps.match.params.projectId] || null;
   let creator = project ? state.entities.users[project.creator_id] : null;
   let rewards;
-
-  if (Object.keys(state.entities.rewards) > 0) {
-    rewards = Object.values(state.entities.rewards).filter(reward => {
-      return reward.project_id === parseInt(ownProps.match.params.project_id);
+  if (project && project.rewards) {
+    rewards = Object.values(project.rewards).filter(reward => {
+      return reward.proj_id === parseInt(ownProps.match.params.projectId);
     });
   } else {
     rewards = [];
@@ -40,20 +39,20 @@ const mdp = dispatch => {
 class ProjectShowComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
-    this.handleClick = this.handleClick.bind(this);
     this.calculateTimeLeft = this.calculateTimeLeft.bind(this);
   }
 
   componentDidMount() {
-    this.props
-      .fetchProject(this.props.match.params.projectId)
-      .then(() => this.props.fetchRewards())
-      .then(() => this.setState({ isLoading: false }));
+    this.props.fetchProject(this.props.match.params.projectId);
   }
 
-  handleClick() {
-    this.props.history.push("/");
+  componentWillReceiveProps(nextProps) {
+    if (
+      this.props.project &&
+      this.props.project.id !== parseInt(nextProps.match.params.projectId)
+    ) {
+      this.props.fetchProject(nextProps.match.params.projectId);
+    }
   }
 
   calculateTimeLeft(endDate) {
@@ -76,23 +75,18 @@ class ProjectShowComponent extends React.Component {
   }
 
   render() {
-    debugger;
-    if (this.state.isLoading) {
+    if (!this.props.project) {
       return <div>Loading...</div>;
     }
-    // let rewards = this.state.entities.rewards;
-    // if (this.state.entities.rewards) {
-    //   rewardDivs = rewards.map(reward => (
-    //     <div className="rewardDiv">{reward.name}</div>
-    //   ));
-    // } else {
-    //   rewardDivs = null;
-    // }
 
-    const percentage = {
-      width: `${this.props.project.percentToGoal}%`,
-    };
-
+    let percentage;
+    if (this.props.project && this.props.project.percentToGoal <= 100) {
+      percentage = {
+        width: `${this.props.project.percentToGoal}%`,
+      };
+    } else {
+      percentage = { width: "100%" };
+    }
     return (
       <div className="proj-show-grid">
         <div className="top-row-description flex-nowrap">
@@ -140,7 +134,12 @@ class ProjectShowComponent extends React.Component {
               <span className="goal-amt-text">Backers</span>
             </div>
             <div>{this.calculateTimeLeft(this.props.project.deadline)}</div>
-            <button className="back-project-button" onClick={this.handleClick}>
+            <button
+              className="back-project-button"
+              onClick={() => {
+                window.scrollBy({ top: 900, behavior: "smooth" });
+              }}
+            >
               Back this Project
             </button>
             <span>
@@ -155,6 +154,7 @@ class ProjectShowComponent extends React.Component {
             <div className="proj-show-body">{this.props.project.body}</div>
           </div>
           <div className="proj-show-rewards-right">
+            <h2 className="about-proj">Support</h2>
             <RewardContainer
               userId={this.props.currentUserId}
               rewards={this.props.rewards}

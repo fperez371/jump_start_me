@@ -5,8 +5,17 @@ import GreetingModal from "./greeting";
 import { closeModal } from "../../actions/modal_actions";
 
 const msp = ({ session, entities: { users } }) => {
+  let userProjects;
+  if (users[session.id]) {
+    userProjects = Object.values(users[session.id].projects).filter(project => {
+      return project.creator_id === session.id;
+    });
+  } else {
+    userProjects = [];
+  }
   return {
     currentUser: users[session.id],
+    projects: userProjects,
   };
 };
 

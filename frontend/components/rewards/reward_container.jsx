@@ -5,13 +5,8 @@ class RewardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
       amount: "",
     };
-  }
-
-  handleClick() {
-    this.setState({ clicked: true });
   }
 
   submitPledge() {
@@ -20,7 +15,7 @@ class RewardContainer extends React.Component {
       proj_id: this.props.proj_id,
       amount: this.state.amount,
     });
-    this.setState({ amount: "", clicked: false });
+    this.setState({ amount: "" });
     window.scroll({
       top: 0,
       left: 0,
@@ -34,21 +29,25 @@ class RewardContainer extends React.Component {
         <div className="pledge-amount">
           <h1>Make a pledge without a reward</h1>
         </div>
-        <input
-          className="pledge-input"
-          type="number"
-          onFocus={this.handleClick.bind(this)}
-          value={this.state.amount}
-          onChange={e => {
-            this.setState({ amount: e.currentTarget.value });
-          }}
-        />
+        <div className="input-div">
+          <div className="currency-border">
+            <span className="dolla">$</span>
+          </div>
+          <input
+            className="pledge-input"
+            type="number"
+            value={this.state.amount}
+            onChange={e => {
+              this.setState({ amount: e.currentTarget.value });
+            }}
+          />
+        </div>
         <div>
           <button
-            className="pledge-button"
+            className={this.props.userId ? "pledge-button" : "deactivated"}
             onClick={this.submitPledge.bind(this)}
           >
-            Continue
+            {this.props.userId ? "Continue" : "Log in to support projects!"}
           </button>
         </div>
       </div>
@@ -69,7 +68,7 @@ class RewardContainer extends React.Component {
               key={idx}
               reward={reward}
               backer_id={this.props.backer_id}
-              project_id={this.props.projectId}
+              proj_id={this.props.proj_id}
               createPledge={this.props.createPledge}
             />
           );

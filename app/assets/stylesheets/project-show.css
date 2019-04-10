@@ -132,22 +132,9 @@
 }
 
 .about-proj {
-  font-size: 1.2rem;
-  margin: 1rem;
-}
-
-#reward-pane {
-  padding: 1rem;
-  border: 1px solid #9b9e9e;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #656969;
-  display: block;
-  position: relative;
-}
-
-#reward-pane > * {
-  margin: 1rem;
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin: 3rem 0 3rem 0;
 }
 
 .pledge-amount {
@@ -160,11 +147,26 @@
 }
 
 .pledge-input {
-  border-color: #dcdedd;
   cursor: pointer;
-  font-weight: normal;
+  /* width: 100%; */
+  /* position: relative; */
+  height: 42px;
+  line-height: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  display: inline-block;
+  padding-left: 0.4rem;
+  width: 100%;
+  position: relative;
+  /* border-bottom: 1px solid #dcdedd; */
+}
+.pledge-input:hover {
+  border: 0.5px solid #009e74;
 }
 
+.pledge-input:focus {
+  border: 0.5px solid #009e74;
+}
 .pledge-button {
   width: 100%;
   background-color: #009e74;
@@ -175,4 +177,144 @@
   font-weight: 500;
   transition: all 0.25s ease-in-out !important;
   text-align: center;
+}
+
+.input-div {
+  border: 1px solid #dcdedd;
+  padding-left: 2rem;
+  /* padding-right: 2rem; */
+  margin-right: 1rem !important;
+  display: block;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.input-div:hover {
+  border-color: #009e74;
+}
+
+.input-div:focus {
+  border-color: #009e74;
+}
+
+.currency-border {
+  border-right: 1px solid #dcdedd;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.dolla {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  width: 2.2rem;
+}
+
+#foreground {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #19a781;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.5s, color 0.3s, font-size 0.3s;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#foreground:hover {
+  font-size: 16px;
+  opacity: 0.85;
+  color: white;
+}
+
+/* #reward-pane {
+  padding: 1rem;
+  border: 1px solid #9b9e9e;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #656969;
+  display: block;
+  position: relative;
+} */
+
+/* #reward-pane > * {
+  margin: 1rem;
+} */
+
+#reward-pane {
+  background-color: #fbfbfa;
+  border: 1px solid #e8e8e8;
+  margin-top: 25px;
+  padding: 30px;
+  position: sticky;
+  top: 30px;
+}
+
+#reward-pane h1 {
+  margin: 0px 0px 30px 0px;
+  font-size: 18px;
+  font-weight: lighter;
+  color: #282828;
+}
+
+#reward-pane h3 {
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 16px;
+  color: #282828;
+}
+
+#reward-pane h6 {
+  margin-bottom: 31px;
+  margin-top: 12px;
+  font-weight: lighter;
+  font-size: 14px;
+  color: #656969;
+  line-height: 23px;
+}
+
+#reward-pane h4 {
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 10px;
+  color: #656969;
+}
+
+#reward-pane h5 {
+  font-weight: lighter;
+  color: #282828;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.deactivated {
+  pointer-events: none;
+  width: 100%;
+  background-color: #009e74;
+  color: #ffffff !important;
+  height: 2.2rem;
+  padding: 0 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out !important;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
