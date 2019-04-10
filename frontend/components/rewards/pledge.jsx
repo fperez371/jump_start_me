@@ -37,7 +37,6 @@ class Pledge extends React.Component {
         <h4>ESTIMATED DELIVERY</h4>
         <h5>{this.props.reward.est_delivery}</h5>
         <div className={this.state.clicked ? "" : "hidden"}>
-          <h2>Pledge Amount</h2>
           <div className="input-div">
             <div className="currency-border">
               <span className="dolla">$</span>

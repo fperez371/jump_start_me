@@ -158,14 +158,17 @@
   padding-left: 0.4rem;
   width: 100%;
   position: relative;
-  /* border-bottom: 1px solid #dcdedd; */
+  border-bottom: 1px solid #dcdedd;
+  border-top: none;
+  border-right: none;
+  border-left: 1px solid #dcdedd;
 }
 .pledge-input:hover {
-  border: 0.5px solid #009e74;
+  border-left: 0.5px solid #009e74;
 }
 
 .pledge-input:focus {
-  border: 0.5px solid #009e74;
+  border-left: 0.5px solid #009e74;
 }
 .pledge-button {
   width: 100%;
@@ -183,8 +186,10 @@
   border: 1px solid #dcdedd;
   padding-left: 2rem;
   /* padding-right: 2rem; */
+  margin-top: 1rem;
   margin-right: 1rem !important;
   display: block;
+  margin-bottom: 1rem;
   text-align: left;
   position: relative;
   box-sizing: border-box;
