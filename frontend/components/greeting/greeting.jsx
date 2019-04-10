@@ -10,12 +10,10 @@ class GreetingModal extends React.Component {
   render() {
     const current = this.props.currentUser;
     const { closeModal, projects } = this.props;
-    debugger;
     let projsDiv;
     if (projects) {
       if (projects.length > 3) {
         projsDiv = projects.slice(0, 3).map((project, idx) => {
-          debugger;
           return (
             <li className="no-dec-li" onClick={() => closeModal()}>
               <Link
