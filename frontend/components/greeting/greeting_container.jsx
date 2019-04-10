@@ -4,10 +4,11 @@ import { logout } from "../../actions/session_actions";
 import GreetingModal from "./greeting";
 import { closeModal } from "../../actions/modal_actions";
 
-const msp = ({ session, entities: { users } }) => {
+const msp = ({ session, entities: { users, projects } }) => {
+  debugger;
   let userProjects;
   if (users[session.id]) {
-    userProjects = Object.values(users[session.id].projects).filter(project => {
+    userProjects = Object.values(projects).filter(project => {
       return project.creator_id === session.id;
     });
   } else {

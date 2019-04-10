@@ -4,6 +4,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 
     if @user
+      @projects =@user.projects
       login(@user)
       render "api/users/show"
     else
