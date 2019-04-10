@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { fetchProjects } from "../../actions/project_actions";
 import React from "react";
 import { Link } from "react-router-dom";
+import Loading from "../loading/loading";
 
 const msp = state => {
   return {
@@ -27,7 +28,7 @@ class CatIndex extends React.Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>Loading</div>;
+      return <Loading />;
     }
     let projects = this.props.projects.filter(project => {
       return project.category === this.props.location.pathname.slice(1);

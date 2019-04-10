@@ -1,0 +1,12 @@
+.fa-spin {
+  font-size: 10rem !important;
+  color: #009e74 !important;
+  display: block !important;
+}
+
+.spinner-wrapper {
+  /* display: block !important; */
+  /* position: relative; */
+  margin: 6rem 6rem 6rem 45rem;
+  display: table !important;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Loading from "../loading/loading";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class HomePage extends React.Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>Loading</div>;
+      return <Loading />;
     }
 
     let projects = this.props.projects.sort(function() {

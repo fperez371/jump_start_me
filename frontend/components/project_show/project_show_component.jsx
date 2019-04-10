@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchProject } from "../../actions/project_actions";
 import { fetchRewards } from "../../actions/reward_actions";
 import { createPledge } from "../../actions/pledge_actions";
+import Loading from "../loading/loading";
 import RewardContainer from "../rewards/reward_container";
 
 const msp = (state, ownProps) => {
@@ -76,7 +77,7 @@ class ProjectShowComponent extends React.Component {
 
   render() {
     if (!this.props.project) {
-      return <div>Loading...</div>;
+      return <Loading />;
     }
 
     let percentage;
