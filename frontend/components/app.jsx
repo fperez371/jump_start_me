@@ -13,6 +13,7 @@ import ProjectShowComponent from "./project_show/project_show_component";
 import CreateRewardComponent from "./rewards/create_reward_component";
 import CatIndex from "./project_index_by_category/category_index";
 import Modal from "./modal/modal";
+import UserProfile from "./user_profile/user_profile";
 
 const App = () => (
   <div>
@@ -32,6 +33,7 @@ const App = () => (
       <Route exact path="/" component={Footer} />
     </header>
     <Switch>
+      <ProtectedRoute exact path="/myProfile" component={UserProfile} />
       <ProtectedRoute exact path="/startProject" component={CreateProject} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

@@ -1,14 +1,14 @@
-
- .signup-header{
-  background-color: rgba(241,238,234,0.2);
-  border-bottom: 1px solid #F1EEEA;
+.signup-header {
+  background-color: rgba(241, 238, 234, 0.2);
+  border-bottom: 1px solid #f1eeea;
   padding: 20px;
   font-size: 14px;
   text-align: center;
-  color: #3D3D66;
- }
+  color: #3d3d66;
+}
 
- .signup-form, .login-form-box {
+.signup-form,
+.login-form-box {
   width: 338px;
   height: 455px;
   position: relative;
@@ -19,10 +19,9 @@
   transform: translate(-50%, -50%);
   border: 0.5px solid #ccc;
   padding: 20px 30px 20px 30px;
-
 }
 
-.login-text{
+.login-text {
   font-size: 30px;
   line-height: 3.6rem;
   margin-top: 0.6rem;
@@ -34,9 +33,9 @@
   margin-top: 0.6rem;
 }
 
-.session-submit{
-  background-color: #009E74;
-  color: #FFFFFF !important;
+.session-submit {
+  background-color: #009e74;
+  color: #ffffff !important;
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
@@ -47,27 +46,27 @@
   margin-bottom: 15px;
 }
 
-.header-button{
+.header-button {
   box-sizing: border-box;
-  background-color: #009E74;
-  color: #FFFFFF !important;
+  background-color: #009e74;
+  color: #ffffff !important;
 }
 
-.login-footer{
-  background-color: rgba(241,238,234,0.2);
-  border-top: 1px solid #F1EEEA;
+.login-footer {
+  background-color: rgba(241, 238, 234, 0.2);
+  border-top: 1px solid #f1eeea;
   padding: 10px;
   font-size: 14px;
   text-align: center;
-  color: #3D3D66;
+  color: #3d3d66;
   position: absolute;
   bottom: 10px;
   left: 100px;
 }
 
-.demo-login{
-  background-color: #009E74;
-  color: #FFFFFF !important;
+.demo-login {
+  background-color: #009e74;
+  color: #ffffff !important;
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
@@ -77,9 +76,9 @@
   text-align: center;
 }
 
-.signup-submit{
-  background-color: #009E74;
-  color: #FFFFFF !important;
+.signup-submit {
+  background-color: #009e74;
+  color: #ffffff !important;
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
@@ -88,7 +87,8 @@
   line-height: 17px;
 }
 
-.signup-input, .login-input  {
+.signup-input,
+.login-input {
   box-sizing: border-box;
   padding: 12px;
   font-size: 14px;
@@ -101,12 +101,12 @@
 }
 
 .signup-header {
-  background-color: rgba(241,238,234,0.2);
-  border-bottom: 1px solid #F1EEEA;
+  background-color: rgba(241, 238, 234, 0.2);
+  border-bottom: 1px solid #f1eeea;
   padding: 20px;
   font-size: 14px;
   text-align: center;
-  color: #3D3D66;
+  color: #3d3d66;
   text-align: center;
   box-sizing: border-box;
   margin-bottom: 20px;

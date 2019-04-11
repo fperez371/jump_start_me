@@ -1,0 +1,46 @@
+.basics-wrapper header,
+.profile-wrapper header {
+  border-bottom: 1px solid #dcdedd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 212px;
+  box-sizing: border-box;
+  padding: 0px 25%;
+}
+
+.profile-wrapper header {
+  align-items: flex-start;
+}
+
+.basics-wrapper header h1,
+.profile-wrapper header h1 {
+  margin-bottom: 0px;
+  font-weight: lighter;
+  color: #282828;
+  font-size: 26px;
+  letter-spacing: 1.1px;
+}
+
+.basics-wrapper header h2,
+.profile-wrapper h3 {
+  margin-top: 19px;
+  font-weight: lighter;
+  color: #656969;
+  font-size: 17.6px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.basics-form,
+.profile-form {
+  padding-bottom: 50px;
+}
+
+.form-li {
+  border-bottom: 1px solid #dcdedd;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 12%;
+}
