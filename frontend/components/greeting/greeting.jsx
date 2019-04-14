@@ -22,9 +22,9 @@ class GreetingModal extends React.Component {
                 to={`/projects/${project.id}`}
               >
                 <div className="li-prj-img">
-                  {" "}
                   <img className="modal-img" src={project.photo} alt="" />{" "}
                 </div>
+                &nbsp;
                 {project.name}
               </Link>
             </li>
@@ -52,6 +52,14 @@ class GreetingModal extends React.Component {
       <div className="user-modal">
         <header className="username-header"> Welcome {current.name}!</header>
         <div className="projects-div">
+          <Link
+            className="prof-link"
+            to="/myProfile"
+            onClick={() => closeModal()}
+          >
+            {" "}
+            My profile
+          </Link>
           <ul className="ddm-project-list">
             <h3 className="my-projects">My Projects</h3>
             {projsDiv}

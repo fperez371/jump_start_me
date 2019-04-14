@@ -213,6 +213,7 @@ a {
   overflow-y: hidden;
   display: flex;
   align-items: center;
+  padding-right: 0.1rem;
 }
 .projects-div {
   padding: auto;
@@ -220,6 +221,17 @@ a {
 
 .my-projects {
   margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.prof-link {
+  list-style: none;
+  color: black;
+  font-weight: bold;
+}
+.prof-link:hover {
+  cursor: pointer;
+  color: #009e74;
 }
 
 .logout {

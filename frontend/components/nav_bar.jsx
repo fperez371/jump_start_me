@@ -36,11 +36,6 @@ class NavBar extends React.Component {
         <div className="site-nav-left">
           <ul className="nav-bar-items">
             <li>
-              <Link className="nav-link" to="/projects">
-                Explore
-              </Link>
-            </li>
-            <li>
               <Link className="nav-link" to="/startProject">
                 Start a project
               </Link>

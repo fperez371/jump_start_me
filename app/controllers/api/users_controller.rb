@@ -11,6 +11,22 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(id: params[:id])
+    unless logged_in? && current_user.id == @user.id
+      render json: [], status: 422
+      return
+    end
+
+    if @user.update(user_params)
+      @projects = @user.projects
+
+      render :show
+    else
+      render json: @user.errors.full_messages, status: 422
+    end
+  end
+
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end

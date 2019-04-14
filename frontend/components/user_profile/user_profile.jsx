@@ -38,12 +38,25 @@ class UserProfile extends React.Component {
   }
 
   render() {
+    let editButton;
+    if (this.state.name !== "demo-guy") {
+      editButton = (
+        <button onSubmit={this.saveChanges.bind(this)}>
+          Update your profile
+        </button>
+      );
+    } else {
+      editButton = null;
+    }
     return (
       <div>
         <main className="profile-wrapper">
           <header>
             <h1>Profile</h1>
-            <h3>Keep your info up to date</h3>
+            <h3>
+              Keep your info up to date. Note that the update feature is
+              disabled for the demo user
+            </h3>
           </header>
           <form className="profile-form">
             <div className="form-li">
@@ -84,7 +97,7 @@ class UserProfile extends React.Component {
                 </p>
               </div>
             </div>
-            <button onSubmit={this.saveChanges.bind(this)} />
+            {editButton}
           </form>
         </main>
       </div>
