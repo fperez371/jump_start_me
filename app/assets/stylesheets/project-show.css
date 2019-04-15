@@ -107,7 +107,7 @@
 }
 
 .back-project-button {
-  background-color: #037362;
+  background-color: #009e74;
   color: #ffffff !important;
   width: 100%;
   font-size: 16px;
@@ -116,6 +116,15 @@
   height: 48px;
   line-height: 48px;
   cursor: pointer;
+  transition: all 0.25s ease-in-out !important;
+}
+
+.back-project-button:hover {
+  background-color: #037362;
+}
+.back-project-button:focus {
+  background-color: #037362;
+  outline: none;
 }
 
 #pledges-total {
@@ -180,6 +189,15 @@
   font-weight: 500;
   transition: all 0.25s ease-in-out !important;
   text-align: center;
+}
+
+.pledge-button:hover {
+  background-color: #037362;
+}
+
+.pledge-button:focus {
+  background-color: #037362;
+  outline: none;
 }
 
 .input-div {

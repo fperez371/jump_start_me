@@ -16,8 +16,7 @@ $distance: 8px;
   background-color: white;
   list-style: none;
   text-decoration: none;
-  padding-right: 1.5rem !important;
-  padding-left: 1.5rem !important;
+  margin-right: 1rem;
   padding-top: 1.2rem !important;
   padding-bottom: 1.2rem !important;
   width: 100%;
@@ -36,7 +35,7 @@ a {
   float: left;
   padding-right: 25px;
   width: auto;
-  padding: auto;
+  padding-left: 0.5rem;
   list-style: none;
   color: #282828;
 }
@@ -79,9 +78,8 @@ a {
   display: block;
   float: right;
   margin-left: 20px;
-  padding-right: 30px;
   width: auto;
-  padding: auto;
+  padding-right: 0.5rem;
   list-style: none;
   color: #282828;
 }

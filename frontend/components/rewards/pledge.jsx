@@ -51,10 +51,10 @@ class Pledge extends React.Component {
             />
           </div>
           <button
-            className={!this.props.userId ? "pledge-button" : "deactivated"}
+            className={this.props.userId ? "pledge-button" : "deactivated"}
             onClick={this.submitPledge.bind(this)}
           >
-            Continue
+            {this.props.userId ? "Continue" : "Log in to support projects!"}
           </button>
         </div>
         <div

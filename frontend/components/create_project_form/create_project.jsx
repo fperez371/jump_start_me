@@ -19,6 +19,7 @@ class CreateProjectForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectHome = this.redirectHome.bind(this);
     let currentDate = new Date();
     this.state = {
       body: "",
@@ -31,6 +32,10 @@ class CreateProjectForm extends React.Component {
       location: "",
       due: 0,
     };
+  }
+
+  redirectHome() {
+    this.props.history.push("/");
   }
 
   handleSubmit(e) {
@@ -72,9 +77,21 @@ class CreateProjectForm extends React.Component {
   }
 
   render() {
-    const preview = this.state.proj_image_url ? (
-      <img src={this.state.proj_image_url} />
-    ) : null;
+    let preview;
+    if (this.state.proj_image_url) {
+      preview = (
+        <img className="project-image-render" src={this.state.proj_image_url} />
+      );
+    } else {
+      preview = (
+        <div id="no-image">
+          <div id="pic-icon-circle">
+            <i className="fas fa-camera" />
+          </div>
+          Select image file
+        </div>
+      );
+    }
 
     return (
       <div className="create-project-page">
@@ -93,7 +110,7 @@ class CreateProjectForm extends React.Component {
               placeholder="Give your Project a title"
             />
           </div>
-          <div className="proj-body-row">
+          <div className="proj-name-row">
             <span className="proj-body-instruction">
               Write an in depth description of your project. The more info the
               better.
@@ -106,7 +123,7 @@ class CreateProjectForm extends React.Component {
               placeholder="Describe your project"
             />
           </div>
-          <div className="categories-row">
+          <div className="proj-name-row">
             <div className="description-row">
               <p className="proj-categories-instruction">
                 Choose the category that most closely aligns with your project.
@@ -187,7 +204,7 @@ class CreateProjectForm extends React.Component {
               </select>
             </div>
           </div>
-          <div className="create-proj-location">
+          <div className="proj-name-row">
             <p className="proj-categories-instruction">
               Choose the location that best describes where your project is
               located
@@ -200,7 +217,7 @@ class CreateProjectForm extends React.Component {
               onChange={this.update("location")}
             />
           </div>
-          <div className="create-proj-image-row">
+          <div className="proj-name-row">
             <div className="description-row">
               <p className="proj-categories-instruction">
                 Add an image that clearly represents your project.
@@ -216,14 +233,18 @@ class CreateProjectForm extends React.Component {
                 because they may not be legible at smaller sizes.
               </p>
             </div>
-            <input
-              type="file"
-              id="create-proj-image"
-              onChange={this.handleFile.bind(this)}
-            />
-            <div className="create-image-preview">{preview}</div>
+            <div className="li-inputs">
+              <label id="add-image-label">
+                {preview}
+                <input
+                  id="image-input"
+                  type="file"
+                  onChange={this.handleFile.bind(this)}
+                />
+              </label>
+            </div>
           </div>
-          <div className="create-proj-funding-row">
+          <div className="proj-name-row">
             <div className="description-row">
               <h3 className="funding-goal-text">Funding goal</h3>
               <p className="proj-categories-instruction">
@@ -246,7 +267,7 @@ class CreateProjectForm extends React.Component {
               value={this.state.goal_amt}
             />
           </div>
-          <div className="create-proj-funding-row">
+          <div className="proj-cat-row">
             <div className="description-row">
               <h3 className="funding-goal-text">Campaign duration</h3>
               <p className="proj-categories-instruction">
@@ -268,12 +289,11 @@ class CreateProjectForm extends React.Component {
               />
             </div>
           </div>
-          <input
-            className="create-proj-submit"
-            type="submit"
-            value="Move on to rewards"
-          />
         </form>
+        <footer className="create-proj-footer">
+          <button onClick={this.redirectHome}>Cancel</button>
+          <button onClick={this.handleSubmit}>Move on to rewards</button>
+        </footer>
       </div>
     );
   }
