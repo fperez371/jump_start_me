@@ -24,6 +24,10 @@
   flex-direction: column;
 }
 
+.smaller {
+  height: 0.5rem !important;
+}
+
 .left-featured {
   display: block;
   border-bottom-color: rgb(232, 232, 232);
@@ -106,6 +110,12 @@
   font-weight: 400;
   padding-bottom: 1rem;
   word-wrap: break-word;
+  max-width: 219px;
+}
+
+.fav {
+  font-size: 1rem;
+  color: black;
 }
 
 .creator-name {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//  let userProjs = entities.projects.filter(project => project.creator_id === currentUser.id)
 class GreetingModal extends React.Component {
   constructor(props) {
     super(props);

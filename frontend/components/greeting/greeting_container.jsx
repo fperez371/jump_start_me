@@ -5,7 +5,6 @@ import GreetingModal from "./greeting";
 import { closeModal } from "../../actions/modal_actions";
 
 const msp = ({ session, entities: { users, projects } }) => {
-  debugger;
   let userProjects;
   if (users[session.id]) {
     userProjects = Object.values(projects).filter(project => {

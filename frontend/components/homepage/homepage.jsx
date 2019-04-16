@@ -5,21 +5,29 @@ import Loading from "../loading/loading";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = {
+      isLoading: true,
+      projects: [],
+    };
   }
 
   componentDidMount() {
-    this.props.fetchProjects().then(() => this.setState({ isLoading: false }));
+    this.props.fetchProjects().then(projects => {
+      debugger;
+      this.setState({
+        isLoading: false,
+        projects: Object.values(projects).sort(function() {
+          return 0.5 - Math.random();
+        }),
+      });
+    });
   }
 
   render() {
     if (this.state.isLoading) {
       return <Loading />;
     }
-
-    let projects = this.props.projects.sort(function() {
-      return 0.5 - Math.random();
-    });
+    const { projects } = this.state;
     const projLink = `/projects/${projects[0].id}`;
     const projLink2 = `/projects/${projects[1].id}`;
     const projLink3 = `/projects/${projects[2].id}`;
@@ -121,11 +129,11 @@ class HomePage extends React.Component {
                   <img className="fresh-img" src={projects[4].photo} alt="" />
                 </Link>
                 <div
-                  className="funding-border-hp"
+                  className="funding-border-hp smaller"
                   style={{ width: `${projects[4].percentToGoal}` }}
                 />
               </div>
-              <p className="proj-name">{projects[4].name}</p>
+              <p className="proj-name fav">{projects[4].name}</p>
               <Link className="creator-name" to={projLink5}>
                 By {projects[4].creator.name}
               </Link>
@@ -139,10 +147,10 @@ class HomePage extends React.Component {
                 </Link>
               </div>
               <div
-                className="funding-border-hp"
+                className="funding-border-hp smaller"
                 style={{ width: `${projects[5].percentToGoal}` }}
               />
-              <p className="proj-name">{projects[5].name}</p>
+              <p className="proj-name fav">{projects[5].name}</p>
               <Link className="creator-name" to={projLink6}>
                 By {projects[5].creator.name}
               </Link>
@@ -156,10 +164,10 @@ class HomePage extends React.Component {
                 </Link>
               </div>
               <div
-                className="funding-border-hp"
+                className="funding-border-hp smaller"
                 style={{ width: `${projects[6].percentToGoal}` }}
               />
-              <p className="proj-name">{projects[6].name}</p>
+              <p className="proj-name fav">{projects[6].name}</p>
               <Link className="creator-name" to={projLink7}>
                 By {projects[6].creator.name}
               </Link>
@@ -173,10 +181,10 @@ class HomePage extends React.Component {
                 </Link>
               </div>
               <div
-                className="funding-border-hp"
+                className="funding-border-hp smaller"
                 style={{ width: `${projects[7].percentToGoal}` }}
               />
-              <p className="proj-name">{projects[7].name}</p>
+              <p className="proj-name fav">{projects[7].name}</p>
               <Link className="creator-name" to={projLink8}>
                 By {projects[7].creator.name}
               </Link>

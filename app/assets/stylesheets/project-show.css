@@ -140,6 +140,10 @@
   margin: 2rem;
 }
 
+.proj-show-rewards-right {
+  min-width: 300px;
+}
+
 .about-proj {
   font-weight: 400;
   font-size: 2.2rem;
@@ -157,6 +161,7 @@
 
 .pledge-input {
   cursor: pointer;
+  box-shadow: none;
   /* width: 100%; */
   /* position: relative; */
   height: 42px;
@@ -168,7 +173,7 @@
   width: 100%;
   position: relative;
   border-bottom: 1px solid #dcdedd;
-  border-top: none;
+  border-top: 1px solid #dcdedd;
   border-right: none;
   border-left: 1px solid #dcdedd;
 }
