@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./search/search";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.sessionLink = this.sessionLink.bind(this);
     this.personalGreeting = this.personalGreeting.bind(this);
+    this.toggleSearch = this.toggleSearch.bind(this);
+    this.state = {
+      search: false,
+    };
   }
 
   sessionLink() {
@@ -30,33 +35,49 @@ class NavBar extends React.Component {
     );
   }
 
+  toggleSearch() {
+    debugger;
+    this.setState({ search: true });
+  }
+
   render() {
+    let search;
+    if (this.state.search) {
+      search = <SearchBar />;
+    } else {
+      search = null;
+    }
     return (
-      <div className="nav-bar">
-        <div className="site-nav-left">
-          <ul className="nav-bar-items">
-            <li>
-              <Link className="nav-link" to="/startProject">
-                Start a project
-              </Link>
-            </li>
-          </ul>
+      <>
+        <div className={"nav-bar"}>
+          <div className="site-nav-left">
+            <ul className="nav-bar-items">
+              <li>
+                <Link className="nav-link" to="/startProject">
+                  Start a project
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="site-nav-middle">
+            <Link to="/">JumpStartMe</Link>
+          </div>
+          <div className="site-nav-right">
+            <ul className="nav-bar-items">
+              <li>
+                <button onClick={this.toggleSearch} className="search-nav">
+                  Search
+                  <i className="fas fa-search" />
+                </button>
+              </li>
+              {this.props.loggedIn
+                ? this.personalGreeting()
+                : this.sessionLink()}
+            </ul>
+          </div>
         </div>
-        <div className="site-nav-middle">
-          <Link to="/">JumpStartMe</Link>
-        </div>
-        <div className="site-nav-right">
-          <ul className="nav-bar-items">
-            <li>
-              <button className="search-nav">
-                Search
-                <i className="fas fa-search" />
-              </button>
-            </li>
-            {this.props.loggedIn ? this.personalGreeting() : this.sessionLink()}
-          </ul>
-        </div>
-      </div>
+        {search}
+      </>
     );
   }
 }

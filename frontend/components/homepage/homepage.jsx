@@ -13,7 +13,6 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     this.props.fetchProjects().then(projects => {
-      debugger;
       this.setState({
         isLoading: false,
         projects: Object.values(projects).sort(function() {
