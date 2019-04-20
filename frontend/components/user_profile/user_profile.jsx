@@ -17,7 +17,6 @@ const mapDispatchToProps = dispatch => {
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     this.state = {
       name: this.props.currentUser.name,
       email: this.props.currentUser.email,

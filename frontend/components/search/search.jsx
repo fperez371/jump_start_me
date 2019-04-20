@@ -1,9 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchSearchResults } from "../../actions/search_actions";
 
+const msp = state => {
+  let results = state.entities.results || null;
+  return {
+    results: results,
+  };
+};
+
 const mdp = dispatch => {
-  debugger;
   return {
     fetchResults: query => dispatch(fetchSearchResults(query)),
   };
@@ -37,20 +44,26 @@ class SearchBar extends React.Component {
     if (query.length < 1) return;
     this.props
       .fetchResults(query)
-      .then(() => this.setState({ [searchList]: true }));
+      .then(() => this.setState({ searchList: true }));
   }
 
   render() {
     let projects;
     if (this.state.searchList) {
-      projects = this.props.results.map((project, idx) => {
-        <li key={idx} className="search-proj-li">
-          <Link onClick={this.toggleSearch} to={`api/projects/${project.id}`}>
-            <h3>{project.name}</h3>
-            <h3> By {project.creator.name}</h3>
-            <img src={project.photo} alt="" />
-          </Link>
-        </li>;
+      projects = Object.values(this.props.results).map((project, idx) => {
+        return (
+          <li key={idx} className="search-proj-li">
+            <Link onClick={this.toggleSearch} to={`/projects/${project.id}`}>
+              <div className="search-proj-img">
+                <img src={project.photo} alt="" />
+              </div>
+              <div id="search-text">
+                <h3>{project.name}</h3>
+                <h3> By {project.creator.name}</h3>
+              </div>
+            </Link>
+          </li>
+        );
       });
     } else {
       projects = null;
@@ -74,8 +87,8 @@ class SearchBar extends React.Component {
             </button>
           </div>
         </form>
-        <div className={this.searchList ? "search-list" : "hidden"}>
-          <ul>{projects}</ul>
+        <div className={this.state.searchList ? "search-list" : "hidden"}>
+          <ul className="search-list-ul">{projects}</ul>
         </div>
       </div>
     );
@@ -83,6 +96,6 @@ class SearchBar extends React.Component {
 }
 
 export default connect(
-  null,
+  msp,
   mdp
 )(SearchBar);
