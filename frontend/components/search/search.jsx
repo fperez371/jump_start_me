@@ -39,12 +39,9 @@ class SearchBar extends React.Component {
     e.preventDefault();
     let query = this.state.query;
     if (query.length < 1) return;
-    let that = this;
     this.props.fetchResults(query).then(() => {
-      debugger;
-      that.props.toggleSearch;
+      this.props.toggleSearch;
     });
-    debugger;
   }
 
   componentWillUnmount() {
@@ -73,7 +70,10 @@ class SearchBar extends React.Component {
           </li>
         );
       });
-    } else if (this.props.searchList && this.props.results.length === 0) {
+    } else if (
+      this.props.searchList &&
+      Object.values(this.props.results).length === 0
+    ) {
       debugger;
       projects = <li className="search-proj-li">No matches found</li>;
     } else {
