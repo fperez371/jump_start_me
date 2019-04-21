@@ -10,6 +10,7 @@ class NavBar extends React.Component {
     this.toggleSearch = this.toggleSearch.bind(this);
     this.state = {
       search: false,
+      searchList: false,
     };
   }
 
@@ -36,14 +37,22 @@ class NavBar extends React.Component {
   }
 
   toggleSearch() {
-    debugger;
-    this.setState({ search: true });
+    this.setState({
+      search: !this.state.search,
+      searchList: !this.state.searchList,
+    });
   }
 
   render() {
     let search;
     if (this.state.search) {
-      search = <SearchBar />;
+      search = (
+        <SearchBar
+          search={this.state.search}
+          searchList={this.state.searchList}
+          toggleSearch={this.toggleSearch}
+        />
+      );
     } else {
       search = null;
     }

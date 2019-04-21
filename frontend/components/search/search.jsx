@@ -20,11 +20,8 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchList: false,
-      search: true,
       query: "",
     };
-    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   edit(query) {
@@ -34,26 +31,28 @@ class SearchBar extends React.Component {
       });
   }
 
-  toggleSearch() {
-    this.setState({ search: false });
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     let query = this.state.query;
     if (query.length < 1) return;
-    this.props
-      .fetchResults(query)
-      .then(() => this.setState({ searchList: true }));
+    let that = this;
+    this.props.fetchResults(query).then(() => {
+      debugger;
+      that.props.toggleSearch;
+    });
   }
 
   render() {
     let projects;
-    if (this.state.searchList) {
+    // debugger;
+    if (this.props.searchList && this.props.results) {
       projects = Object.values(this.props.results).map((project, idx) => {
         return (
           <li key={idx} className="search-proj-li">
-            <Link onClick={this.toggleSearch} to={`/projects/${project.id}`}>
+            <Link
+              onClick={this.props.toggleSearch}
+              to={`/projects/${project.id}`}
+            >
               <div className="search-proj-img">
                 <img src={project.photo} alt="" />
               </div>
@@ -65,10 +64,12 @@ class SearchBar extends React.Component {
           </li>
         );
       });
+    } else if (this.state.searchList && !this.props.results) {
+      projects = <li className="search-proj-li">No matches found</li>;
     } else {
       projects = null;
     }
-    if (!this.state.search) {
+    if (!this.props.search) {
       return <div className="hidden" />;
     }
     return (
@@ -82,12 +83,16 @@ class SearchBar extends React.Component {
               placeholder="search for a project by name"
               onChange={this.edit("query")}
             />
-            <button id="close-search" type="button" onClick={this.toggleSearch}>
+            <button
+              id="close-search"
+              type="button"
+              onClick={this.props.toggleSearch}
+            >
               X
             </button>
           </div>
         </form>
-        <div className={this.state.searchList ? "search-list" : "hidden"}>
+        <div className={this.props.searchList ? "search-list" : "hidden"}>
           <ul className="search-list-ul">{projects}</ul>
         </div>
       </div>

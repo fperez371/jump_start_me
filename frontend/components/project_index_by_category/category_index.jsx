@@ -19,7 +19,12 @@ const mdp = dispatch => {
 class CatIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: true, search: false };
+    this.toggleSearch = this.toggleSearch.bind(this);
+  }
+
+  toggleSearch() {
+    this.setState({ search: !this.state.search });
   }
 
   componentDidMount() {
@@ -123,7 +128,7 @@ class CatIndex extends React.Component {
                 <div className="rec-li-div-description">
                   <Link className="description-link" to={projLink3}>
                     <h2 className="rec-title">{projects[2].name}</h2>
-                    {projects[2].body.slice(0, 100)}...
+                    {projects[2].body.slice(0, 100)}
                   </Link>
                 </div>
               </li>
