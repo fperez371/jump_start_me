@@ -50,7 +50,6 @@ class SearchBar extends React.Component {
 
   render() {
     let projects;
-    // debugger;
     if (this.props.searchList && this.props.results) {
       projects = Object.values(this.props.results).map((project, idx) => {
         return (
@@ -74,7 +73,6 @@ class SearchBar extends React.Component {
       this.props.searchList &&
       Object.values(this.props.results).length === 0
     ) {
-      debugger;
       projects = <li className="search-proj-li">No matches found</li>;
     } else {
       projects = null;
