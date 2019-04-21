@@ -37,6 +37,7 @@
 
 .proj-show-left-picture > img {
   max-width: 100%;
+  min-width: 700px;
   height: auto;
   position: relative;
   display: block;
@@ -87,6 +88,7 @@
 .proj-show-body {
   float: left;
   margin: 1rem;
+  width: 75%;
 }
 
 .funding-border {

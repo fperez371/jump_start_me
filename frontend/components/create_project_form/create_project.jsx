@@ -225,7 +225,7 @@ class CreateProjectForm extends React.Component {
               <p className="proj-categories-instruction">
                 Choose one that looks good at different sizes. It will appear in
                 different sizes in different places: on your project page,
-                across the Kickstarter website and mobile apps, and (when
+                across the Jumpstartme website and mobile apps, and (when
                 shared) on social channels.
               </p>
               <p className="proj-categories-instruction">

@@ -114,7 +114,7 @@
 }
 
 .fav {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: black;
 }
 
@@ -275,4 +275,5 @@
 
 .fresh-img {
   max-width: 300px;
+  max-height: 156px;
 }
