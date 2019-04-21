@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchSearchResults } from "../../actions/search_actions";
+import {
+  fetchSearchResults,
+  receiveSearchResults,
+} from "../../actions/search_actions";
 
 const msp = state => {
   let results = state.entities.results || null;
@@ -13,6 +16,7 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     fetchResults: query => dispatch(fetchSearchResults(query)),
+    clearResults: () => dispatch(receiveSearchResults({})),
   };
 };
 
@@ -40,6 +44,11 @@ class SearchBar extends React.Component {
       debugger;
       that.props.toggleSearch;
     });
+    debugger;
+  }
+
+  componentWillUnmount() {
+    this.props.clearResults();
   }
 
   render() {
@@ -64,7 +73,8 @@ class SearchBar extends React.Component {
           </li>
         );
       });
-    } else if (this.state.searchList && !this.props.results) {
+    } else if (this.props.searchList && this.props.results.length === 0) {
+      debugger;
       projects = <li className="search-proj-li">No matches found</li>;
     } else {
       projects = null;
