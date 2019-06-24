@@ -1,5 +1,6 @@
 import React from "react";
 import Pledge from "./pledge";
+import { withRouter } from "react-router-dom";
 
 class RewardContainer extends React.Component {
     constructor(props) {
@@ -7,8 +8,15 @@ class RewardContainer extends React.Component {
         this.state = {
             amount: "",
         };
+        this.redirectLogin = this.redirectLogin.bind(this);
     }
 
+    redirectLogin() {
+        debugger;
+        this.props.history.push("/login");
+    }
+    // change createPledge to redirect to login
+    // redirect to project show on success
     submitPledge() {
         this.props.createPledge({
             backer_id: this.props.backer_id,
@@ -44,10 +52,13 @@ class RewardContainer extends React.Component {
                 </div>
                 <div>
                     <button
-                        className={
-                            this.props.userId ? "pledge-button" : "deactivated"
+                        type="button"
+                        className="pledge-button"
+                        onClick={
+                            this.props.userId
+                                ? this.submitPledge.bind(this)
+                                : this.redirectLogin
                         }
-                        onClick={this.submitPledge.bind(this)}
                     >
                         {this.props.userId ? "Continue" : "Log in first!"}
                     </button>
@@ -80,4 +91,4 @@ class RewardContainer extends React.Component {
     }
 }
 
-export default RewardContainer;
+export default withRouter(RewardContainer);

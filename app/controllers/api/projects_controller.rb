@@ -17,7 +17,7 @@ class Api::ProjectsController < ApplicationController
     if @project.save
       render :show
     else
-      render json: @project.errors.full_messages, status: 422
+      render json: {errors: @project.errors.full_messages}, status: 422
     end
   end
 
@@ -26,7 +26,7 @@ class Api::ProjectsController < ApplicationController
     if @project.update(project_params)
       render :show
     else
-      render json: @project.errors.full_messages, status: 422
+      render json: {errors: @project.errors.full_messages}, status: 422
     end
 
   end
