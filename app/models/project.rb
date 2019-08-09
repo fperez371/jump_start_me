@@ -16,25 +16,31 @@
 
 class Project < ApplicationRecord
 
-
+  validate :ensure_photo
   validates :body, :name, :category, :location, :goal_amt, :deadline, presence: true
   validates :category, inclusion: { in: %w(Arts Comics&Illustration Design&Tech Film Food&Craft Games Music Publishing) }
   
   belongs_to :creator,
-    class_name: :User,
-    foreign_key: :creator_id,
-    primary_key: :id
-
+  class_name: :User,
+  foreign_key: :creator_id,
+  primary_key: :id
+  
   has_many :rewards,
-    class_name: :Reward,
-    foreign_key: :proj_id,
-    primary_key: :id
-
+  class_name: :Reward,
+  foreign_key: :proj_id,
+  primary_key: :id
+  
   has_many :pledges,
-    class_name: :Pledge,
-    foreign_key: :proj_id,
-    primary_key: :id
-
+  class_name: :Pledge,
+  foreign_key: :proj_id,
+  primary_key: :id
+  
   has_one_attached :photo
+
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "must attach a photo"
+    end
+  end
 
 end 

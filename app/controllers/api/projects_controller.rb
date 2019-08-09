@@ -12,12 +12,12 @@ class Api::ProjectsController < ApplicationController
 
 
   def create
-    @project = Project.new(project_params)
-    @project.creator_id = current_user.id
+    @project = current_user.projects.new(project_params)
     if @project.save
       render :show
     else
-      render json: {errors: @project.errors.full_messages}, status: 422
+      debugger
+      render json: @project.errors.full_messages, status: 422
     end
   end
 
@@ -26,7 +26,7 @@ class Api::ProjectsController < ApplicationController
     if @project.update(project_params)
       render :show
     else
-      render json: {errors: @project.errors.full_messages}, status: 422
+      render json: @project.errors.full_messages, status: 422
     end
 
   end

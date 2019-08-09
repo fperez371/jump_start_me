@@ -4,13 +4,12 @@ import {
 } from "../actions/project_actions";
 
 export default (state = [], action) => {
-    debugger;
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PROJECT_ERRORS:
             return action.errors;
-        case RECEIVE_PROJECT:
-            return [];
+        // case RECEIVE_PROJECT:
+        //     return [];
         default:
             return state;
     }
