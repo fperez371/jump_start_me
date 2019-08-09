@@ -3,7 +3,7 @@
 JumpStartMe is a web application inspired by Kickstarter.
 
 [Visit the Live JumpStartMe App here](https://jumpstartme.herokuapp.com/#/)
-![image of JumpStartMe]("/Users/fp/Desktop/fullStack/jump_start_me/app/assets/images/Screen Shot 2019-08-09 at 6.45.27 PM.png")
+![image of JumpStartMe]("app/assets/images/Screen Shot 2019-08-09 at 6.45.27 PM.png")
 
 ---
 
