@@ -5,7 +5,7 @@ JumpStartMe is a web application inspired by Kickstarter.
 [Visit the Live JumpStartMe App here](https://jumpstartme.herokuapp.com/#/)
 
 <p>
-    <img src="app/assets/images/JumpStartMe.jpg" width="220" height="240" />
+    <img src="app/assets/images/JumpStartMe.jpg" width="600" height="500" />
 </p>
 ---
 
