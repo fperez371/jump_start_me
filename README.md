@@ -20,28 +20,34 @@ JumpStartMe is a web application inspired by Kickstarter.
 -   Start a project
     -   Create a project with a funding goal, rewards, a deadline, etc. just like on Kickstarter!
 
-## Technology Used
+## Technologies Used
 
-# Ruby on Rails (backend)
+-   ActiveRecord
 
-```ruby
-  # /app/controllers/api/search_controller.rb
+-   ActiveStorage (AWS)
 
-  class Api::SearchController < ApplicationController
+-   PostgreSQL
 
-    def show
-      searchParam = params[:id]
-      @projects = Project.where("name ILIKE ?", "%#{searchParam}%")
-      render 'api/search/show'
-    end
+-   React/Redux (frontend)
 
-  end
-```
+-   jQuery
 
-#ActiveRecord
-#ActiveStorage (AWS)
-#PostgreSQL
-#User Authentication
-#React/Redux (frontend)
-#jQuery
-#DOM Manipulation - ES6
+-   ES6 JavaScript
+
+-   Ruby on Rails (backend)
+
+    Here is a simple search feature implemented with Ruby on Rails. The search term is passed directly into the path and ActiveRecord is used to search for similar terms.
+
+    ```ruby
+      # /app/controllers/api/search_controller.rb
+
+      class Api::SearchController < ApplicationController
+
+        def show
+          searchParam = params[:id]
+          @projects = Project.where("name ILIKE ?", "%#{searchParam}%")
+          render 'api/search/show'
+        end
+
+      end
+    ```

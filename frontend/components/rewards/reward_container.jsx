@@ -9,10 +9,10 @@ class RewardContainer extends React.Component {
             amount: "",
         };
         this.redirectLogin = this.redirectLogin.bind(this);
+        this.submitPledge = this.submitPledge.bind(this);
     }
 
     redirectLogin() {
-        debugger;
         this.props.history.push("/login");
     }
     // change createPledge to redirect to login
@@ -56,7 +56,7 @@ class RewardContainer extends React.Component {
                         className="pledge-button"
                         onClick={
                             this.props.userId
-                                ? this.submitPledge.bind(this)
+                                ? this.submitPledge
                                 : this.redirectLogin
                         }
                     >
