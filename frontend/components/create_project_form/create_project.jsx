@@ -56,7 +56,6 @@ class CreateProjectForm extends React.Component {
         formData.append("project[deadline]", this.state.deadline);
         formData.append("project[photo]", this.state.photo);
         formData.append("project[location]", this.state.location);
-        debugger;
         this.props.createProject(formData).then(project => {
             this.props.history.push(`/projects/${project.project.id}/rewards`);
         });
