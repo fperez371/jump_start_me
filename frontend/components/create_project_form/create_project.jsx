@@ -42,8 +42,6 @@ class CreateProjectForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const project = Object.assign({}, this.state);
-        // this.props.createProject(project).then(() => this.props.history.push("/"));
         const formData = new FormData();
         let day = 60 * 60 * 24 * 1000;
         this.state.deadline = new Date(
