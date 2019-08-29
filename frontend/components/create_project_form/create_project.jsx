@@ -15,8 +15,6 @@ const mdp = dispatch => {
     };
 };
 
-// add errors to top of page
-
 class CreateProjectForm extends React.Component {
     constructor(props) {
         super(props);

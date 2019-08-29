@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  # when model is instantiated session token is generated
   after_initialize :ensure_session_token
 
   has_many :projects,
@@ -54,6 +55,7 @@ class User < ApplicationRecord
 
   private
 
+  # called by after_intialize. 
   def ensure_session_token
     generate_unique_session_token unless self.session_token
   end
